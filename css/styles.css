@@ -1,0 +1,458 @@
+/* Global CSS */
+
+.container-fluid {
+    padding: 0 100px;
+}
+
+main {
+    min-height: 50vh;
+}
+
+/* Global CSS ENDS */
+
+/* Top Navbar CSS */ 
+/* hidden on max-width: 991px media-query */
+#header .topnav {
+    height: 30px;
+    background: #2D3E52;
+    width: 100%;
+}
+
+#header .topnav-inner-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+#header li {
+    margin-left: 40px;
+}
+
+#header li:first-child {
+    margin-left: 0;
+}
+
+.topnav a {
+    color: #fff!important;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    text-decoration-line: none;
+}
+
+/* Top Navbar CSS ENDS */ 
+
+/* Main Menu CSS */
+
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#header nav {
+    background: #fff !important;
+}
+
+#myNavbar a {
+    color: #000;
+    font-size: 0.8em;
+}
+
+.navbar {
+    padding: 0.5rem 0;
+}
+
+/* Main Menu CSS ENDS */ 
+
+/* Footer CSS */
+
+.footer {
+    
+}
+
+footer li {
+    text-decoration-style: none;
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+footer a {
+    color: #000;
+}
+
+footer ul {
+    padding: 0;
+}
+
+.footer-socials {
+    
+}
+
+.footer-bg {
+    background: url('/assets/Footer-BG-1.svg');
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-bg:nth-child(2) {
+    justify-self: center;
+}
+
+.footer-bg img:nth-child() {
+    width: 100%;
+}
+
+.footer-socials img {
+    width: 20px!important;
+}
+
+/* Footer CSS ENDS */
+
+/* Hero Section CSS */
+
+.hero-section .inner {
+    background: url('/assets/Hero-BG-Image.svg') no-repeat center bottom #EDF7F9;
+    min-height: 300px;
+    background-size: 85%;
+    margin-right: 0px!important;
+}
+
+.hero-section-left, .hero-section-right {
+    margin-top: 10px;
+    height: 400px;
+}
+
+.hero-section-left {
+    display: flex;
+    flex-direction: column;
+    padding-left: 25vw;
+    justify-content: center;
+}
+
+.hero-section-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.hero-section-left p {
+    color: #000;
+    text-align: left;
+}
+
+.hero-section-right img {
+    object-fit: contain;
+    object-position: left;
+    max-height: 80%;
+    padding-left: 20px;
+}
+
+.hero-today {
+    color: #01B7F2;
+}
+
+.hero-btn {
+    border-radius: 50px;
+    background: #01B7F2;
+    height: 40px;
+    padding: 0 20px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.hero-btn:nth-child(2) {
+    background: #FDC500;
+}
+
+/* Hero Section CSS ENDS */
+
+/* Quick-Search Section CSS */
+
+.quick-search-section {
+    margin-top: -33px;
+    margin-bottom: 60px;
+}
+
+.quick-search-section ul {
+    list-style-type: none;
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    gap: 10px;
+}
+
+.quick-search-section button {
+    padding: 0;
+    font-size: 0.9em;
+}
+
+.qs-options {
+    display: flex;
+    gap: 10px;
+    align-items: end;
+    padding: 20px 10px;
+    background: #2D3E52;
+    color: #fff;
+}
+
+.qs-single {
+    padding: 0;
+}
+
+.qs-input {
+    height: 40px;
+    margin-bottom: 0;
+}
+
+.qs-single-btn {
+    width: 250%;
+    background: #98CE44;
+    color: #fff;
+}
+
+.dropdown-toggle {
+    background: #fff;
+    padding: 5px!important;
+}
+
+.qs-buttons button {
+    background: rgba(112,112,112,0.1);
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.qs-buttons-last {
+    background: #FDC500!important;
+    color: #fff!important;
+}
+
+.qs-buttons button:focus {
+    background: #2D3E52;
+    border: 1px solid #2D3E52;
+    color: #fff;
+}
+
+/* Quick-Search Section CSS ENDS */
+
+/* LS-Offers Section CSS */
+
+.offers-section {
+    margin-right: 0px!important;
+    margin-bottom: 100px;
+}
+
+.os-card-header {
+    background: none;
+}
+
+.os-card-header button {
+    color: #000;
+}
+
+.os-card-header button:hover {
+    color: #000;
+}
+ 
+.testimonials-bg {
+    background: #F5F5F5;
+    padding: 40px;
+}
+
+.testimonials-text {
+    background: #fff;
+    padding: 20px;
+}
+
+.testimonials-name {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.testimonials-name div {
+    
+}
+
+.advt {
+    background: #F5F5F5;
+}
+
+.ls-stats {
+    margin-top: 220px;
+    background: #F5F5F5;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.ls-stats-single-outer {
+    background: #fff;
+    padding: 0;
+}
+
+.ls-stats-single {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.ls-stats-single p {
+    margin-bottom: 0;
+}
+
+/* Advanced Searc Section CSS */
+
+.adv-search {
+    margin-bottom: 100px;
+}
+
+.adv-search-sort {
+    padding: 5px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.adv-search-sort div {
+    margin: 0;
+    padding: 0;
+}
+
+.adv-search-sort p {
+    margin-bottom: 0;
+    height: 40px;
+}
+
+.adv-search div {
+    margin-right: 0; 
+}
+
+.adv-sort-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.adv-search-best {
+    width: 50%;
+    background: #01B7F2;
+    color: #fff;
+    border: 1px solid #01B7F2;
+}
+
+.adv-search-best:hover {
+    color: #fff;
+}
+
+.adv-search-cheap {
+    width: 50%;
+    background: #fff;
+    color: #000;
+    border: 1px solid #01B7F2;
+}
+
+.adv-search-table {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #000;
+}
+
+.adv-search-table p {
+    margin-bottom: 0;
+}
+
+.adv-search-provider {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 20px;
+    padding: 0;
+    border: 1px solid #000;
+}
+
+.adv-search-provider p {
+    margin-bottom: 0;
+}
+
+.adv-search-provider div:nth-child(2) {
+    align-self: center;
+}
+
+.adv-search-filters h5 {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+.adv-search-single-filter {
+    border: 1px solid #000;
+    padding: 10px;
+    border-top: none; 
+}
+
+.adv-search-single-filter p {
+    margin-bottom: 0;
+}
+
+.adv-search-card {
+    border: none;
+    padding: 0;
+}
+
+.adv-search-input {
+    border: none;
+    background: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.adv-search-filters {
+    padding-right: 0;
+}
+
+.adv-search-results {
+    padding: 0;
+    margin: 0;
+}
+
+.adv-search-results-inner {
+    padding-right: 0;
+}
+
+.adv-search-pricing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    border-left: 1px solid #000;
+    padding: 10px;
+    height: auto;
+}
+
+.adv-search-offer {
+    display: flex;
+    flex-direction: column;
+}
+
+.adv-search-image {
+    align-self: center;
+    padding-left: 10px;
+}
+
+.adv-search-input-group {
+    width: 100%;
+}

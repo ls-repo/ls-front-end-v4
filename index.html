@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Logistics Scanner</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="Logistics Scanner" />
+    <meta name="description" content="Logistics Scanner">
+
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Main Styles CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <header id="header" class="navbar-static-top">
+        <!-- Top Navigation for Login, SignUp, Account-Access  -->
+        <div class="topnav hidden-xs">
+            <div class="container-fluid">
+                <div class="topnav-inner-wrapper">
+                    <ul class="quick-menu pull-left">
+                        <li><a href="#">MY ACCOUNT</a></li>
+                        <li>
+                            <a>English</a>
+                        </li>
+                        <!-- Change Language of website
+                        <li class="ribbon">
+                            <a href="#">English</a>
+                            <ul class="menu mini">
+                                <li><a href="#" title="Dansk">Dansk</a></li>
+                                <li><a href="#" title="Deutsch">Deutsch</a></li>
+                                <li class="active"><a href="#" title="English">English</a></li>
+                                <li><a href="#" title="Español">Español</a></li>
+                                <li><a href="#" title="Français">Français</a></li>
+                                <li><a href="#" title="Italiano">Italiano</a></li>
+                                <li><a href="#" title="Magyar">Magyar</a></li>
+                                <li><a href="#" title="Nederlands">Nederlands</a></li>
+                                <li><a href="#" title="Norsk">Norsk</a></li>
+                                <li><a href="#" title="Polski">Polski</a></li>
+                                <li><a href="#" title="Português">Português</a></li>
+                                <li><a href="#" title="Suomi">Suomi</a></li>
+                                <li><a href="#" title="Svenska">Svenska</a></li>
+                            </ul>
+                        </li>-->
+                    </ul>
+                    <ul class="quick-menu pull-right">
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                        <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
+                        <li>
+                            <a>RS</a>
+                        </li>
+                        <!-- Currency Selector
+                        <li class="ribbon currency">
+                            <a href="#" title="">USD</a>
+                            <ul class="menu mini">
+                                <li><a href="#" title="AUD">AUD</a></li>
+                                <li><a href="#" title="BRL">BRL</a></li>
+                                <li class="active"><a href="#" title="USD">USD</a></li>
+                                <li><a href="#" title="CAD">CAD</a></li>
+                                <li><a href="#" title="CHF">CHF</a></li>
+                                <li><a href="#" title="CNY">CNY</a></li>
+                                <li><a href="#" title="CZK">CZK</a></li>
+                                <li><a href="#" title="DKK">DKK</a></li>
+                                <li><a href="#" title="EUR">EUR</a></li>
+                                <li><a href="#" title="GBP">GBP</a></li>
+                                <li><a href="#" title="HKD">HKD</a></li>
+                                <li><a href="#" title="HUF">HUF</a></li>
+                                <li><a href="#" title="IDR">IDR</a></li>
+                            </ul>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Menu for LS -->
+        <div class="main-header container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="main-menu">
+                    <!-- Logo for LS -->
+                    <div>
+                        <a class="navbar-brand" href="#">
+                            <img src="/assets/Logo-LS.svg" class="d-inline-block align-top" alt="">
+                        </a>
+                    </div>
+                    <!-- Main Menu Links -->
+                    <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+                        <ul class="navbar-nav ml-auto flex-nowrap">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link m-2 menu-item nav-active">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link m-2 menu-item">Quick Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link m-2 menu-item">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link m-2 menu-item">Explore More</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link m-2 menu-item">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Mobile Menu Toggler -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with CTA -->
+    <section class="hero-section">
+        <div class="row inner">
+            <div class="col-sm-6 col-md-6 col-lg-7 hero-section-left">
+                <h2>Order <span class="hero-today">Today,</span></h2>
+                <h2>Deliver <span class="hero-today">Today,</span></h2>
+                <p>India's Smartest Same Day</p>
+                <p>Delivery Solutions at your fingertips!</p>
+                <div class="hero-section-cta">
+                    <button class="btn hero-btn">Bike Delivery</button>
+                    <button class="btn hero-btn">Contact Us</button>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-5 hero-section-right">
+                <img src="/assets/Hero-Scooter-Image.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <main>
+        <section class="quick-search-section">
+            <div class="container qs-container">
+                <div class="row qs-buttons">
+                    <ul>
+                        <li><a href="#"><button class="btn">Bike Delivery</button></a></li>
+                        <li><button class="btn">Domestic Courier</button></li>
+                        <li><button class="btn">Hire Fleet</button></li>
+                        <li><button class="btn">Ware House</button></li>
+                        <li><button class="btn">Shipping Quotes</button></li>
+                        <li><button class="btn qs-buttons-last">Advanced Search</button></li>
+                    </ul>
+                </div>
+                <div class="row qs-options">
+                    <div class="qs-single col-lg-1 col-md-1">
+                        <p class="qs-input">Quick Search</p>
+                    </div>
+                    <div class="qs-single col-lg-2 col-md-2">
+                        <p>From</p>
+                        <div class="input-group">
+                            <input type="text" class="qs-input form-control" aria-label="Text input with dropdown button">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <div role="separator" class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qs-single col-lg-2 col-md-2">
+                        <p>To</p>
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <div role="separator" class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qs-single col-lg-2 col-md-2">
+                        <p>Parcel Type</p>
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <div role="separator" class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qs-single col-lg-2 col-md-2">
+                        <p>Pick Up Date & Time</p>
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <div role="separator" class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qs-single col-lg-1 col-md-1">
+                        <p>Weight</p>
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <div role="separator" class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qs-single">
+                        <button class="btn qs-input qs-single-btn">Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container-fluid">
+                <div class="row offers-section">
+                    <div class="col-lg-10 col-md-10">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <h4>Limited Time Offer</h4>
+
+                                <div class="accordion" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header os-card-header" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    Logistics Offer
+                                                </button>
+                                            </h2>
+                                        </div>
+
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                Nunc cursus libero purus ac congue ar lorem cursus ut sed pulvinar massa iden
+                                                porta nequetiam elerisque mi id habitant morbi tristique senectus.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header os-card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    Logistics Offer
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                Nunc cursus libero purus ac congue ar lorem cursus ut sed pulvinar massa iden
+                                                porta nequetiam elerisque mi id habitant morbi tristique senectus.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header os-card-header" id="headingThree">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    Logistics Offer
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                Nunc cursus libero purus ac congue ar lorem cursus ut sed pulvinar massa iden
+                                                porta nequetiam elerisque mi id habitant morbi tristique senectus.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <h4>Testimonials</h4>
+                                <div class="testimonials">
+                                    <div class="card">
+                                        <div class="card-body testimonials-bg">
+                                            <div class="testimonials-text">
+                                                <cite><span>&ldquo;</span>I want to express my appreciation to your team for their support for
+                                                    Mumbai shipment for a list of machines and fixtures that were delivered
+                                                    today. Special thanks to Logisticscanner team My coworker initiated
+                                                    this shipment in May 2019 but till May 2020 we had no success
+                                                    bringing… Read more »<span>&rdquo;</span></cite>
+                                                <div class="testimonials-name">
+                                                    <div class="">
+                                                        <img src="/assets/testimonials-img@2x.png">
+                                                    </div>
+                                                    <div class="">
+                                                        <h6>NAME</h6>
+                                                        <p>Company Name</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ls-stats">
+                            <div class="col-lg-2 col-md-2 ls-stats-single-outer">
+                                <div class="ls-stats-single">
+                                    <div>
+                                        <img src="/assets/testimonials-1-globe.png">
+                                    </div>
+                                    <div>
+                                        <p>220</p>
+                                    </div>
+                                </div>
+                                <p class="text-center">Deliver within 220 countries</p>
+                            </div>
+                            <div class="col-lg-3 col-md-3 ls-stats-single-outer">
+                                <div class="ls-stats-single">
+                                    <div>
+                                        <img src="/assets/testimonials-2-map.png">
+                                    </div>
+                                    <div>
+                                        <p>20000</p>
+                                    </div>
+                                </div>
+                                <p class="text-center">Pincodes Covered</p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 ls-stats-single-outer">
+                                <div class="ls-stats-single">
+                                    <div>
+                                        <img src="/assets/testimonials-3-truck.png">
+                                    </div>
+                                    <div>
+                                        <p>100+</p>
+                                    </div>
+                                </div>
+                                <p class="text-center">Service Providers</p>
+                            </div>
+                            <div class="col-lg-3 col-md-3 ls-stats-single-outer">
+                                <div class="ls-stats-single">
+                                    <div>
+                                        <img src="/assets/testimonials-4-smile.png">
+                                    </div>
+                                    <div>
+                                        <p>100000</p>
+                                    </div>
+                                </div>
+                                <p class="text-center">Expected Happy Customer Soon</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <div class="card advt" style="height: 70vh;">
+                            <p>****Advertisment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <img src="/assets/Logo-LS.svg" alt="">
+                        <br>
+                        <br>
+                        <br>
+                        <p>Newsletter Subscription</p>
+                        <br>
+                        <input type="text" placeholder="Enter your email">
+                        <br>
+                        <br>
+                        <p>We respect your privacy</p>
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <h6>About Us</h6>
+                        <ul>
+                            <li><a href="#">Our Vision</a></li>
+                            <li><a href="#">Our History</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <h6>Quick Search</h6>
+                        <ul>
+                            <li><a href="#">Bike Delivery</a></li>
+                            <li><a href="#">Courier / Parcel</a></li>
+                            <li><a href="#">Hire Fleet</a></li>
+                            <li><a href="#">Warehouse</a></li>
+                            <li><a href="#">Fulfillment</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <h6>Services</h6>
+                        <ul>
+                            <li><a href="#">IT Consulting</a></li>
+                            <li><a href="#">Supply Chain Consulting</a></li>
+                            <li><a href="#">Training & Education</a></li>
+                            <li><a href="#">Benchmarking</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <h6 class="text-center">Follow Us</h6>
+                        <div class="footer-socials">
+                            <img src="/assets/Social-Icons-1@2x.png">
+                            <img src="/assets/Social-Icons-2@2x.png">
+                            <img src="/assets/Social-Icons-3@2x.png">
+                            <img src="/assets/Social-Icons-4@2x.png">
+                            <img src="/assets/Social-Icons-5@2x.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row container-fluid footer-bg">
+                <div class="">
+                    <img src="/assets/Footer-Item-1-Scooter.svg">
+                </div>
+                <div class="">
+                    <img src="/assets/Footer-Vehicle-2.png">
+                </div>
+                <div class="">
+                    <img src="/assets/Footer-Vehicle-3.png">
+                </div>
+                <div class="">
+                    <img src="/assets/Footer-Worker-4.png">
+                </div>
+                <div class="">
+                    <img src="/assets/Footer-Warehouse-5.png">
+                </div>
+
+            </div>
+        </footer>
+    </main>
+
+
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body></html>
