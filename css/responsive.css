@@ -13,6 +13,9 @@
     .footer-bg img {
         transform: scale(0.8);
     }
+    .footer-elements img {
+        width: 100%;
+    } 
     .container-fluid {
         padding: 0 20px;
     }

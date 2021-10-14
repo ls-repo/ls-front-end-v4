@@ -67,6 +67,10 @@ main {
     padding: 0.5rem 0;
 }
 
+.menu-item {
+    padding: 5px;
+}
+
 /* Main Menu CSS ENDS */ 
 
 /* Footer CSS */
@@ -100,6 +104,7 @@ footer ul {
     justify-content: space-between;
     margin: 0;
     padding: 0;
+    flex-wrap: nowrap; 
 }
 
 .footer-bg:nth-child(2) {
@@ -312,7 +317,7 @@ footer ul {
     margin-bottom: 0;
 }
 
-/* Advanced Searc Section CSS */
+/* Quick Search Section CSS */
 
 .adv-search {
     margin-bottom: 100px;
@@ -455,4 +460,432 @@ footer ul {
 
 .adv-search-input-group {
     width: 100%;
+}
+
+/* Provider Dashboard Section CSS */
+
+.provider-dashboard {
+    margin-bottom: 40px;
+}
+
+.provider-dashboard-inner {
+    width: 100%;
+}
+
+.pds-button {
+    height: 12vh;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pds-button svg {
+    margin: 0 auto;
+    fill: #fff;
+}
+
+.pds-document {
+    border: 1px solid #000;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+}
+ 
+.pds-document a {
+    color: #000;
+}
+
+.pds-document a:focus {
+    background: #01B7F2;
+    color: #fff;
+    text-decoration: none;
+}
+
+.pds-document a:hover {
+    background: #01B7F2;
+    color: #fff;
+    text-decoration: none;
+}
+
+.pds-account-intro-wrapper {
+    display: flex;
+    gap: 35px;
+    margin: 0 0 20px 0;
+}
+
+.pds-account-intro {
+    border: 1px solid #000;
+}
+
+.pds-account-progress {
+    border: 1px solid #000;
+}
+
+/* General Information CSS */
+
+#kyc-docs, #payment-method, #parcel-type, #contact-info, #pricing-model, #delivery-location {
+    display: none;
+}
+
+.pds-account-info-wrapper {
+    border: 1px solid #000;
+    padding: 40px 60px;
+    max-width: 95%;
+    margin-bottom: 40px;
+}
+
+.pds-account-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 30px;
+    grid-template-rows: auto;
+    margin-bottom: 40px;
+}
+
+.pds-single-input {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 5px 20px 0 0;
+    justify-content: flex-end;
+}
+
+.pds-span label {
+    margin-bottom: 0;
+}
+
+.pds-single-input span {
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+
+.pds-account-type {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 40px;
+}
+
+.pds-account-type label {
+    margin: 0 10px 0 0;
+}
+
+.pds-account-type div {
+    display: flex;
+    align-items: center;
+}
+
+.pds-account-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.pds-account-buttons div {
+    width: 150px;
+}
+
+.pds-account-edit {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.pds-single-input input {
+    border: 1px solid #000;
+}
+
+/* General Information CSS Ends */
+
+/* KYC Documents CSS */
+
+.pds-company {
+    display: flex;
+    align-items: flex-end;
+}
+
+.pds-company img {
+    margin-bottom: 30px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.pds-company-type, .pds-company-info {
+    padding: 0;
+}
+
+.pds-company-info p {
+    margin-bottom: 0;
+}
+
+.pds-company-text {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.pds-company-note {
+    border: 1px solid #000;
+    background: #F4F8FB;
+    padding: 10px 20px;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.pds-company-note p {
+    margin-bottom: 0;
+}
+
+.pds-kyc-outer {
+    display: flex;
+    flex-direction: column;
+}
+
+.pds-kyc {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+}
+
+.pds-kyc-upload-single {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.pds-label:after {
+    display: none;
+}
+
+.pds-kyc-add {
+    border: 1px solid #000;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.payment-available {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: 40px auto;
+}
+
+.payment-type {
+    display: grid;
+    grid-template-rows: 50px;
+    gap: 20px;
+}
+
+.payment-type p {
+    margin-bottom: 2px;
+}
+
+.payment-name {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px;
+    gap: 20px;
+}
+
+.parcel-type-wrapper {
+    padding: 10px 20px;
+    border: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+.parcel-type-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.parcel-type-wrapper h5 {
+    margin-bottom: 0;
+}
+
+.cat-single {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #000;
+    padding: 10px;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px; 
+}
+
+.cat-name {
+    width: 20%;
+}
+
+.cat-selection {
+    width: 70%;
+}
+
+.cat-select {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.cat-details input {
+    width: 100%;
+}
+
+/* Contact Details Section */
+
+.contact-table {
+    border: 1px solid #000;
+    margin: 40px 0;
+}
+
+.contact-header {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    padding: 10px 20px;
+    border-bottom: 1px solid #000;
+}
+
+/*.contact-details-wrapper {
+    display: grid;
+    grid-template-columns: 10% 1fr;
+}*/
+
+.contact-details-wrapper {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    padding: 10px 20px;
+}
+
+.contact-details-button img {
+    width: 40px;
+}
+
+.cd-input {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.cd-input label {
+    width: 25%;
+}
+
+.pricing-model-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.pricing-model {
+    border: 1px solid #000;
+}
+
+.pm-info, .pm-details, .pm-header {
+    padding: 0px 10px;
+}
+
+.pricing-model h6 {
+    border: 1px solid #000;
+    padding: 10px;
+    background: #01B7F2;
+    color: #fff;
+}
+
+.pm-info {
+    display: flex;
+    width: 100%;
+}
+
+.pm-info p {
+    width: 50%;
+    margin-bottom: 0;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+.pm-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pm-details p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.pm-header {
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.pm-value {
+    width: 30%;
+    text-align: center;
+}
+
+.pm-save {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.pm-save button {
+    width: 100%;
+}
+
+/* Delivery Location Section CSS */
+
+.dl-time-wrapper {
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.dl-time-single {
+    display: grid;
+    grid-template-columns: 2fr 1fr 0.5fr 1fr;
+}
+
+.dl-pincode {
+    display: flex;
+    border: 1px solid #000;
+}
+
+.dl-pincode-btn {
+    margin-top: 60px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 2px 10px;
+}
+
+.dl-pincode-table, table {
+    width: 100%;
+}
+
+table, td, th {
+    border: 1px solid #000;
+    border-top: none;
+    border-right: none;
+}
+
+.dl-pincode tr, th {
+    text-align: center;
+}
+
+.dl-pincode th {
+    font-size: 0.9em;
+}
+
+.dl-pt-header {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 }

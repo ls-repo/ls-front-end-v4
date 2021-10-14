@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Logistics Scanner</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="Logistics Scanner" />
+    <meta name="description" content="Logistics Scanner">
+
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Main Styles CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <header id="header" class="navbar-static-top">
+        <!-- Top Navigation for Login, SignUp, Account-Access  -->
+        <div class="topnav hidden-xs">
+            <div class="container-fluid">
+                <div class="topnav-inner-wrapper">
+                    <ul class="quick-menu pull-left">
+                        <li><a href="#">MY ACCOUNT</a></li>
+                        <li>
+                            <a>English</a>
+                        </li>
+                        <!-- Change Language of website
+                        <li class="ribbon">
+                            <a href="#">English</a>
+                            <ul class="menu mini">
+                                <li><a href="#" title="Dansk">Dansk</a></li>
+                                <li><a href="#" title="Deutsch">Deutsch</a></li>
+                                <li class="active"><a href="#" title="English">English</a></li>
+                                <li><a href="#" title="Español">Español</a></li>
+                                <li><a href="#" title="Français">Français</a></li>
+                                <li><a href="#" title="Italiano">Italiano</a></li>
+                                <li><a href="#" title="Magyar">Magyar</a></li>
+                                <li><a href="#" title="Nederlands">Nederlands</a></li>
+                                <li><a href="#" title="Norsk">Norsk</a></li>
+                                <li><a href="#" title="Polski">Polski</a></li>
+                                <li><a href="#" title="Português">Português</a></li>
+                                <li><a href="#" title="Suomi">Suomi</a></li>
+                                <li><a href="#" title="Svenska">Svenska</a></li>
+                            </ul>
+                        </li>-->
+                    </ul>
+                    <ul class="quick-menu pull-right">
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                        <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
+                        <li>
+                            <a>RS</a>
+                        </li>
+                        <!-- Currency Selector
+                        <li class="ribbon currency">
+                            <a href="#" title="">USD</a>
+                            <ul class="menu mini">
+                                <li><a href="#" title="AUD">AUD</a></li>
+                                <li><a href="#" title="BRL">BRL</a></li>
+                                <li class="active"><a href="#" title="USD">USD</a></li>
+                                <li><a href="#" title="CAD">CAD</a></li>
+                                <li><a href="#" title="CHF">CHF</a></li>
+                                <li><a href="#" title="CNY">CNY</a></li>
+                                <li><a href="#" title="CZK">CZK</a></li>
+                                <li><a href="#" title="DKK">DKK</a></li>
+                                <li><a href="#" title="EUR">EUR</a></li>
+                                <li><a href="#" title="GBP">GBP</a></li>
+                                <li><a href="#" title="HKD">HKD</a></li>
+                                <li><a href="#" title="HUF">HUF</a></li>
+                                <li><a href="#" title="IDR">IDR</a></li>
+                            </ul>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Menu for LS -->
+        <div class="main-header container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="main-menu">
+                    <!-- Logo for LS -->
+                    <div>
+                        <a class="navbar-brand" href="#">
+                            <img src="/assets/Logo-LS.svg" class="d-inline-block align-top" alt="">
+                        </a>
+                    </div>
+                    <!-- Main Menu Links -->
+                    <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+                        <ul class="navbar-nav ml-auto flex-nowrap">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link m-2 menu-item nav-active">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle m-2 menu-item" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quick Search</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Bike Delivery</a>
+                                    <a class="dropdown-item" href="#">Domestic Courier</a>
+                                    <a class="dropdown-item" href="#">Hire Fleet</a>
+                                    <a class="dropdown-item" href="#">Warehouse</a>
+                                    <a class="dropdown-item" href="#">Shipping Quote</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle m-2 menu-item" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">IT Consulting</a>
+                                    <a class="dropdown-item" href="#">Supply Chain Consulting</a>
+                                    <a class="dropdown-item" href="#">Training & Eduaction</a>
+                                    <a class="dropdown-item" href="#">Benchmarking</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle m-2 menu-item" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Explore More</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Why Logistics Scanner?</a>
+                                    <a class="dropdown-item" href="#">Partner With Us</a>
+                                    <a class="dropdown-item" href="#">Knowledgehub</a>
+                                    <a class="dropdown-item" href="#">Careers</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle m-2 menu-item" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Our Vision</a>
+                                    <a class="dropdown-item" href="#">Our Team</a>
+                                    <a class="dropdown-item" href="#">Contact Us</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Mobile Menu Toggler -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="provider-dashboard">
+            <div class="row provider-dashboard-inner">
+
+                <!-- Dashboard Buttons -->
+                <div class="col-lg-2 col-md-3 pd-sidebar">
+                    <div class="pds-button">
+
+                        <!-- Button Name -->
+                        <h5 class="text-center">
+                            Dashboard
+                        </h5>
+                        <!-- Button Image -->
+                        <img src="">
+                    </div>
+                    <div class="pds-button">
+                        <!-- Button Name -->
+                        <h5 class="text-center">
+                            My Account
+                        </h5>
+                        <!-- Button Image -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="53.727" height="53.727" viewBox="0 0 53.727 53.727">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: #707070;
+                                    }
+                                </style>
+                            </defs>
+                            <g id="user-4250" transform="translate(126.036 126.036)">
+                                <g id="Group_818" data-name="Group 818" transform="translate(-126.036 -126.036)">
+                                    <path id="Path_675" data-name="Path 675" class="cls-1" d="M47.54,43.994a26.864,26.864,0,1,0-41.352,0,1.171,1.171,0,0,0,.229.266l0,0a26.811,26.811,0,0,0,40.887,0l0,0A1.2,1.2,0,0,0,47.54,43.994ZM26.864,2.388A24.464,24.464,0,0,1,46.485,41.479,26.794,26.794,0,0,0,33.112,33.7a12.756,12.756,0,1,0-12.5,0A26.794,26.794,0,0,0,7.242,41.478,24.463,24.463,0,0,1,26.864,2.388Zm0,30.575A10.368,10.368,0,1,1,37.231,22.595,10.379,10.379,0,0,1,26.864,32.963Zm0,18.377a24.415,24.415,0,0,1-18.082-8,24.456,24.456,0,0,1,36.165,0A24.415,24.415,0,0,1,26.864,51.34Z" />
+                                </g>
+                            </g>
+                        </svg>
+
+                    </div>
+                    <!-- My Account Filters -->
+                    <div class="pds-document">
+                        <a href="#general-info" onclick="openGeneral()">&nbsp;&nbsp;General Information</a>
+                        <a href="#kyc-docs" onclick="openKYC()">&nbsp;&nbsp;KYC Documents</a>
+                        <a href="#" onclick="paymentMethod()">&nbsp;&nbsp;Payment Method</a>
+                        <a href="#" onclick="parcelType()">&nbsp;&nbsp;Parcel Type</a>
+                        <a href="#" onclick="deliveryLocation()">&nbsp;&nbsp;Delivery Location</a>
+                        <a href="#" onclick="addContacts()">&nbsp;&nbsp;Contacts</a>
+                        <a href="#" onclick="addPricing()">&nbsp;&nbsp;Pricing Model</a>
+                    </div>
+                    <div class="pds-button">
+                        <!-- Button Name -->
+                        <h5 class="text-center">
+                            Summary
+                        </h5>
+                        <!-- Button Image -->
+                    </div>
+                    <div class="pds-button">
+                        <!-- Button Name -->
+                        <h5 class="text-center">
+                            FAQ
+                        </h5>
+                        <!-- Button Image -->
+
+                    </div>
+                    <div class="pds-button">
+                        <!-- Button Name -->
+                        <h5 class="text-center">
+                            Settings
+                        </h5>
+                        <!-- Button Image -->
+                    </div>
+
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <div class="row pds-account-intro-wrapper">
+                        <!-- Account Intro -->
+                        <div class="col-lg-8 col-md-7 pds-account-intro">
+                            <p>This is your My Account , the place to check your Profile
+                            </p>
+                            <p>Learn How It Works — Watch a short video that shows you how Logisticscanner works.
+                            </p>
+                            <p>Get Help — View our help section and FAQs to get started on Logisticsscanner.</p>
+                        </div>
+                        <!-- Account Progress -->
+                        <div class="col-lg-3 col-md-4 text-center pds-account-progress">
+                            <p>Please complete your information</p>
+                            <p>***Add progress bar</p>
+                            <p>40% Profile</p>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <!-- General Information Tab -->
+                    <div class="pds-account-info-wrapper" id="general-info">
+                        <h5>General Information</h5>
+                        <div class="pds-account-info">
+                            <div class="pds-single-input">
+                                <label>Company Registered Name</label>
+
+                                <input type="text" placeholder="">
+                            </div>
+                            <div class="pds-single-input">
+                                <label>Company Name</label>
+
+                                <input type="text" placeholder="">
+                            </div>
+                            <div class="pds-single-input pds-span">
+                                <label>Contact Person</label>
+                                <span>First Name</span>
+                                <input type="text" placeholder="">
+                            </div>
+                            <div class="pds-single-input pds-span">
+                                <label>&nbsp;</label>
+                                <span>Last Name</span>
+                                <input type="text" placeholder="">
+                            </div>
+                            <div class="pds-single-input">
+                                <label>Official Email Id</label>
+
+                                <input type="text" placeholder="">
+                            </div>
+                            <div class="pds-single-input">
+                                <label>Contact Number</label>
+
+                                <input type="text" placeholder="">
+                            </div>
+                            <div class="pds-single-input pds-span">
+                                <label>Official Information</label>
+                                <span>Company Registered Address</span>
+                                <input type="text" placeholder="">
+                            </div>
+                            <div class="pds-single-input pds-span">
+                                <label>&nbsp;</label>
+                                <span>Company Website</span>
+                                <input type="text" placeholder="">
+                            </div>
+                            <div class="pds-single-input">
+                                <label>Company Registered No</label>
+                                <input type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="pds-account-type-wrapper">
+                            <h6>Service Provider Type</h6>
+                            <div class="pds-account-type">
+                                <div>
+                                    <label>Bike Delivery</label>
+                                    <input type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                                <div>
+                                    <label>Courier</label>
+                                    <input type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                                <div>
+                                    <label>Warehouse</label>
+                                    <input type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                                <div>
+                                    <label>Fulfillment</label>
+                                    <input type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                                <div>
+                                    <label>Hire Fleet</label>
+                                    <input type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                            </div>
+                            <div class="pds-account-buttons">
+                                <div class="pds-account-edit">
+                                    <button class="btn btn-primary">Edit</button>
+                                </div>
+                                <div class="pds-account-next">
+                                    <button class="btn btn-primary">Save</button>
+                                    <button class="btn btn-primary">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pds-account-info-wrapper" id="kyc-docs">
+                        <div class="pds-company row">
+                            <div class="col-md-6 pds-company-info">
+                                <img id="pds-company-image" src="/assets/providers/provider-1-dhl@2x.png">
+                                <div class="pds-company-text">
+                                    <p id="pds-company-name">Company Name</p>
+                                    <p id="pds-company-reg">Company Registration No: Lsght453</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pds-company-type">
+                                <p>Are you an individual or a company running the business?</p>
+                                <div>
+                                    <button class="btn btn-primary">Individual</button>
+                                    <button class="btn">Company</button>
+                                </div>
+                            </div>
+                            <div class="pds-company-note">
+                                <p><strong>Note: Shared documents will be kept considered confidential and only for official purpose.</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="pds-kyc-outer row">
+                            <h6>Submit your KYC documents</h6>
+                            <div class="pds-kyc">
+                                <div>
+                                    <label>Company GST Details:</label>
+                                    <input type="text" required>
+                                </div>
+                                <div>
+                                    <label>Bank Payment Details:</label>
+                                    <input type="text" required>
+                                </div>
+
+                                <div class="pds-kyc-upload">
+                                    <div class="pds-kyc-upload-single">
+                                        <p>Upload File 1</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label pds-label" for="customFile">Choose file</label>
+                                        </div>
+                                        <p>**uploaded file</p>
+                                        <p>Aadhar Card</p>
+                                        <p>Remove File</p>
+                                    </div>
+                                    <div class="pds-kyc-upload-single">
+                                        <p>Upload File 2</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label pds-label" for="customFile">Choose file</label>
+                                        </div>
+                                        <p>**uploaded file</p>
+                                        <p>PAN Card</p>
+                                        <p>Remove File</p>
+                                    </div>
+                                    <div class="pds-kyc-upload-single">
+                                        <p>Upload File 3</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label pds-label" for="customFile">Choose file</label>
+                                        </div>
+                                        <p>**uploaded file</p>
+                                        <p>Passport</p>
+                                        <p>Remove File</p>
+                                    </div>
+                                    <div class="pds-kyc-upload-single">
+                                        <p>Upload File 1</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label pds-label" for="customFile">Choose file</label>
+                                        </div>
+                                        <p>**uploaded file</p>
+                                        <p>Driving License</p>
+                                        <p>Remove File</p>
+                                    </div>
+                                </div>
+                                <div class="pds-account-buttons">
+                                    <div class="pds-account-edit">
+                                        <button class="btn btn-primary">Edit</button>
+                                    </div>
+                                    <div class="pds-account-next">
+                                        <button class="btn btn-primary">Save</button>
+                                        <button class="btn btn-primary">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pds-kyc">
+                                <h6 class="text-center">Upload Additional Documents</h6>
+
+                                <div class="pds-kyc-add text-center">
+                                    <button class="btn btn-primary">Start Uploading Your Documents Now</button>
+                                    <p>Supported files : PDF, Images, Scanner, Video files</p>
+                                </div>
+                                <div class="pds-kyc-add pds-kyc-upload-single">
+                                    <p>Date & Time</p>
+                                    <p>Uploaded By</p>
+                                    <p>File Name</p>
+                                    <p>File Type</p>
+                                    <p>Sort By * Dropdown type</p>
+                                </div>
+                                <div class="pds-account-buttons">
+                                    <div class="pds-account-edit">
+                                        <button class="btn btn-primary">Edit</button>
+                                    </div>
+                                    <div class="pds-account-next">
+                                        <button class="btn btn-primary">Save</button>
+                                        <button class="btn btn-primary">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pds-account-info-wrapper" id="payment-method">
+                        <h6 class="text-center">Type of Payment Method allowed for customer</h6>
+                        <div class="payment-available">
+                            <div class="payment-type">
+                                <div>
+                                    <p>Payment Mode*</p>
+                                    <p>Minimum 1 required</p>
+                                </div>
+                                <div>
+                                    <p>Digital Wallet Accepted*</p>
+                                    <p>Minimum 1 required</p>
+                                </div>
+                            </div>
+                            <div class="payment-name">
+                                <div>
+                                    <label>Prepaid</label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label>Cash on Delivery</label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    &nbsp;
+                                </div>
+                                <div>
+                                    <label>Paytm</label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label>Gpay</label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label>Phonepe</label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label>UPI</label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label>VISA</label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label>Amazon Pay</label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label>MobiKwik</label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label>Freecharge</label>
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pds-account-buttons">
+                            <div class="pds-account-edit">
+                                <button class="btn btn-primary">Edit</button>
+                            </div>
+                            <div class="pds-account-next">
+                                <button class="btn btn-primary">Save</button>
+                                <button class="btn btn-primary">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parcel Type Tab -->
+                    <div class="" id="parcel-type">
+                        <div class="parcel-type-wrapper parcel-type-header">
+                            <div class="parcel-edit">
+                                <button class="btn btn-priamry">Edit</button>
+                            </div>
+                            <div>
+                                <h5>Parcel Type</h5>
+                            </div>
+                            <div>
+                                &nbsp;
+                            </div>
+                        </div>
+
+                        <div class="parcel-type-wrapper">
+                            <h6 class="text-center">Categories</h6>
+                            <div class="cat-single">
+                                <div class="cat-name">Apparels & Accessories</div>
+                                <div class="cat-selection">
+                                    <div class="cat-select">
+                                        <button class="btn btn-primary">Clothes</button>
+                                        <button class="btn btn-secondary">Cosmetics</button>
+                                        <button class="btn btn-secondary">Shoes</button>
+                                        <button class="btn btn-secondary">Fashion Accessories</button>
+                                        <button class="btn btn-secondary">Grooming & Beauty Products</button>
+                                    </div>
+                                    <div class="cat-details">
+                                        <input type="text" placeholder="add custom category">
+                                    </div>
+                                </div>
+
+                                <div class="cat-select-all"><a href="#">Select All</a></div>
+                            </div>
+
+                            <div class="cat-single">
+                                <div class="cat-name">Electronics & Appliances</div>
+                                <div class="cat-selection">
+                                    <div class="cat-select">
+                                        <button class="btn btn-primary">Electronics Item</button>
+                                        <button class="btn btn-secondary">Self-Grooming Items</button>
+                                        <button class="btn btn-secondary">Large Items (Computer, Printer)</button>
+                                        <button class="btn btn-secondary">Small Items (Hard Drive)</button>
+                                        <button class="btn btn-secondary">Grooming & Beauty Products</button>
+                                        <button class="btn btn-secondary">Heating & Cooling</button>
+                                        <button class="btn btn-secondary">Kitchen Appliances</button>
+                                        <button class="btn btn-secondary">Music Instruments</button>
+                                        <button class="btn btn-secondary">Spare Parts</button>
+                                    </div>
+                                    <div class="cat-details">
+                                        <input type="text" placeholder="add custom category">
+                                    </div>
+                                </div>
+
+                                <div class="cat-select-all"><a href="#">Select All</a></div>
+                            </div>
+
+                            <div class="cat-single">
+                                <div class="cat-name">Automotive</div>
+                                <div class="cat-selection">
+                                    <div class="cat-select">
+                                        <button class="btn btn-primary">Spare Parts</button>
+                                        <button class="btn btn-secondary">Oils</button>
+                                        <button class="btn btn-secondary">Fluids</button>
+                                        <button class="btn btn-secondary">Navigation</button>
+                                        <button class="btn btn-secondary">Ancillary</button>
+                                        <button class="btn btn-secondary">Fluids</button>
+                                        <button class="btn btn-secondary">Tools</button>
+                                    </div>
+                                    <div class="cat-details">
+                                        <input type="text" placeholder="add custom category">
+                                    </div>
+                                </div>
+
+                                <div class="cat-select-all"><a href="#">Select All</a></div>
+                            </div>
+
+                            <div class="cat-single">
+                                <div class="cat-name">Fresh</div>
+                                <div class="cat-selection">
+                                    <div class="cat-select">
+                                        <button class="btn btn-primary">Fast Food</button>
+                                        <button class="btn btn-secondary">Flowers</button>
+                                        <button class="btn btn-secondary">Frozen</button>
+                                    </div>
+                                    <div class="cat-details">
+                                        <input type="text" placeholder="add custom category">
+                                    </div>
+                                </div>
+
+                                <div class="cat-select-all"><a href="#">Select All</a></div>
+                            </div>
+
+                            <div class="cat-single">
+                                <div class="cat-name">Books / Stationary / Documents</div>
+                                <div class="cat-selection">
+                                    <div class="cat-select">
+                                        <button class="btn btn-primary">Books</button>
+                                        <button class="btn btn-secondary">Magazines</button>
+                                        <button class="btn btn-secondary">Stationary Products</button>
+                                        <button class="btn btn-secondary">Forms</button>
+                                        <button class="btn btn-secondary">Catalogues</button>
+                                        <button class="btn btn-secondary">Papers</button>
+                                        <button class="btn btn-secondary">Board Games</button>
+                                        <button class="btn btn-secondary">Toys</button>
+                                        <button class="btn btn-secondary">Office Supplies</button>
+                                    </div>
+                                    <div class="cat-details">
+                                        <input type="text" placeholder="add custom category">
+                                    </div>
+                                </div>
+
+                                <div class="cat-select-all"><a href="#">Select All</a></div>
+                            </div>
+
+                            <div class="cat-single">
+                                <div class="cat-name">Essential Supply</div>
+                                <div class="cat-selection">
+                                    <div class="cat-select">
+                                        <button class="btn btn-primary">Medicines</button>
+                                        <button class="btn btn-secondary">Grocery</button>
+                                        <button class="btn btn-secondary">Baby Care</button>
+                                        <button class="btn btn-secondary">Pet Food</button>
+                                        <button class="btn btn-secondary">All loose & Packed Grocery</button>
+                                        <button class="btn btn-secondary">All liquid & Cooking Oil (Sealed)</button>
+                                        <button class="btn btn-secondary">ALl Covid Essentials</button>
+                                        <button class="btn btn-secondary">Elderly Care</button>
+                                        <button class="btn btn-secondary">Religious Needs</button>
+                                        <button class="btn btn-secondary">Hospital & Medical Equipment</button>
+                                    </div>
+                                    <div class="cat-details">
+                                        <input type="text" placeholder="add custom category">
+                                    </div>
+                                </div>
+
+                                <div class="cat-select-all"><a href="#">Select All</a></div>
+                            </div>
+
+                            <div class="cat-single">
+                                <div class="cat-name">Household Decor</div>
+                                <div class="cat-selection">
+                                    <div class="cat-select">
+                                        <button class="btn btn-primary">Gardening & Outdoor</button>
+                                        <button class="btn btn-secondary">Product</button>
+                                        <button class="btn btn-secondary">Home Decor & Furnishing</button>
+                                        <button class="btn btn-secondary">Kitchenware</button>
+                                        <button class="btn btn-secondary">Lights</button>
+                                        <button class="btn btn-secondary">Packers & Movers</button>
+                                        <button class="btn btn-secondary">Re-location</button>
+                                    </div>
+                                    <div class="cat-details">
+                                        <input type="text" placeholder="add custom category">
+                                    </div>
+                                </div>
+
+                                <div class="cat-select-all"><a href="#">Select All</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Delivery Location Tab -->
+                    <div class="pds-account-info-wrapper" id="delivery-location">
+                        <div class="row">
+                            <!-- Provider Pin Codes Data -->
+                            <div class="col-md-7 col-lg-7">
+                                <h5 class="text-center">Delivery Location</h5>
+                                <div class="dl-pincode">
+                                    <div class="dl-pincode-btn">
+                                        <p>++</p>
+                                        <p>--</p>
+                                    </div>
+                                    <!--
+                                    <div class="dl-pincode-table">
+                                        <div class="dl-pt-header">
+                                            <p>State</p>
+                                            <p>City(All Metro)</p>
+                                            <p>Area</p>
+                                            <p>Serviceable</p>
+                                            <p>Non-Serviceable</p>
+                                        </div>
+                                    </div>-->
+                                    <div class="dl-pincode-table">
+                                        <table class="dl-pt">
+                                            <thead>
+                                                <th>State</th>
+                                                <th>City (All Metro)</th>
+                                                <th>Area</th>
+                                                <th>Serviceable</th>
+                                                <th>Non-Serviceable</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>India</td>
+                                                    <td>All India</td>
+                                                    <td>All India</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Maharashtra</td>
+                                                    <td>Pune</td>
+                                                    <td>Sadashiv Peth</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- Provider Business Hours -->
+                            <div class="col-md-5 col-lg-5">
+                                <h5 class="text-center">Business Hours</h5>
+                                <div class="dl-time-wrapper">
+                                    <div class="dl-time-single">
+                                        <p></p>
+                                        <p>Start Time</p>
+                                        <p></p>
+                                        <p>End Time</p>
+                                    </div>
+                                    <div class="dl-time-single">
+                                        <p>Monday To Saturday</p>
+                                        <p><input type="time" id="" name=""></p>
+                                        <p class="text-center">to</p>
+                                        <p><input type="time" id="" name=""></p>
+                                    </div>
+                                    <div class="dl-time-single">
+                                        <p>Saturday</p>
+                                        <p><input type="time" id="" name=""></p>
+                                        <p class="text-center">to</p>
+                                        <p><input type="time" id="" name=""></p>
+                                    </div>
+                                    <div class="dl-time-single">
+                                        <p>Sunday</p>
+                                        <p><input type="time" id="" name=""></p>
+                                        <p class="text-center">to</p>
+                                        <p><input type="time" id="" name=""></p>
+                                    </div>
+                                    <div class="dl-time-single">
+                                        <p>Public Holidays</p>
+                                        <p><input type="time" id="" name=""></p>
+                                        <p class="text-center">to</p>
+                                        <p><input type="time" id="" name=""></p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="pds-account-buttons row" data-brackets-id="16044">
+                            <div class="pds-account-edit" data-brackets-id="16045">
+                                <button class="btn btn-primary" data-brackets-id="16046">Edit</button>
+                            </div>
+                            <div class="pds-account-next" data-brackets-id="16047">
+                                <button class="btn btn-primary" data-brackets-id="16048">Save</button>
+                                <button class="btn btn-primary" data-brackets-id="16049">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information Tab -->
+                    <div class="pds-account-info-wrapper" id="contact-info">
+                        <h5 class="text-center">Company Contacts</h5>
+                        <div class="contact-table">
+                            <div class="contact-header">
+                                <p>Add.</p>
+                                <p>Sr. No.</p>
+                                <p>State</p>
+                                <p>Name</p>
+                                <p>Role</p>
+                                <p>City</p>
+                                <p>Contact No.</p>
+                                <p>Email Id</p>
+                                <p>Delete **DeleteIcon</p>
+                            </div>
+                            <div class="contact-details-wrapper">
+
+                                <!-- Add contact button ends -->
+                                <div class="contact-details-button">
+                                    <p>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xMS41IDBjNi4zNDcgMCAxMS41IDUuMTUzIDExLjUgMTEuNXMtNS4xNTMgMTEuNS0xMS41IDExLjUtMTEuNS01LjE1My0xMS41LTExLjUgNS4xNTMtMTEuNSAxMS41LTExLjV6bTAgMWM1Ljc5NSAwIDEwLjUgNC43MDUgMTAuNSAxMC41cy00LjcwNSAxMC41LTEwLjUgMTAuNS0xMC41LTQuNzA1LTEwLjUtMTAuNSA0LjcwNS0xMC41IDEwLjUtMTAuNXptLjUgMTBoNnYxaC02djZoLTF2LTZoLTZ2LTFoNnYtNmgxdjZ6Ii8+PC9zdmc+">
+                                        </button>
+                                    </p>
+                                    <!-- Modal for contact data input -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form>
+                                                    <div class="modal-body">
+                                                        <div class="cd-input">
+                                                            <label>State</label>
+                                                            <input type="text" placeholder="Enter the state" required>
+                                                        </div>
+                                                        <div class="cd-input">
+                                                            <label>Name</label>
+                                                            <input type="text" placeholder="Contact Person Name" required>
+                                                        </div>
+                                                        <div class="cd-input">
+                                                            <label>Role</label>
+                                                            <input type="text" placeholder="Contact Person Role" required>
+                                                        </div>
+                                                        <div class="cd-input">
+                                                            <label>City</label>
+                                                            <input type="text" placeholder="Enter the city" required>
+                                                        </div>
+                                                        <div class="cd-input">
+                                                            <label>Contact No.</label>
+                                                            <input type="tel" placeholder="Contact No." required>
+                                                        </div>
+                                                        <div class="cd-input">
+                                                            <label>Email ID</label>
+                                                            <input type="email" placeholder="Enter email ID" required>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <input type="submit" class="btn btn-primary">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Add contact button ends -->
+
+                                <p class="contact-details">
+                                    1
+                                </p>
+                                <p class="contact-details">
+                                    Head
+                                </p>
+                                <p class="contact-details">
+                                    Ashok K
+                                </p>
+                                <p class="contact-details">
+                                    Director
+                                </p>
+                                <p class="contact-details">
+                                    Delhi
+                                </p>
+                                <p class="contact-details">
+                                    9999xxxxxx
+                                </p>
+                                <p class="contact-details">email id</p>
+                                <p class="contact-details"><input type="checkbox"></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Pricing Model Tab -->
+                    <div class="pds-account-info-wrapper" id="pricing-model">
+                        <div class="pricing-model-wrapper">
+                            <div class="pricing-model">
+                                <h6 class="text-center">Bike</h6>
+                                <div class="pm-info">
+                                    <p>Currency</p>
+                                    <p>INR Default</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Rate per Km.</p>
+                                    <p class="pm-value">8</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum No. of Km.</p>
+                                    <p class="pm-value">2</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum No. of Km.</p>
+                                    <p class="pm-value">50</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum Weight (gms)</p>
+                                    <p class="pm-value">0.5gms</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum Weight (kgs)</p>
+                                    <p class="pm-value">50 kgs</p>
+                                </div>
+                                <p class="pm-header">Surcharges</p>
+                                <div class="pm-details">
+                                    <p class="pm-name">GST</p>
+                                    <p class="pm-value">10%</p>
+                                </div>
+                                <p class="pm-header">Fuel Surcharge</p>
+                                <p class="pm-save">
+                                    <button class="btn btn-secondary">Save</button>
+                                </p>
+
+                                *** Give option to add categories
+                            </div>
+                            <div class="pricing-model">
+                                <h6 class="text-center">E-Rickshaw</h6>
+                                <div class="pm-info">
+                                    <p>Currency</p>
+                                    <p>INR Default</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Rate per Km.</p>
+                                    <p class="pm-value">8</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum No. of Km.</p>
+                                    <p class="pm-value">2</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum No. of Km.</p>
+                                    <p class="pm-value">50</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum Weight (gms)</p>
+                                    <p class="pm-value">0.5gms</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum Weight (kgs)</p>
+                                    <p class="pm-value">50 kgs</p>
+                                </div>
+                                <p class="pm-header">Surcharges</p>
+                                <div class="pm-details">
+                                    <p class="pm-name">GST</p>
+                                    <p class="pm-value">10%</p>
+                                </div>
+                                <p class="pm-header">Fuel Surcharge</p>
+                                <p class="pm-save">
+                                    <button class="btn btn-secondary">Save</button>
+                                </p>
+
+                                *** Give option to add categories
+                            </div>
+                            <div class="pricing-model">
+                                <h6 class="text-center">Tempo</h6>
+                                <div class="pm-info">
+                                    <p>Currency</p>
+                                    <p>INR Default</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Rate per Km.</p>
+                                    <p class="pm-value">8</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum No. of Km.</p>
+                                    <p class="pm-value">2</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum No. of Km.</p>
+                                    <p class="pm-value">50</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum Weight (gms)</p>
+                                    <p class="pm-value">0.5gms</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum Weight (kgs)</p>
+                                    <p class="pm-value">50 kgs</p>
+                                </div>
+                                <p class="pm-header">Surcharges</p>
+                                <div class="pm-details">
+                                    <p class="pm-name">GST</p>
+                                    <p class="pm-value">10%</p>
+                                </div>
+                                <p class="pm-header">Fuel Surcharge</p>
+                                <p class="pm-save">
+                                    <button class="btn btn-secondary">Save</button>
+                                </p>
+
+                                *** Give option to add categories
+                            </div>
+                            <div class="pricing-model">
+                                <h6 class="text-center">Half Truck Load</h6>
+                                <div class="pm-info">
+                                    <p>Currency</p>
+                                    <p>INR Default</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Rate per Km.</p>
+                                    <p class="pm-value">8</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum No. of Km.</p>
+                                    <p class="pm-value">2</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum No. of Km.</p>
+                                    <p class="pm-value">50</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum Weight (gms)</p>
+                                    <p class="pm-value">0.5gms</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum Weight (kgs)</p>
+                                    <p class="pm-value">50 kgs</p>
+                                </div>
+                                <p class="pm-header">Surcharges</p>
+                                <div class="pm-details">
+                                    <p class="pm-name">GST</p>
+                                    <p class="pm-value">10%</p>
+                                </div>
+                                <p class="pm-header">Fuel Surcharge</p>
+                                <p class="pm-save">
+                                    <button class="btn btn-secondary">Save</button>
+                                </p>
+
+                                *** Give option to add categories
+                            </div>
+                            <div class="pricing-model">
+                                <h6 class="text-center">Full Truck Load</h6>
+                                <div class="pm-info">
+                                    <p>Currency</p>
+                                    <p>INR Default</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Rate per Km.</p>
+                                    <p class="pm-value">8</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum No. of Km.</p>
+                                    <p class="pm-value">2</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum No. of Km.</p>
+                                    <p class="pm-value">50</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum Weight (gms)</p>
+                                    <p class="pm-value">0.5gms</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum Weight (kgs)</p>
+                                    <p class="pm-value">50 kgs</p>
+                                </div>
+                                <p class="pm-header">Surcharges</p>
+                                <div class="pm-details">
+                                    <p class="pm-name">GST</p>
+                                    <p class="pm-value">10%</p>
+                                </div>
+                                <p class="pm-header">Fuel Surcharge</p>
+                                <p class="pm-save">
+                                    <button class="btn btn-secondary">Save</button>
+                                </p>
+
+                                *** Give option to add categories
+                            </div>
+                            <div class="pricing-model">
+                                <h6 class="text-center">Container 20 Ft.</h6>
+                                <div class="pm-info">
+                                    <p>Currency</p>
+                                    <p>INR Default</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Rate per Km.</p>
+                                    <p class="pm-value">8</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum No. of Km.</p>
+                                    <p class="pm-value">2</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum No. of Km.</p>
+                                    <p class="pm-value">50</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum Weight (gms)</p>
+                                    <p class="pm-value">0.5gms</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum Weight (kgs)</p>
+                                    <p class="pm-value">50 kgs</p>
+                                </div>
+                                <p class="pm-header">Surcharges</p>
+                                <div class="pm-details">
+                                    <p class="pm-name">GST</p>
+                                    <p class="pm-value">10%</p>
+                                </div>
+                                <p class="pm-header">Fuel Surcharge</p>
+                                <p class="pm-save">
+                                    <button class="btn btn-secondary">Save</button>
+                                </p>
+
+                                *** Give option to add categories
+                            </div>
+                            <div class="pricing-model">
+                                <h6 class="text-center">Container 40 Ft.</h6>
+                                <div class="pm-info">
+                                    <p>Currency</p>
+                                    <p>INR Default</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Rate per Km.</p>
+                                    <p class="pm-value">8</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum No. of Km.</p>
+                                    <p class="pm-value">2</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum No. of Km.</p>
+                                    <p class="pm-value">50</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Minimum Weight (gms)</p>
+                                    <p class="pm-value">0.5gms</p>
+                                </div>
+                                <div class="pm-details">
+                                    <p class="pm-name">Maximum Weight (kgs)</p>
+                                    <p class="pm-value">50 kgs</p>
+                                </div>
+                                <p class="pm-header">Surcharges</p>
+                                <div class="pm-details">
+                                    <p class="pm-name">GST</p>
+                                    <p class="pm-value">10%</p>
+                                </div>
+                                <p class="pm-header">Fuel Surcharge</p>
+                                <p class="pm-save">
+                                    <button class="btn btn-secondary">Save</button>
+                                </p>
+
+                                <p>*** Give option to add categories</p>
+
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Advertisment Upload Tab -->
+                    <!--
+                    <div class="pds-account-info-wrapper advt-wrapper" id="advt">
+                        <div></div>
+                    </div>-->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <img src="/assets/Logo-LS.svg" alt="">
+                    <br>
+                    <br>
+                    <br>
+                    <p>Newsletter Subscription</p>
+                    <br>
+                    <input type="text" placeholder="Enter your email">
+                    <br>
+                    <br>
+                    <p>We respect your privacy</p>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                    <h6>About Us</h6>
+                    <ul>
+                        <li><a href="#">Our Vision</a></li>
+                        <li><a href="#">Our History</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                    <h6>Quick Search</h6>
+                    <ul>
+                        <li><a href="#">Bike Delivery</a></li>
+                        <li><a href="#">Courier / Parcel</a></li>
+                        <li><a href="#">Hire Fleet</a></li>
+                        <li><a href="#">Warehouse</a></li>
+                        <li><a href="#">Fulfillment</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                    <h6>Services</h6>
+                    <ul>
+                        <li><a href="#">IT Consulting</a></li>
+                        <li><a href="#">Supply Chain Consulting</a></li>
+                        <li><a href="#">Training & Education</a></li>
+                        <li><a href="#">Benchmarking</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <h6 class="text-center">Follow Us</h6>
+                    <div class="footer-socials">
+                        <img src="/assets/Social-Icons-1@2x.png">
+                        <img src="/assets/Social-Icons-2@2x.png">
+                        <img src="/assets/Social-Icons-3@2x.png">
+                        <img src="/assets/Social-Icons-4@2x.png">
+                        <img src="/assets/Social-Icons-5@2x.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row container-fluid footer-bg">
+            <div class="footer-elements">
+                <img src="/assets/Footer-Item-1-Scooter.svg">
+            </div>
+            <div class="footer-elements">
+                <img src="/assets/Footer-Vehicle-2.png">
+            </div>
+            <div class="footer-elements">
+                <img src="/assets/Footer-Vehicle-3.png">
+            </div>
+            <div class="footer-elements">
+                <img src="/assets/Footer-Worker-4.png">
+            </div>
+            <div class="footer-elements">
+                <img src="/assets/Footer-Warehouse-5.png">
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        function openKYC() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "block";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "none";
+        }
+
+        function openGeneral() {
+            document.getElementById("general-info").style.display = "block";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "none";
+        }
+
+        function paymentMethod() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "block";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "none";
+        }
+
+        function parcelType() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "block";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "none";
+        }
+
+        function addContacts() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "block";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "none";
+        }
+
+        function addPricing() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "block";
+            document.getElementById("delivery-location").style.display = "none";
+        }
+        
+        function deliveryLocation() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "block";
+        }
+    </script>
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body></html>
