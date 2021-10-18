@@ -8,9 +8,36 @@ main {
     min-height: 50vh;
 }
 
+p,
+button,
+cite {
+    font-family: "Roboto Regular";
+}
+
+button {
+    color: #2D3E52;
+}
+
+h6 {
+    font-family: "Roboto Regular";
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+input[type="checkbox"]:checked + label {
+    transform: scale(1.5);
+    background: yellow;
+}
+
 /* Global CSS ENDS */
 
-/* Top Navbar CSS */ 
+/* Top Navbar CSS */
 /* hidden on max-width: 991px media-query */
 #header .topnav {
     height: 30px;
@@ -38,13 +65,13 @@ main {
 }
 
 .topnav a {
-    color: #fff!important;
+    color: #fff !important;
     text-transform: uppercase;
     font-size: 0.7em;
     text-decoration-line: none;
 }
 
-/* Top Navbar CSS ENDS */ 
+/* Top Navbar CSS ENDS */
 
 /* Main Menu CSS */
 
@@ -60,7 +87,8 @@ main {
 
 #myNavbar a {
     color: #000;
-    font-size: 0.8em;
+    font-size: 0.9em;
+    text-transform: uppercase;
 }
 
 .navbar {
@@ -71,13 +99,15 @@ main {
     padding: 5px;
 }
 
-/* Main Menu CSS ENDS */ 
+.partner-with-us.active {
+    background: #DEF3F9;
+}
+
+/* Main Menu CSS ENDS */
 
 /* Footer CSS */
 
-.footer {
-    
-}
+.footer {}
 
 footer li {
     text-decoration-style: none;
@@ -94,7 +124,19 @@ footer ul {
 }
 
 .footer-socials {
-    
+    display: flex;
+    gap: 1rem;
+    margin: 10px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-socials img {
+    transform: scale(1.2);
+}
+
+.footer-socials img:hover {
+    transform: scale(1.5);
 }
 
 .footer-bg {
@@ -103,20 +145,12 @@ footer ul {
     align-items: end;
     justify-content: space-between;
     margin: 0;
-    padding: 0;
-    flex-wrap: nowrap; 
-}
-
-.footer-bg:nth-child(2) {
-    justify-self: center;
-}
-
-.footer-bg img:nth-child() {
-    width: 100%;
+    padding: 0 20px;
+    flex-wrap: nowrap;
 }
 
 .footer-socials img {
-    width: 20px!important;
+    width: 20px !important;
 }
 
 /* Footer CSS ENDS */
@@ -127,10 +161,11 @@ footer ul {
     background: url('/assets/Hero-BG-Image.svg') no-repeat center bottom #EDF7F9;
     min-height: 300px;
     background-size: 85%;
-    margin-right: 0px!important;
+    margin-right: 0px !important;
 }
 
-.hero-section-left, .hero-section-right {
+.hero-section-left,
+.hero-section-right {
     margin-top: 10px;
     height: 400px;
 }
@@ -149,7 +184,7 @@ footer ul {
 }
 
 .hero-section-left p {
-    color: #000;
+    color: #2D3E52;
     text-align: left;
 }
 
@@ -158,6 +193,10 @@ footer ul {
     object-position: left;
     max-height: 80%;
     padding-left: 20px;
+}
+
+.hero-order {
+    color: #002147;
 }
 
 .hero-today {
@@ -225,26 +264,53 @@ footer ul {
 
 .dropdown-toggle {
     background: #fff;
-    padding: 5px!important;
+    padding: 5px !important;
 }
 
 .qs-buttons button {
-    background: rgba(112,112,112,0.1);
+    background: rgba(112, 112, 112, 0.1);
     padding: 5px 10px;
     cursor: pointer;
     position: relative;
     z-index: 1;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
 }
 
 .qs-buttons-last {
-    background: #FDC500!important;
-    color: #fff!important;
+    background: #FDC500 !important;
+    color: #fff !important;
 }
 
 .qs-buttons button:focus {
     background: #2D3E52;
     border: 1px solid #2D3E52;
     color: #fff;
+    box-shadow: none;
+}
+
+.qs-buttons-last:focus {
+    border: 1px solid #FDC500 !important;
+}
+
+.qs-buttons .active {
+    background: #2D3E52;
+    border-radius: 6px 6px 0 0;
+    border-bottom: none;
+}
+
+.qs-buttons ul {
+    border: none;
+}
+
+.tab-content > .active {
+    display: flex;
+}
+
+.qs-single > div > div > .dropdown-toggle:empty::after {
+    color: #2D3E52;
+    font-size: 1.5em;
+    vertical-align: middle !important;
 }
 
 /* Quick-Search Section CSS ENDS */
@@ -252,7 +318,7 @@ footer ul {
 /* LS-Offers Section CSS */
 
 .offers-section {
-    margin-right: 0px!important;
+    margin-right: 0px !important;
     margin-bottom: 100px;
 }
 
@@ -267,15 +333,59 @@ footer ul {
 .os-card-header button:hover {
     color: #000;
 }
- 
+
+.os-button-toggle:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f055";
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    font-weight: 900;
+    color: #01B7F2;
+    font-size: 1.5em;
+}
+
+.os-button-toggle[aria-expanded="true"]:before {
+    content: '\f056';
+    color: #CFD1D2;
+}
+
+.os-button-toggle:focus,
+.os-button-toggle:hover {
+    text-decoration: none;
+}
+
 .testimonials-bg {
     background: #F5F5F5;
-    padding: 40px;
+    padding: 60px;
 }
 
 .testimonials-text {
     background: #fff;
     padding: 20px;
+}
+
+.tt-cite {
+    display: flex;
+    gap: 20px;
+}
+
+.tt-cite > p:nth-child(1) {
+    display: flex;
+    color: #FDC500;
+    font-size: 30px;
+}
+
+.tt-cite > p:nth-child(2) {
+    color: #01B7F2;
+}
+
+.tt-cite > p:nth-child(3) {
+    display: flex;
+    color: #FDC500;
+    align-items: flex-end;
+    font-size: 30px;
+    margin-bottom: 0;
 }
 
 .testimonials-name {
@@ -285,9 +395,7 @@ footer ul {
     margin-top: 10px;
 }
 
-.testimonials-name div {
-    
-}
+.testimonials-name div {}
 
 .advt {
     background: #F5F5F5;
@@ -302,19 +410,66 @@ footer ul {
     justify-content: space-between;
 }
 
+.ls-stats-tablet {
+    display: none;
+}
+
 .ls-stats-single-outer {
     background: #fff;
     padding: 0;
 }
 
+.ls-stats-single-outer > p:last-child {
+    font-size: 0.9rem;
+}
+
 .ls-stats-single {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px 20px;
+    align-items: center;
+    gap: 1.5rem;
+    height: 7vh;
 }
 
 .ls-stats-single p {
     margin-bottom: 0;
+    color: #948F8F;
+}
+
+.feedback-button {
+    position: fixed;
+    right: -40px;
+    top: 20%;
+    transform: rotate(-90deg);
+    display: flex;
+    align-items: center;
+}
+
+.feedback-button:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f164";
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 900;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.settings-button {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 0 5px 5px 5px;
+}
+
+.settings-button:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f013";
+    display: inline-block;
+    font-weight: 900;
+    font-size: 1.2em;
 }
 
 /* Quick Search Section CSS */
@@ -324,15 +479,9 @@ footer ul {
 }
 
 .adv-search-sort {
-    padding: 5px;
+    padding: 5px 15px 5px 0;
     border: 1px solid #000;
-    display: flex;
-    justify-content: space-between;
-}
-
-.adv-search-sort div {
-    margin: 0;
-    padding: 0;
+    margin-right: 15px !important;
 }
 
 .adv-search-sort p {
@@ -340,8 +489,17 @@ footer ul {
     height: 40px;
 }
 
+.adv-search-outer {
+    display: flex;
+    align-items: center;
+}
+
+.adv-search-outer p {
+    margin-bottom: 0;
+}
+
 .adv-search div {
-    margin-right: 0; 
+    margin-right: 0;
 }
 
 .adv-sort-buttons {
@@ -354,10 +512,11 @@ footer ul {
     background: #01B7F2;
     color: #fff;
     border: 1px solid #01B7F2;
+    height: 6vh;
 }
 
 .adv-search-best:hover {
-    color: #fff;
+    color: #000;
 }
 
 .adv-search-cheap {
@@ -365,6 +524,7 @@ footer ul {
     background: #fff;
     color: #000;
     border: 1px solid #01B7F2;
+    height: 6vh;
 }
 
 .adv-search-table {
@@ -405,11 +565,31 @@ footer ul {
 .adv-search-single-filter {
     border: 1px solid #000;
     padding: 10px;
-    border-top: none; 
+    border-top: none;
 }
 
 .adv-search-single-filter p {
     margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.adv-search-toggle:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0d7";
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    font-weight: 900;
+    color: #676767;
+    font-size: 1.5em;
+}
+
+.adv-search-toggle[aria-expanded="true"]:after {
+    content: "\f077";
+    color: #707070;
 }
 
 .adv-search-card {
@@ -441,11 +621,12 @@ footer ul {
 .adv-search-pricing {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     width: 150px;
     border-left: 1px solid #000;
     padding: 10px;
-    height: auto;
+    height: 100%;
+    align-items: center;
 }
 
 .adv-search-offer {
@@ -494,7 +675,7 @@ footer ul {
     justify-content: center;
     height: auto;
 }
- 
+
 .pds-document a {
     color: #000;
 }
@@ -527,7 +708,12 @@ footer ul {
 
 /* General Information CSS */
 
-#kyc-docs, #payment-method, #parcel-type, #contact-info, #pricing-model, #delivery-location {
+#kyc-docs,
+#payment-method,
+#parcel-type,
+#contact-info,
+#pricing-model,
+#delivery-location {
     display: none;
 }
 
@@ -565,7 +751,7 @@ footer ul {
 
 .pds-account-type {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     gap: 40px;
 }
 
@@ -613,7 +799,8 @@ footer ul {
     height: 100px;
 }
 
-.pds-company-type, .pds-company-info {
+.pds-company-type,
+.pds-company-info {
     padding: 0;
 }
 
@@ -718,7 +905,7 @@ footer ul {
     padding: 10px;
     align-items: flex-start;
     gap: 10px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 .cat-name {
@@ -789,7 +976,9 @@ footer ul {
     border: 1px solid #000;
 }
 
-.pm-info, .pm-details, .pm-header {
+.pm-info,
+.pm-details,
+.pm-header {
     padding: 0px 10px;
 }
 
@@ -867,17 +1056,21 @@ footer ul {
     padding: 2px 10px;
 }
 
-.dl-pincode-table, table {
+.dl-pincode-table,
+table {
     width: 100%;
 }
 
-table, td, th {
+table,
+td,
+th {
     border: 1px solid #000;
     border-top: none;
     border-right: none;
 }
 
-.dl-pincode tr, th {
+.dl-pincode tr,
+th {
     text-align: center;
 }
 

@@ -7,6 +7,13 @@
     .hero-section-left {
         padding-left: 5vw;
     }
+    .ls-stats {
+        display: none;
+        margin-top: 100px;
+    }
+    .ls-stats-tablet {
+        display: flex;
+    }
 }
 
 @media screen and (max-width: 1200px) {

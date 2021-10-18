@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/2888bac9b2.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -127,7 +128,7 @@
                                 <a href="#" class="nav-link dropdown-toggle m-2 menu-item" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Explore More</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Why Logistics Scanner?</a>
-                                    <a class="dropdown-item" href="#">Partner With Us</a>
+                                    <a class="dropdown-item active partner-with-us" href="#">Partner With Us</a>
                                     <a class="dropdown-item" href="#">Knowledgehub</a>
                                     <a class="dropdown-item" href="#">Careers</a>
                                 </div>
@@ -167,7 +168,7 @@
                                     <div class="input-group-prepend adv-search-input-group">
                                         <div class="input-group-text adv-search-input">
                                             <span>Bike Delivery</span>
-                                            <span><input type="checkbox" aria-label="Checkbox for following text input">
+                                            <span><input type="checkbox" aria-label="Checkbox for following text input" checked>
                                             </span>
                                         </div>
                                     </div>
@@ -516,21 +517,24 @@
                             </div>
                         </div>
                         <h5>Search Results</h5>
-                        <div class="row container">
-                            <div class="col-md-5 col-lg-5">
-                                <p>Sort By</p>
+                        <div class="container">
+                            <div class="adv-search-sort row">
+                                <div class="col-md-5 col-lg-5 adv-search-outer">
+                                    <p>Sort By</p>
+                                </div>
+                                <div class="col-md-7 col-lg-7 adv-sort-buttons adv-search-outer">
+                                    <button class="btn btn-primary">
+                                        By name
+                                    </button>
+                                    <button class="btn btn-primary">
+                                        LS Rating
+                                    </button>
+                                    <button class="btn btn-primary">
+                                        By Price
+                                    </button>
+                                </div>
                             </div>
-                            <div class="col-md-7 col-lg-7 adv-sort-buttons">
-                                <button class="btn btn-primary">
-                                    By name
-                                </button>
-                                <button class="btn btn-primary">
-                                    LS Rating
-                                </button>
-                                <button class="btn btn-primary">
-                                    By Price
-                                </button>
-                            </div>
+
                         </div>
 
                         <div class="adv-search-results">
@@ -611,7 +615,7 @@
         <footer class="">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-lg-3 col-md-4">
                         <img src="/assets/Logo-LS.svg" alt="">
                         <br>
                         <br>
@@ -623,7 +627,7 @@
                         <br>
                         <p>We respect your privacy</p>
                     </div>
-                    <div class="col-lg-2 col-md-2">
+                    <div class="col-lg-2 col-md-3">
                         <h6>About Us</h6>
                         <ul>
                             <li><a href="#">Our Vision</a></li>
@@ -654,14 +658,14 @@
                             <li><a href="#">Benchmarking</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-lg-3 col-md-2">
                         <h6 class="text-center">Follow Us</h6>
                         <div class="footer-socials">
-                            <img src="/assets/Social-Icons-1@2x.png">
-                            <img src="/assets/Social-Icons-2@2x.png">
-                            <img src="/assets/Social-Icons-3@2x.png">
-                            <img src="/assets/Social-Icons-4@2x.png">
-                            <img src="/assets/Social-Icons-5@2x.png">
+                            <a href="" target="_blank"><img src="/assets/social-icon-1.svg"></a>
+                            <a href="" target="_blank"><img src="/assets/social-icon-2.svg"></a>
+                            <a href="" target="_blank"><img src="/assets/social-icon-3.svg"></a>
+                            <a href="" target="_blank"><img src="/assets/social-icon-4.svg"></a>
+                            <a href="" target="_blank"><img src="/assets/social-icon-5.svg"></a>
                         </div>
                     </div>
                 </div>
@@ -677,10 +681,7 @@
                     <img src="/assets/Footer-Vehicle-3.png">
                 </div>
                 <div class="footer-elements">
-                    <img src="/assets/Footer-Worker-4.png">
-                </div>
-                <div class="footer-elements">
-                    <img src="/assets/Footer-Warehouse-5.png">
+                    <img src="/assets/Footer-Warehouse-Combo-5.png">
                 </div>
 
             </div>

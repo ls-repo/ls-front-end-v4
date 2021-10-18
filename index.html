@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/2888bac9b2.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -125,7 +128,7 @@
                                 <a href="#" class="nav-link dropdown-toggle m-2 menu-item" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Explore More</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Why Logistics Scanner?</a>
-                                    <a class="dropdown-item" href="#">Partner With Us</a>
+                                    <a class="dropdown-item active partner-with-us" href="#">Partner With Us</a>
                                     <a class="dropdown-item" href="#">Knowledgehub</a>
                                     <a class="dropdown-item" href="#">Careers</a>
                                 </div>
@@ -153,8 +156,8 @@
     <section class="hero-section">
         <div class="row inner">
             <div class="col-sm-6 col-md-6 col-lg-7 hero-section-left">
-                <h2>Order <span class="hero-today">Today,</span></h2>
-                <h2>Deliver <span class="hero-today">Today,</span></h2>
+                <h2><span class="hero-order">Order</span> <span class="hero-today">Today,</span></h2>
+                <h2><span clas="hero-order">Deliver</span> <span class="hero-today">Today,</span></h2>
                 <p>India's Smartest Same Day</p>
                 <p>Delivery Solutions at your fingertips!</p>
                 <div class="hero-section-cta">
@@ -173,101 +176,193 @@
         <section class="quick-search-section">
             <div class="container qs-container">
                 <div class="row qs-buttons">
-                    <ul>
-                        <li><a href="#"><button class="btn">Bike Delivery</button></a></li>
-                        <li><button class="btn">Domestic Courier</button></li>
-                        <li><button class="btn">Hire Fleet</button></li>
-                        <li><button class="btn">Ware House</button></li>
-                        <li><button class="btn">Shipping Quotes</button></li>
-                        <li><button class="btn qs-buttons-last">Advanced Search</button></li>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li href="#bike-delivery" data-toggle="tab" role="tab" class="qs-button-tab active"><button class="btn">Bike Delivery</button></li>
+                        <li href="#domestic-courier" data-toggle="tab" role="tab" class="qs-button-tab"><button class="btn">Domestic Courier</button></li>
+                        <li href="#hire-fleet" data-toggle="tab" role="tab" class="qs-button-tab"><button class="btn">Hire Fleet</button></li>
+                        <li href="#warehouse" data-toggle="tab" role="tab" class="qs-button-tab"><button class="btn">WareHouse</button></li>
+                        <li href="#shipping-quote" data-toggle="tab" role="tab" class="qs-button-tab"><button class="btn">Shipping Quotes</button></li>
+                        <li href="#advanced-search" data-toggle="tab" role="tab" class="qs-button-tab"><button class="btn qs-buttons-last">Advanced Search</button></li>
                     </ul>
                 </div>
-                <div class="row qs-options">
-                    <div class="qs-single col-lg-1 col-md-2">
-                        <p class="qs-input">Quick Search</p>
-                    </div>
-                    <div class="qs-single col-lg-2 col-md-3">
-                        <p>From</p>
-                        <div class="input-group">
-                            <input type="text" class="qs-input form-control" aria-label="Text input with dropdown button">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div role="separator" class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
+                <div class="tab-content">
+                    <div class="row qs-options tab-pane active" role="tabpanel" id="bike-delivery">
+                        <div class="qs-single col-lg-1 col-md-2">
+                            <p class="qs-input">Quick Search</p>
+                        </div>
+                        <div class="qs-single col-lg-2 col-md-3">
+                            <p>From</p>
+                            <div class="input-group">
+                                <input type="text" class="qs-input form-control" aria-label="Text input with dropdown button" placeholder="Enter Place">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="qs-single col-lg-2 col-md-3">
-                        <p>To</p>
-                        <div class="input-group">
-                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div role="separator" class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
+                        <div class="qs-single col-lg-2 col-md-3">
+                            <p>To</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="qs-single col-lg-2 col-md-3">
-                        <p>Parcel Type</p>
-                        <div class="input-group">
-                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div role="separator" class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
+                        <div class="qs-single col-lg-2 col-md-3">
+                            <p>Parcel Type</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="qs-single col-lg-2 col-md-3">
-                        <p>Pick Up Date & Time</p>
-                        <div class="input-group">
-                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div role="separator" class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
+                        <div class="qs-single col-lg-2 col-md-3">
+                            <p>Pick Up Date & Time</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="qs-single col-lg-1 col-md-2">
-                        <p>Weight</p>
-                        <div class="input-group">
-                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div role="separator" class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
+                        <div class="qs-single col-lg-1 col-md-2">
+                            <p>Weight</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="qs-single">
+                            <button class="btn qs-input qs-single-btn">Search</button>
+                        </div>
                     </div>
-                    <div class="qs-single">
-                        <button class="btn qs-input qs-single-btn">Search</button>
+                    
+                    <!-- Second Tab -->
+                    <div class="row qs-options tab-pane" role="tabpanel" id="domestic-courier">
+                        <div class="qs-single col-lg-1 col-md-2">
+                            <p class="qs-input">Quick Search</p>
+                        </div>
+                        <div class="qs-single col-lg-2 col-md-3">
+                            <p>From</p>
+                            <div class="input-group">
+                                <input type="text" class="qs-input form-control" aria-label="Text input with dropdown button">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="qs-single col-lg-2 col-md-3">
+                            <p>To</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="qs-single col-lg-2 col-md-3">
+                            <p>Parcel Type</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="qs-single col-lg-2 col-md-3">
+                            <p>Pick Up Date & Time</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="qs-single col-lg-1 col-md-2">
+                            <p>Weight</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Separated link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="qs-single">
+                            <button class="btn qs-input qs-single-btn">Search</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -280,51 +375,52 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-10">
                                 <h4>Limited Time Offer</h4>
-
                                 <div class="accordion" id="accordionExample">
                                     <div class="card">
                                         <div class="card-header os-card-header" id="headingOne">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    Logistics Offer
+                                            <h2 class="mb-0 ">
+                                                <button class="btn btn-link btn-block text-left os-button-toggle" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                   Logistics Offer
                                                 </button>
                                             </h2>
                                         </div>
 
                                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                             <div class="card-body">
-                                                Nunc cursus libero purus ac congue ar lorem cursus ut sed pulvinar massa iden
-                                                porta nequetiam elerisque mi id habitant morbi tristique senectus.
+                                                <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed pulvinar massa iden
+                                                porta nequetiam elerisque mi id habitant morbi tristique senectus.</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card">
-                                        <div class="card-header os-card-header" id="headingTwo">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <div class="card-header os-card-header" id="headingOne">
+                                            <h2 class="mb-0 ">
+                                                <button class="btn btn-link btn-block text-left os-button-toggle" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                     Logistics Offer
                                                 </button>
                                             </h2>
                                         </div>
+                                        
                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                             <div class="card-body">
-                                                Nunc cursus libero purus ac congue ar lorem cursus ut sed pulvinar massa iden
-                                                porta nequetiam elerisque mi id habitant morbi tristique senectus.
+                                                <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed pulvinar massa iden
+                                                porta nequetiam elerisque mi id habitant morbi tristique senectus.</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card">
-                                        <div class="card-header os-card-header" id="headingThree">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                    Logistics Offer
+                                        <div class="card-header os-card-header" id="headingOne">
+                                            <h2 class="mb-0 ">
+                                                <button class="btn btn-link btn-block text-left os-button-toggle" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                   Logistics Offer
                                                 </button>
                                             </h2>
                                         </div>
+                                        
                                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                             <div class="card-body">
-                                                Nunc cursus libero purus ac congue ar lorem cursus ut sed pulvinar massa iden
-                                                porta nequetiam elerisque mi id habitant morbi tristique senectus.
+                                                <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed pulvinar massa iden
+                                                porta nequetiam elerisque mi id habitant morbi tristique senectus.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -336,11 +432,16 @@
                                     <div class="card">
                                         <div class="card-body testimonials-bg">
                                             <div class="testimonials-text">
-                                                <cite><span>&ldquo;</span>I want to express my appreciation to your team for their support for
+                                                <cite class="tt-cite">
+                                                    <p>&ldquo;</p>
+                                                    <p style="font-size: 0.8rem;">I want to express my appreciation to your team for their support for
                                                     Mumbai shipment for a list of machines and fixtures that were delivered
                                                     today. Special thanks to Logisticscanner team My coworker initiated
                                                     this shipment in May 2019 but till May 2020 we had no success
-                                                    bringing… Read more »<span>&rdquo;</span></cite>
+                                                    bringing… Read more »</p>
+                                                    <p>&rdquo;</p>
+                                                </cite>
+                                                <span></span><span></span>
                                                 <div class="testimonials-name">
                                                     <div class="">
                                                         <img src="/assets/testimonials-img@2x.png">
@@ -356,6 +457,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- LS Stats Desktop -->
                         <div class="row ls-stats">
                             <div class="col-lg-2 col-md-2 ls-stats-single-outer">
                                 <div class="ls-stats-single">
@@ -408,14 +510,64 @@
                             <p>****Advertisment</p>
                         </div>
                     </div>
+                    <!-- LS Stats On Tablet Size -->
+                    <div class="row ls-stats ls-stats-tablet">
+                            <div class="col-lg-2 col-md-2 ls-stats-single-outer">
+                                <div class="ls-stats-single">
+                                    <div>
+                                        <img src="/assets/testimonials-1-globe.png">
+                                    </div>
+                                    <div>
+                                        <p>220</p>
+                                    </div>
+                                </div>
+                                <p class="text-center">Deliver within 220 countries</p>
+                            </div>
+                            <div class="col-lg-3 col-md-3 ls-stats-single-outer">
+                                <div class="ls-stats-single">
+                                    <div>
+                                        <img src="/assets/testimonials-2-map.png">
+                                    </div>
+                                    <div>
+                                        <p>20000</p>
+                                    </div>
+                                </div>
+                                <p class="text-center">Pincodes Covered</p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 ls-stats-single-outer">
+                                <div class="ls-stats-single">
+                                    <div>
+                                        <img src="/assets/testimonials-3-truck.png">
+                                    </div>
+                                    <div>
+                                        <p>100+</p>
+                                    </div>
+                                </div>
+                                <p class="text-center">Service Providers</p>
+                            </div>
+                            <div class="col-lg-3 col-md-3 ls-stats-single-outer">
+                                <div class="ls-stats-single">
+                                    <div>
+                                        <img src="/assets/testimonials-4-smile.png">
+                                    </div>
+                                    <div>
+                                        <p>100000</p>
+                                    </div>
+                                </div>
+                                <p class="text-center">Expected Happy Customer Soon</p>
+                            </div>
+                        </div>
                 </div>
             </div>
         </section>
-
+        
+        <button class="btn btn-primary feedback-button">Feedback</button>
+        <button class="btn btn-primary settings-button"></button>
+        
         <footer class="">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-lg-3 col-md-4">
                         <img src="/assets/Logo-LS.svg" alt="">
                         <br>
                         <br>
@@ -458,14 +610,14 @@
                             <li><a href="#">Benchmarking</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-lg-3 col-md-2">
                         <h6 class="text-center">Follow Us</h6>
                         <div class="footer-socials">
-                            <img src="/assets/Social-Icons-1@2x.png">
-                            <img src="/assets/Social-Icons-2@2x.png">
-                            <img src="/assets/Social-Icons-3@2x.png">
-                            <img src="/assets/Social-Icons-4@2x.png">
-                            <img src="/assets/Social-Icons-5@2x.png">
+                            <a href="" target="_blank"><img src="/assets/social-icon-1.svg"></a>
+                            <a href="" target="_blank"><img src="/assets/social-icon-2.svg"></a>
+                            <a href="" target="_blank"><img src="/assets/social-icon-3.svg"></a>
+                            <a href="" target="_blank"><img src="/assets/social-icon-4.svg"></a>
+                            <a href="" target="_blank"><img src="/assets/social-icon-5.svg"></a>
                         </div>
                     </div>
                 </div>
@@ -481,10 +633,7 @@
                     <img src="/assets/Footer-Vehicle-3.png">
                 </div>
                 <div class="footer-elements">
-                    <img src="/assets/Footer-Worker-4.png">
-                </div>
-                <div class="footer-elements">
-                    <img src="/assets/Footer-Warehouse-5.png">
+                    <img src="/assets/Footer-Warehouse-Combo-5.png">
                 </div>
 
             </div>
@@ -496,4 +645,10 @@
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+        $('.qs-button-tab').click(function() {
+            $(".qs-button-tab").removeClass('active');
+        });
+    </script>
 </body></html>
