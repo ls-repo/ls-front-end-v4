@@ -197,14 +197,48 @@
                     </div>
                     <!-- My Account Filters -->
                     <div class="pds-document">
-                        <a href="#general-info" onclick="openGeneral()" onfocus="openLink(this)" onfocusout="closeLink(this)">&nbsp;&nbsp;General Information</a>
+                        <a href="#general-info" onclick="openGeneral()">&nbsp;&nbsp;General Information</a>
                         <a href="#kyc-docs" onclick="openKYC()">&nbsp;&nbsp;KYC Documents</a>
                         <a href="#" onclick="paymentMethod()">&nbsp;&nbsp;Payment Method</a>
                         <a href="#" onclick="parcelType()">&nbsp;&nbsp;Parcel Type</a>
                         <a href="#" onclick="deliveryLocation()">&nbsp;&nbsp;Delivery Location</a>
                         <a href="#" onclick="addContacts()">&nbsp;&nbsp;Contacts</a>
                         <a href="#" onclick="addPricing()">&nbsp;&nbsp;Pricing Model</a>
+                        <a href="#" onclick="addAdvt()">&nbsp;&nbsp;Upload Advertisement</a>
                     </div>
+
+                    <div class="pds-button" id="billing">
+                        <!-- Button Name -->
+                        <h5 class="text-center">Billing</h5>
+
+                        <!-- Button Image -->
+                        <svg id="reshot-icon-billing-PNZWY8SQBV" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: #707070;
+                                    }
+
+                                    .cls-2 {
+                                        fill: none;
+                                    }
+                                </style>
+                            </defs>
+                            <g id="Layer_x0020_1" transform="translate(10.44 9.023)">
+                                <path id="Path_871" data-name="Path 871" class="cls-1" d="M342.466,310.133a.846.846,0,0,0,0-1.692H301.49a3.6,3.6,0,0,1-3.584-3.583v-47.17H337.32v38.875a.846.846,0,1,0,1.692,0V256.842a.846.846,0,0,0-.846-.846H297.061a.846.846,0,0,0-.846.846v48.016a5.289,5.289,0,0,0,5.275,5.275Z" transform="translate(-296.215 -255.996)" />
+                                <path id="Path_872" data-name="Path 872" class="cls-1" d="M306.412,1382.906a.846.846,0,1,0-1.692,0v8.5a3.406,3.406,0,0,1-6.813,0v-8.5a.846.846,0,1,0-1.692,0v8.5a5.1,5.1,0,0,0,10.2,0Z" transform="translate(-296.216 -1342.372)" />
+                                <path id="Path_873" data-name="Path 873" class="cls-1" d="M538.36,1382.05a.846.846,0,0,0,0,1.692h41.105a.846.846,0,0,0,0-1.692Z" transform="translate(-529.009 -1342.362)" />
+                                <path id="Path_874" data-name="Path 874" class="cls-1" d="M1589.086,1382.906a.846.846,0,0,0-1.692,0v8.5a3.419,3.419,0,0,1-3.406,3.406.846.846,0,0,0,0,1.692,5.111,5.111,0,0,0,5.1-5.1Z" transform="translate(-1537.784 -1342.372)" />
+                                <path id="Path_875" data-name="Path 875" class="cls-1" d="M480.741,859.246h29.79v1.692h-29.79Z" transform="translate(-474.237 -837.984)" />
+                                <path id="Path_876" data-name="Path 876" class="cls-1" d="M480.741,1040.22h29.79v1.692h-29.79Z" transform="translate(-474.237 -1012.58)" />
+                                <path id="Path_877" data-name="Path 877" class="cls-1" d="M480.741,1221.19h29.79v1.692h-29.79Z" transform="translate(-474.237 -1187.172)" />
+                                <path id="Path_878" data-name="Path 878" class="cls-1" d="M1153.768,419.692v-1.263a4.647,4.647,0,0,1-1.541-.424,2.7,2.7,0,0,1-1.026-.988,3.525,3.525,0,0,1-.5-1.664l1.271-.24a3.2,3.2,0,0,0,.52,1.5,1.831,1.831,0,0,0,1.278.75v-4.023a5.282,5.282,0,0,1-1.594-.6,2.341,2.341,0,0,1-.93-.935,2.976,2.976,0,0,1,.628-3.538,3.313,3.313,0,0,1,1.9-.688v-.6h.746v.6a3.117,3.117,0,0,1,1.748.645,2.864,2.864,0,0,1,1,1.889l-1.306.2a2.149,2.149,0,0,0-.468-1.141,1.714,1.714,0,0,0-.971-.523v3.644a10.3,10.3,0,0,1,1.263.374,3.111,3.111,0,0,1,.961.63,2.527,2.527,0,0,1,.573.885,3.013,3.013,0,0,1,.2,1.11,3.037,3.037,0,0,1-3,3.133v1.278h-.746Zm0-11.068a1.869,1.869,0,0,0-1.163.59,1.756,1.756,0,0,0-.062,2.213,2.493,2.493,0,0,0,1.225.7Zm.746,8.736a1.872,1.872,0,0,0,1.218-.638,1.979,1.979,0,0,0,.482-1.357,1.7,1.7,0,0,0-.34-1.105,2.956,2.956,0,0,0-1.359-.748Z" transform="translate(-1120.583 -401.647)" />
+                                <path id="Path_879" data-name="Path 879" class="cls-1" d="M480.741,680h19.147v1.692H480.741Z" transform="translate(-474.237 -665.056)" />
+                                <path id="Path_880" data-name="Path 880" class="cls-1" d="M480.741,500.755h19.147v1.692H480.741Z" transform="translate(-474.237 -492.128)" />
+                            </g>
+                        </svg>
+                    </div>
+
                     <div class="pds-button">
                         <!-- Button Name -->
                         <h5 class="text-center">
@@ -308,11 +342,7 @@
                                 </div>
                             </div>
                             <div class="pds-account-inner">
-                                <p id="progress-value">40% Profile</p>
-                            </div>
-                            <div class="pds-account-inner">
-                                <p>Add Information to complete
-                                    your profile</p>
+                                <p>Add Information to complete your profile</p>
                             </div>
                         </div>
                     </div>
@@ -371,26 +401,27 @@
                         <div class="pds-account-type-wrapper">
                             <h6>Service Provider Type <span class="asterisk">&ast;</span></h6>
                             <div class="pds-account-type">
-                                <div>
-                                    <label>Bike Delivery</label>
-                                    <input class="custom-checkbox" type="checkbox" aria-label="Checkbox for following text input">
-                                </div>
-                                <div>
-                                    <label>Courier</label>
-                                    <input type="checkbox" aria-label="Checkbox for following text input">
-                                </div>
-                                <div>
-                                    <label>Warehouse</label>
-                                    <input type="checkbox" aria-label="Checkbox for following text input">
-                                </div>
-                                <div>
-                                    <label>Fulfillment</label>
-                                    <input type="checkbox" aria-label="Checkbox for following text input">
-                                </div>
-                                <div>
-                                    <label>Hire Fleet</label>
-                                    <input type="checkbox" aria-label="Checkbox for following text input">
-                                </div>
+
+                                <label>
+                                    <span>Bike Delivery</span>
+                                    <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                </label>
+                                <label>
+                                    <span>Courier</span>
+                                    <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                </label>
+                                <label>
+                                    <span>Warehouse</span>
+                                    <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                </label>
+                                <label>
+                                    <span>Fullfillment</span>
+                                    <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                </label>
+                                <label>
+                                    <span>Hire Fleet</span>
+                                    <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                </label>
                             </div>
                             <div class="pds-account-buttons">
                                 <div class="pds-account-edit">
@@ -416,25 +447,26 @@
                             <div class="col-md-6 pds-company-type">
                                 <p>Are you an individual or a company running the business?</p>
                                 <div>
-                                    <button class="btn btn-primary">Individual</button>
-                                    <button class="btn">Company</button>
+                                    <button class="btn btn-primary" onclick="pdsIndividual()">Individual</button>
+                                    <button class="btn" onclick="pdsCompany()">Company</button>
                                 </div>
                             </div>
                             <div class="pds-company-note">
-                                <p><strong>Note: Shared documents will be kept considered confidential and only for official purpose.</strong></p>
+                                <p><strong>Note: Shared documents will be kept considered confidential and only for
+                                        official purpose.</strong></p>
                             </div>
                         </div>
 
                         <div class="pds-kyc-outer row">
                             <h6>Submit your KYC documents</h6>
-                            <div class="pds-kyc">
-                                <div>
-                                    <label>Company GST Details:</label>
-                                    <input type="text" required>
+                            <div class="pds-kyc" id="pds-individual">
+                                <div class="pds-kyc-label">
+                                    <label>Company GST Details: <span class="asterisk">*</span></label>
+                                    <input type="text" placeholder="AAAAA546789202IZ5" required>
                                 </div>
-                                <div>
-                                    <label>Bank Payment Details:</label>
-                                    <input type="text" required>
+                                <div class="pds-kyc-label">
+                                    <label>Bank Payment Details: <span class="asterisk">*</span></label>
+                                    <input type="text" placeholder="Account Number" required>
                                 </div>
 
                                 <div class="pds-kyc-upload">
@@ -442,27 +474,30 @@
                                         <p>Upload File 1</p>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="customFile">
-                                            <label class="custom-file-label pds-label" for="customFile">Choose file</label>
+                                            <label class="custom-file-label pds-label" for="customFile">Choose
+                                                file</label>
                                         </div>
                                         <p>**uploaded file</p>
-                                        <p>Aadhar Card</p>
+                                        <p>Aadhar Card <span class="asterisk">*</span></p>
                                         <p>Remove File</p>
                                     </div>
                                     <div class="pds-kyc-upload-single">
                                         <p>Upload File 2</p>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="customFile">
-                                            <label class="custom-file-label pds-label" for="customFile">Choose file</label>
+                                            <label class="custom-file-label pds-label" for="customFile">Choose
+                                                file</label>
                                         </div>
                                         <p>**uploaded file</p>
-                                        <p>PAN Card</p>
+                                        <p>PAN Card <span class="asterisk">*</span></p>
                                         <p>Remove File</p>
                                     </div>
                                     <div class="pds-kyc-upload-single">
                                         <p>Upload File 3</p>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="customFile">
-                                            <label class="custom-file-label pds-label" for="customFile">Choose file</label>
+                                            <label class="custom-file-label pds-label" for="customFile">Choose
+                                                file</label>
                                         </div>
                                         <p>**uploaded file</p>
                                         <p>Passport</p>
@@ -472,7 +507,8 @@
                                         <p>Upload File 1</p>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="customFile">
-                                            <label class="custom-file-label pds-label" for="customFile">Choose file</label>
+                                            <label class="custom-file-label pds-label" for="customFile">Choose
+                                                file</label>
                                         </div>
                                         <p>**uploaded file</p>
                                         <p>Driving License</p>
@@ -482,11 +518,135 @@
                             </div>
 
                             <div class="pds-kyc">
+                                <div class="pds-kyc-label" id="pds-company">
+                                    <label>Company GST Details: <span class="asterisk">*</span></label>
+                                    <input type="text" placeholder="AAAAA546789202IZ5" required>
+                                </div>
+                                <div class="pds-kyc-label">
+                                    <label>Bank Payment Details: <span class="asterisk">*</span></label>
+                                    <input type="text" placeholder="Account Number" required>
+                                </div>
+                                <div class="pds-kyc-label">
+                                    <label>IFSC CODE <span class="asterisk">*</span></label>
+                                    <input type="text" placeholder="Account Number" required>
+                                </div>
+
+                                <div class="pds-kyc-upload">
+                                    <h6 class="pds-kyc-header">A. ID Proof Documents<span>&nbsp;&nbsp;(Each File should not be more than 2MB)</span></h6>
+                                    <div class="pds-kyc-upload-single">
+                                        <p>Upload File 1</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label pds-label" for="customFile">Choose
+                                                file</label>
+                                        </div>
+                                        <p>**uploaded file</p>
+                                        <p>Aadhar Card <span class="asterisk">*</span></p>
+                                        <p>Remove File</p>
+                                    </div>
+                                    <div class="pds-kyc-upload-single">
+                                        <p>Upload File 2</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label pds-label" for="customFile">Choose
+                                                file</label>
+                                        </div>
+                                        <p>**uploaded file</p>
+                                        <p>PAN Card <span class="asterisk">*</span></p>
+                                        <p>Remove File</p>
+                                    </div>
+                                    <div class="pds-kyc-upload-single">
+                                        <p>Upload File 3</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label pds-label" for="customFile">Choose
+                                                file</label>
+                                        </div>
+                                        <p>**uploaded file</p>
+                                        <p>Passport</p>
+                                        <p>Remove File</p>
+                                    </div>
+                                    <div class="pds-kyc-upload-single">
+                                        <p>Upload File 1</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label pds-label" for="customFile">Choose
+                                                file</label>
+                                        </div>
+                                        <p>**uploaded file</p>
+                                        <p>Driving License</p>
+                                        <p>Remove File</p>
+                                    </div>
+                                </div>
+
+                                <div class="pds-kyc-upload">
+                                    <h6 class="pds-kyc-header">B. Proof of Company Documents<span>&nbsp;&nbsp;(Each File should not be more than 2MB)</span></h6>
+                                    <div class="pds-kyc-upload-single">
+                                        <p>Upload File 1</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label pds-label" for="customFile">Choose
+                                                file</label>
+                                        </div>
+                                        <p>**uploaded file</p>
+                                        <p>Certificate of Incorportation<span class="asterisk">*</span></p>
+                                        <p>Remove File</p>
+                                    </div>
+                                    <div class="pds-kyc-upload-single">
+                                        <p>Upload File 2</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label pds-label" for="customFile">Choose
+                                                file</label>
+                                        </div>
+                                        <p>**uploaded file</p>
+                                        <p>Company Pan Card<span class="asterisk">*</span></p>
+                                        <p>Remove File</p>
+                                    </div>
+                                    <div class="pds-kyc-upload-single">
+                                        <p>Upload File 3</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label pds-label" for="customFile">Choose
+                                                file</label>
+                                        </div>
+                                        <p>**uploaded file</p>
+                                        <p>Memorandum and Articles of Association</p>
+                                        <p>Remove File</p>
+                                    </div>
+                                    <div class="pds-kyc-upload-single">
+                                        <p>Upload File 1</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label pds-label" for="customFile">Choose
+                                                file</label>
+                                        </div>
+                                        <p>**uploaded file</p>
+                                        <p>Certificate of Commencement of Business</p>
+                                        <p>Remove File</p>
+                                    </div>
+                                    <div class="pds-kyc-upload-single">
+                                        <p>Upload File 1</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label pds-label" for="customFile">Choose
+                                                file</label>
+                                        </div>
+                                        <p>**uploaded file</p>
+                                        <p>LLP Agreement</p>
+                                        <p>Remove File</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pds-kyc">
                                 <h6 class="text-center">Upload Additional Documents</h6>
 
                                 <div class="pds-kyc-add text-center">
-                                    <button class="btn btn-primary">Start Uploading Your Documents Now</button>
-                                    <p>Supported files : PDF, Images, Scanner, Video files</p>
+                                    <p><img src="/assets/pds-add-doccument.png"></p>
+                                    <button class="btn">Start Uploading Your Documents Now</button>
+                                    <p style="color: #C4C3C3; font-weight: 500; font-size: 0.9em;">Supported files :
+                                        PDF, Images, Scanner, Video files</p>
                                 </div>
                                 <div class="pds-kyc-add pds-kyc-upload-single">
                                     <p>Date & Time</p>
@@ -513,15 +673,11 @@
                         <div class="payment-available">
                             <div class="payment-type">
                                 <div>
-                                    <p>Payment Mode*</p>
-                                    <p>Minimum 1 required</p>
-                                </div>
-                                <div>
-                                    <p>Digital Wallet Accepted*</p>
-                                    <p>Minimum 1 required</p>
+                                    <p>Payment Mode <span class="asterisk">*</span></p>
+                                    <p class="pt-minimum">(Minimum 1 required)</p>
                                 </div>
                             </div>
-                            <div class="payment-name">
+                            <div class="payment-name-1">
                                 <div>
                                     <label>Prepaid</label>
                                     <input type="checkbox">
@@ -530,40 +686,50 @@
                                     <label>Cash on Delivery</label>
                                     <input type="checkbox">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="payment-available">
+                            <div class="payment-type">
+                                <div>
+                                    <p>Digital Wallet Accepted <span class="asterisk">*</span></p>
+                                    <p class="pt-minimum">(Minimum 1 required)</p>
+                                </div>
+                            </div>
+                            <div class="payment-name">
+                                <div>
+                                    <label><img src="assets/pymnt-4-paytm.svg" alt="UPI"></label>
+                                    <input class="custom-checkbox" type="checkbox">
+                                </div>
+                                <div>
+                                    <label><img src="assets/pymnt-2-gpay.svg" alt="Google Pay"></label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label><img src="assets/pymnt-8-phonepe.svg" alt="PhonePe"></label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label><img src="/assets/pymnt-1-upi.svg" alt="UPI"></label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label><img src="assets/pymnt-3-visa.svg" alt="VISA"></label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label><img src="assets/pymnt-5-amazonpay.svg" alt="Amazon Pay"></label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label><img src="assets/pymnt-7-mobikwik.svg" alt="MobiKwik"></label>
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <label><img src="assets/pymnt-6-freecharge.svg" alt="Freecharge"></label>
+                                    <input type="checkbox">
+                                </div>
                                 <div>
                                     &nbsp;
-                                </div>
-                                <div>
-                                    <label>Paytm</label>
-                                    <input type="checkbox">
-                                </div>
-                                <div>
-                                    <label>Gpay</label>
-                                    <input type="checkbox">
-                                </div>
-                                <div>
-                                    <label>Phonepe</label>
-                                    <input type="checkbox">
-                                </div>
-                                <div>
-                                    <label>UPI</label>
-                                    <input type="checkbox">
-                                </div>
-                                <div>
-                                    <label>VISA</label>
-                                    <input type="checkbox">
-                                </div>
-                                <div>
-                                    <label>Amazon Pay</label>
-                                    <input type="checkbox">
-                                </div>
-                                <div>
-                                    <label>MobiKwik</label>
-                                    <input type="checkbox">
-                                </div>
-                                <div>
-                                    <label>Freecharge</label>
-                                    <input type="checkbox">
                                 </div>
                             </div>
                         </div>
@@ -737,7 +903,7 @@
 
                             <div class="pds-account-buttons">
                                 <div class="pds-account-edit">
-                                    <button class="btn btn-primary">Edit</button>
+                                    <button class="btn btn-primary">Back</button>
                                 </div>
                                 <div class="pds-account-next">
                                     <button class="btn btn-primary">Save</button>
@@ -885,85 +1051,96 @@
                                 <p>Email Id</p>
                                 <p>Delete **DeleteIcon</p>
                             </div>
-                            <div class="contact-details-wrapper">
+                            <div id="test-id">
+                                <div class="contact-details-wrapper">
 
-                                <!-- Add contact button ends -->
-                                <div class="contact-details-button">
-                                    <p>
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
-                                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xMS41IDBjNi4zNDcgMCAxMS41IDUuMTUzIDExLjUgMTEuNXMtNS4xNTMgMTEuNS0xMS41IDExLjUtMTEuNS01LjE1My0xMS41LTExLjUgNS4xNTMtMTEuNSAxMS41LTExLjV6bTAgMWM1Ljc5NSAwIDEwLjUgNC43MDUgMTAuNSAxMC41cy00LjcwNSAxMC41LTEwLjUgMTAuNS0xMC41LTQuNzA1LTEwLjUtMTAuNSA0LjcwNS0xMC41IDEwLjUtMTAuNXptLjUgMTBoNnYxaC02djZoLTF2LTZoLTZ2LTFoNnYtNmgxdjZ6Ii8+PC9zdmc+">
-                                        </button>
-                                    </p>
-                                    <!-- Modal for contact data input -->
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
+                                    <!-- Add contact button starts -->
+                                    <div class="contact-details-button">
+                                        <p>
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xMS41IDBjNi4zNDcgMCAxMS41IDUuMTUzIDExLjUgMTEuNXMtNS4xNTMgMTEuNS0xMS41IDExLjUtMTEuNS01LjE1My0xMS41LTExLjUgNS4xNTMtMTEuNSAxMS41LTExLjV6bTAgMWM1Ljc5NSAwIDEwLjUgNC43MDUgMTAuNSAxMC41cy00LjcwNSAxMC41LTEwLjUgMTAuNS0xMC41LTQuNzA1LTEwLjUtMTAuNSA0LjcwNS0xMC41IDEwLjUtMTAuNXptLjUgMTBoNnYxaC02djZoLTF2LTZoLTZ2LTFoNnYtNmgxdjZ6Ii8+PC9zdmc+">
+                                            </button>
+                                        </p>
+                                        <!-- Modal for contact data input -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <form>
+                                                        <div class="modal-body">
+                                                            <div class="cd-input">
+                                                                <label>State</label>
+                                                                <input id="cdi-state" type="text" placeholder="Enter the state" required>
+                                                            </div>
+                                                            <div class="cd-input">
+                                                                <label>Name</label>
+                                                                <input id="cdi-name" type="text" placeholder="Contact Person Name" required>
+                                                            </div>
+                                                            <div class="cd-input">
+                                                                <label>Role</label>
+                                                                <input id="cdi-role" type="text" placeholder="Contact Person Role" required>
+                                                            </div>
+                                                            <div class="cd-input">
+                                                                <label>City</label>
+                                                                <input id="cdi-city" type="text" placeholder="Enter the city" required>
+                                                            </div>
+                                                            <div class="cd-input">
+                                                                <label>Contact No.</label>
+                                                                <input id="cdi-contact" type="tel" placeholder="Contact No." required>
+                                                            </div>
+                                                            <div class="cd-input">
+                                                                <label>Email ID</label>
+                                                                <input id="cdi-email" type="email" placeholder="Enter email ID" required>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <input type="submit" class="btn btn-primary" onclick="addContactRow()">
+                                                        </div>
+                                                    </form>
                                                 </div>
-                                                <form>
-                                                    <div class="modal-body">
-                                                        <div class="cd-input">
-                                                            <label>State</label>
-                                                            <input type="text" placeholder="Enter the state" required>
-                                                        </div>
-                                                        <div class="cd-input">
-                                                            <label>Name</label>
-                                                            <input type="text" placeholder="Contact Person Name" required>
-                                                        </div>
-                                                        <div class="cd-input">
-                                                            <label>Role</label>
-                                                            <input type="text" placeholder="Contact Person Role" required>
-                                                        </div>
-                                                        <div class="cd-input">
-                                                            <label>City</label>
-                                                            <input type="text" placeholder="Enter the city" required>
-                                                        </div>
-                                                        <div class="cd-input">
-                                                            <label>Contact No.</label>
-                                                            <input type="tel" placeholder="Contact No." required>
-                                                        </div>
-                                                        <div class="cd-input">
-                                                            <label>Email ID</label>
-                                                            <input type="email" placeholder="Enter email ID" required>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <input type="submit" class="btn btn-primary">
-                                                    </div>
-                                                </form>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- Add contact button ends -->
+                                    <!-- Add contact button ends -->
 
-                                <p class="contact-details">
-                                    1
-                                </p>
-                                <p class="contact-details">
-                                    Head
-                                </p>
-                                <p class="contact-details">
-                                    Ashok K
-                                </p>
-                                <p class="contact-details">
-                                    Director
-                                </p>
-                                <p class="contact-details">
-                                    Delhi
-                                </p>
-                                <p class="contact-details">
-                                    9999xxxxxx
-                                </p>
-                                <p class="contact-details">email id</p>
-                                <p class="contact-details"><input type="checkbox"></p>
+                                    <p class="contact-details">
+                                        1
+                                    </p>
+                                    <p class="contact-details">
+                                        Head
+                                    </p>
+                                    <p class="contact-details">
+                                        Ashok K
+                                    </p>
+                                    <p class="contact-details">
+                                        Director
+                                    </p>
+                                    <p class="contact-details">
+                                        Delhi
+                                    </p>
+                                    <p class="contact-details">
+                                        9999xxxxxx
+                                    </p>
+                                    <p class="contact-details">email id</p>
+                                    <p class="contact-details"><input type="checkbox"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pds-account-buttons">
+                            <div class="pds-account-edit">
+                                <button class="btn btn-primary">Back</button>
+                            </div>
+                            <div class="pds-account-next">
+                                <button class="btn btn-primary">Save</button>
+                                <button class="btn btn-primary">Next</button>
                             </div>
                         </div>
                     </div>
@@ -1242,20 +1419,165 @@
                         </div>
                         <div class="pds-account-buttons">
                             <div class="pds-account-edit">
-                                <button class="btn btn-primary">Edit</button>
+                                <button class="btn btn-primary">Back</button>
                             </div>
                             <div class="pds-account-next">
-                                <button class="btn btn-primary">Submit</button>
+                                <button class="btn btn-primary">Save</button>
                                 <button class="btn btn-primary">Next</button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Advertisment Upload Tab -->
-                    <!--
-                    <div class="pds-account-info-wrapper advt-wrapper" id="advt">
-                        <div></div>
-                    </div>-->
+
+                    <div class="pds-account-info-wrapper advt-wrapper" id="upload-advt">
+                        <div class="row">
+                            *close-button
+                        </div>
+                        <div class="aw-inner row">
+                            <table>
+                                <tr>
+                                    <th><button class="btn"><i class="fa fa-plus-square" style="font-size: 1.5em; padding: 0 5px;"></i></button></th>
+                                    <th>Advertiser Name</th>
+                                    <th>Advertiser Type</th>
+                                    <th>Upload *</th>
+                                    <th>Publishing Date</th>
+                                    <th>End Date</th>
+                                    <th>Advertisement Place</th>
+                                    <th>Status</th>
+                                    <th>Remark</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>ABC</td>
+                                    <td>Image</td>
+                                    <td>Icon*</td>
+                                    <td>Start Date*</td>
+                                    <td>End Date*</td>
+                                    <td>Options*</td>
+                                    <td>Active/Inactive</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>XYZ</td>
+                                    <td>Image</td>
+                                    <td>Icon*</td>
+                                    <td>Start Date*</td>
+                                    <td>End Date*</td>
+                                    <td>Options*</td>
+                                    <td>Active</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>ABC</td>
+                                    <td>Image</td>
+                                    <td>Icon*</td>
+                                    <td>Start Date*</td>
+                                    <td>End Date*</td>
+                                    <td>Options*</td>
+                                    <td>Inactive</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="pds-account-buttons">
+                            <div class="pds-account-edit">
+                                <button class="btn btn-primary" style="display: none;">Back</button>
+                            </div>
+                            <div class="pds-account-next">
+                                <button class="btn btn-primary">Previous</button>
+                                <button class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Billing Section -->
+                    <section>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="pds-billing-box">
+                                    <h4>Bank account details for Bill Payments</h4>
+                                </div>
+
+                                <!-- LS Bank ACcount Information -->
+                                <div class="pds-billing-box pds-bb-container" id="pds-ls-bank">
+                                    <div class="pds-bb-form-outer">
+                                        <div class="pds-bb-form">
+                                            <h6 style="font-weight: 600; color: ">LS Bank Account Information</h6>
+                                            <div class="pds-bb-ls">
+                                                <label>Name</label>
+                                                <input type="text" name="account-name" placeholder="Srinivas" disabled>
+                                            </div>
+                                            <div class="pds-bb-ls">
+                                                <label>A/C No.</label>
+                                                <input type="text" name="account-no" placeholder="XXXXXXXXXX" disabled>
+                                            </div>
+                                            <div class="pds-bb-ls">
+                                                <label>Bank Name</label>
+                                                <input type="text" name="bank-name" placeholder="ICICI Bank" disabled>
+                                            </div>
+                                            <div class="pds-bb-ls">
+                                                <label>IFSC Code</label>
+                                                <input type="text" name="ifsc-code" placeholder="XXXXX" disabled>
+                                            </div>
+                                            <div class="pds-bb-ls">
+                                                <label>Bank Address</label>
+                                                <input type="text" name="bank-address" placeholder="Hyderabad Branch" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pds-billing-box" id="pds-sp-bank">
+                                    <div class="pds-bb-container">
+                                        <div class="pds-bb-form-outer">
+                                            <div class="pds-bb-form">
+                                                <h6 style="font-weight: 600;">Bank Account Information (all information required)</h6>
+                                                <div class="pds-bb-ls">
+                                                    <label>Name</label>
+                                                    <input type="text" name="account-name" placeholder="Srinivas" required>
+                                                </div>
+                                                <div class="pds-bb-ls">
+                                                    <label>A/C No.</label>
+                                                    <input type="text" name="account-no" placeholder="XXXXXXXXXX" required>
+                                                </div>
+                                                <div class="pds-bb-ls">
+                                                    <label>Bank Name</label>
+                                                    <input type="text" name="bank-name" placeholder="SBI Bank" required>
+                                                </div>
+                                                <div class="pds-bb-ls">
+                                                    <label>IFSC Code</label>
+                                                    <input type="text" name="ifsc-code" placeholder="XXXXX" required>
+                                                </div>
+                                                <div class="pds-bb-ls">
+                                                    <label>Bank Address</label>
+                                                    <input type="text" name="bank-address" placeholder="Hyderabad Branch" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pds-bb-form-outer" id="pds-bb-add">
+                                            <div class="pds-bb-form">
+                                                <i class="fa fa-plus-circle"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Account Setting Section -->
+                    <section>
+                        <div class="row">
+                            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                                <h5 style="color: #2D3E52">Account Settings</h5>
+                                <h6 style="color: #01B7F2">Change your password</h6>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </section>
@@ -1338,6 +1660,7 @@
 
 
     <script>
+        /* Functions for opening different tabs - find better functionality than individual functions*/
         function openKYC() {
             document.getElementById("general-info").style.display = "none";
             document.getElementById("kyc-docs").style.display = "block";
@@ -1346,6 +1669,7 @@
             document.getElementById("contact-info").style.display = "none";
             document.getElementById("pricing-model").style.display = "none";
             document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "none";
         }
 
         function openGeneral() {
@@ -1356,6 +1680,7 @@
             document.getElementById("contact-info").style.display = "none";
             document.getElementById("pricing-model").style.display = "none";
             document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "none";
         }
 
         function paymentMethod() {
@@ -1366,6 +1691,7 @@
             document.getElementById("contact-info").style.display = "none";
             document.getElementById("pricing-model").style.display = "none";
             document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "none";
         }
 
         function parcelType() {
@@ -1376,6 +1702,7 @@
             document.getElementById("contact-info").style.display = "none";
             document.getElementById("pricing-model").style.display = "none";
             document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "none";
         }
 
         function addContacts() {
@@ -1386,6 +1713,7 @@
             document.getElementById("contact-info").style.display = "block";
             document.getElementById("pricing-model").style.display = "none";
             document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "none";
         }
 
         function addPricing() {
@@ -1396,6 +1724,7 @@
             document.getElementById("contact-info").style.display = "none";
             document.getElementById("pricing-model").style.display = "block";
             document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "none";
         }
 
         function deliveryLocation() {
@@ -1406,11 +1735,75 @@
             document.getElementById("contact-info").style.display = "none";
             document.getElementById("pricing-model").style.display = "none";
             document.getElementById("delivery-location").style.display = "block";
+            document.getElementById("upload-advt").style.display = "none";
+        }
+
+        function addAdvt() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "block";
         }
 
         function openLink(link) {
             link.style.background = "#01B7F2";
             link.style.color = "#fff";
+        }
+
+        var cdiCounter = 1;
+
+        /* Function to add contact data to contact table in new row */
+        function addContactRow() {
+            let stateValue = document.getElementById("cdi-state");
+            let nameValue = document.getElementById("cdi-name");
+            let roleValue = document.getElementById("cdi-role");
+            let cityValue = document.getElementById("cdi-city");
+            let emailValue = document.getElementById("cdi-email");
+            let contactValue = document.getElementById("cdi-contact");
+
+            let valueArray = [stateValue, nameValue, roleValue, cityValue, emailValue, contactValue];
+
+            /*Counter for adding new serial no for new rows*/
+            ++cdiCounter;
+
+            /* Pushing data from modal form to the contact-table div*/
+            const div = document.createElement('div');
+            div.className = "contact-details-wrapper";
+
+            div.innerHTML = `
+                <p class="contact-details"></p>
+                <p class="contact-details">${cdiCounter}</p>
+                <p class="contact-details">${stateValue.value}</p>
+                <p class="contact-details">${nameValue.value}</p>
+                <p class="contact-details">${roleValue.value}</p>
+                <p class="contact-details">${cityValue.value}</p>
+                <p class="contact-details">${emailValue.value}</p>
+                <p class="contact-details">${contactValue.value}</p>
+            `;
+
+            /* Close the modal after submitting contact information  */
+            document.getElementById("test-id").appendChild(div);
+            $('#exampleModal').modal('hide');
+
+            /* Create modal form input values */
+            for (i = 0; i < valueArray.length; ++i) {
+                valueArray[i].value = "";
+            }
+        }
+
+        /* Functions for individual and company buttons */
+        function pdsIndividual() {
+            document.getElementById("pds-individual").style.display = "flex";
+            document.getElementById("pds-company").style.display = "none";
+        }
+
+        function pdsCompany() {
+            document.getElementById("pds-individual").style.display = "none";
+            document.getElementById("pds-company").style.display = "flex";
         }
     </script>
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

@@ -1,5 +1,10 @@
 /* Global CSS */
 
+:root {
+    --form-control-color: #fff;
+    --form-control-disabled: #959495;
+}
+
 .container-fluid {
     padding: 0 60px;
 }
@@ -26,24 +31,82 @@ h6 {
     box-shadow: none;
 }
 
+
+/* Custom Checkbox Styling */
+
 input[type="checkbox"] {
     transform: scale(1.5);
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    /* Not removed via appearance */
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 1px solid #B8B5B5;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
 }
 
-input[type="checkbox"]:checked + label {
-    transform: scale(1.5);
-    background: ;
+.custom-checkbox {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
 }
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.9em;
+    height: 0.9em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+    outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:checked {
+    outline-offset: max(2px, 0.15em);
+    background: #01B7F2;
+}
+
+input[type="checkbox"]:disabled {
+    --form-control-color: var(--form-control-disabled);
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+}
+
+
+/* asterisk for input fields */
 
 .asterisk {
     color: #FE0A0A;
     font-size: 1.2em !important;
 }
 
+
 /* Global CSS ENDS */
 
+
 /* Top Navbar CSS */
+
+
 /* hidden on max-width: 991px media-query */
+
 #header .topnav {
     height: 30px;
     background: #2D3E52;
@@ -97,7 +160,9 @@ input[type="checkbox"]:checked + label {
     color: #000 !important;
 }
 
+
 /* Top Navbar CSS ENDS */
+
 
 /* Main Menu CSS */
 
@@ -129,7 +194,9 @@ input[type="checkbox"]:checked + label {
     background: #DEF3F9;
 }
 
+
 /* Main Menu CSS ENDS */
+
 
 /* Footer CSS */
 
@@ -179,7 +246,9 @@ footer ul {
     width: 20px !important;
 }
 
+
 /* Footer CSS ENDS */
+
 
 /* Hero Section CSS */
 
@@ -242,7 +311,9 @@ footer ul {
     background: #FDC500;
 }
 
+
 /* Hero Section CSS ENDS */
+
 
 /* Quick-Search Section CSS */
 
@@ -350,7 +421,9 @@ footer ul {
     vertical-align: middle !important;
 }
 
+
 /* Quick-Search Section CSS ENDS */
+
 
 /* LS-Offers Section CSS */
 
@@ -515,6 +588,7 @@ footer ul {
     font-weight: 900;
     font-size: 1.2em;
 }
+
 
 /* Quick Search Section CSS */
 
@@ -687,6 +761,7 @@ footer ul {
     width: 100%;
 }
 
+
 /* Provider Dashboard Section CSS */
 
 .provider-dashboard {
@@ -701,6 +776,7 @@ footer ul {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-right: 0;
 }
 
 .pds-button {
@@ -729,6 +805,7 @@ footer ul {
 
 .pds-document a {
     color: #000;
+    padding: 10px 20px;
 }
 
 .pds-document a:focus {
@@ -780,8 +857,9 @@ footer ul {
 }
 
 .pds-account-inner {
-    margin: 10px auto!important;
-} 
+    margin: 10px auto !important;
+}
+
 
 /* Progress Bar */
 
@@ -811,7 +889,9 @@ footer ul {
     content: " ";
 }
 
+
 /* Text inside the control */
+
 .progress-circle span {
     position: absolute;
     line-height: 5em;
@@ -833,7 +913,9 @@ footer ul {
     /* clips the whole left half*/
 }
 
+
 /* when p>50, don't clip left half*/
+
 .progress-circle.over50 .left-half-clipper {
     clip: rect(auto, auto, auto, auto);
 }
@@ -853,10 +935,11 @@ footer ul {
     /*background-color: #4D642D;*/
     /* for debug */
     box-sizing: border-box;
-
 }
 
+
 /* Progress bar filling the whole right half for values above 50% */
+
 .progress-circle.over50 .first50-bar {
     /*Progress bar for the first 50%, filling the whole right half*/
     position: absolute;
@@ -874,6 +957,7 @@ footer ul {
 
 
 /* Progress bar rotation position */
+
 .progress-circle.p0 .value-bar {
     display: none;
 }
@@ -1278,7 +1362,9 @@ footer ul {
     transform: rotate(360deg);
 }
 
+
 /* Progress Bar Ends */
+
 
 /* General Information CSS */
 
@@ -1287,7 +1373,8 @@ footer ul {
 #parcel-type,
 #contact-info,
 #pricing-model,
-#delivery-location {
+#delivery-location,
+#upload-advt {
     display: none;
 }
 
@@ -1330,7 +1417,20 @@ footer ul {
 }
 
 .pds-account-type label {
-    margin: 0 10px 0 0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
+    height: 30px;
+    border: 1px solid #B8B5B5;
+    border-right: none;
+    padding-left: 10px;
+}
+
+.pds-account-type input[type="checkbox"] {
+    height: 30px;
+    width: 30px;
 }
 
 .pds-account-type div {
@@ -1355,9 +1455,7 @@ footer ul {
     min-width: 100px;
 }
 
-.pds-account-buttons button:active,
-.pds-account-buttons button:hover,
-.pds-account-buttons button:focus {
+.pds-account-buttons button:hover {
     background: #01B7F2;
     font-weight: 600;
 }
@@ -1380,13 +1478,16 @@ footer ul {
     font-weight: 900;
 }
 
+
 /* General Information CSS Ends */
+
 
 /* KYC Documents CSS */
 
 .pds-company {
     display: flex;
     align-items: flex-end;
+    margin-top: 10px;
 }
 
 .pds-company img {
@@ -1394,6 +1495,7 @@ footer ul {
     border-radius: 50%;
     width: 100px;
     height: 100px;
+    s
 }
 
 .pds-company-type,
@@ -1407,12 +1509,21 @@ footer ul {
 
 .pds-company-text {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     flex-direction: column;
 }
 
+#pds-company-name {
+    font-weight: 600;
+}
+
+#pds-company-reg {
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
 .pds-company-note {
-    border: 1px solid #000;
+    border: 1px solid #B8B5B5;
     background: #F4F8FB;
     padding: 10px 20px;
     margin: 30px 0;
@@ -1429,7 +1540,7 @@ footer ul {
 }
 
 .pds-kyc {
-    border: 1px solid #000;
+    border: 1px solid #B8B5B5;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -1437,10 +1548,43 @@ footer ul {
     margin-bottom: 40px;
 }
 
+.pds-kyc-add img {
+    width: 40px;
+    margin: 10px auto;
+}
+
+#pds-company {
+    display: "none";
+}
+
+.pds-kyc-label {
+    display: flex;
+    gap: 40px;
+}
+
+.pds-kyc-label label {
+    width: 11vw;
+}
+
+.pds-kyc-upload {
+    margin: 2vh 0;
+}
+
 .pds-kyc-upload-single {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
+    margin-bottom: 10px;
+}
+
+.pds-kyc-upload-single p {
+    line-height: 1.1em;
+    margin: auto 0;
+    text-align: left;
+}
+
+.pds-kyc-header {
+    margin-bottom: 2vh;
 }
 
 .pds-label:after {
@@ -1448,17 +1592,35 @@ footer ul {
 }
 
 .pds-kyc-add {
-    border: 1px solid #000;
+    border: 1px solid #B8B5B5;
     width: 90%;
     margin: 0 auto;
     padding: 10px 20px;
+    box-shadow: 0 0 5px 1px rgb(100 100 100 / 30%);
+}
+
+.pds-kyc-add button {
+    background: #01B7F2;
+    padding: 10px 40px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border-color: #01B7F2;
+    color: #fff !important;
+    margin-bottom: 20px;
+}
+
+.pds-kyc-add button:hover,
+.pds-kyc-add button:focus {
+    background: #01B7F2;
+    border-color: #01B7F2;
+    color: #000 !important;
 }
 
 .payment-available {
     display: flex;
     gap: 40px;
     justify-content: space-between;
-    max-width: 80%;
+    max-width: 85%;
     margin: 40px auto;
 }
 
@@ -1466,6 +1628,12 @@ footer ul {
     display: grid;
     grid-template-rows: 50px;
     gap: 20px;
+    width: 20vw;
+}
+
+.pt-minimum {
+    color: #565E61;
+    font-size: 0.9em;
 }
 
 .payment-type p {
@@ -1475,8 +1643,42 @@ footer ul {
 .payment-name {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px 50px 50px;
+    gap: 20px 30px;
+    width: 50vw;
+}
+
+.payment-name-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 50px;
-    gap: 20px;
+    gap: 10px;
+    width: 50vw;
+}
+
+.payment-name div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-name-1 div {
+    display: flex;
+    align-items: center;
+}
+
+.payment-name-1 label {
+    padding-right: 10px;
+}
+
+.payment-name input[type="checkbox"],
+.payment-name-1 input[type="checkbox"] {
+    height: 25px;
+    width: 25px;
+}
+
+.payment-name label {
+    width: 50%;
 }
 
 .parcel-type-wrapper {
@@ -1524,6 +1726,7 @@ footer ul {
     width: 100%;
 }
 
+
 /* Contact Details Section */
 
 .contact-table {
@@ -1537,6 +1740,7 @@ footer ul {
     padding: 10px 20px;
     border-bottom: 1px solid #000;
 }
+
 
 /*.contact-details-wrapper {
     display: grid;
@@ -1627,6 +1831,7 @@ footer ul {
     width: 100%;
 }
 
+
 /* Delivery Location Section CSS */
 
 .dl-time-wrapper {
@@ -1673,9 +1878,117 @@ th {
 
 .dl-pincode th {
     font-size: 0.9em;
+    font-size: 0.9em;
 }
 
 .dl-pt-header {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+}
+
+/* Advertisement Tab CSS */
+
+.aw-inner table {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+    border: none;
+}
+
+.aw-inner tr {
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 0px 1px #B8B5B5;
+    -moz-box-shadow: 0px 0px 0px 1px  #B8B5B5;
+    -webkit-box-shadow: 0px 0px 0px 1px  #B8B5B5;
+}
+
+.aw-inner td, .aw-inner th {
+    border: none;
+    height: 40px;
+}
+
+.aw-inner th {
+    font-size: 1em;
+    font-weight: 500;
+    text-align: left;
+}
+
+.aw-inner td {
+    font-size: 0.9em;
+}
+
+/* Provider Dashboard Billing */
+.pds-billing-box {
+    background: #F4F6F8;
+    border: 1px solid #C7C2C2;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+#pds-ls-bank {
+    color: #A1A4A7;
+}
+
+#pds-ls-bank input {
+    background: #EBEBEB;
+}
+
+.pds-bb-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 30vh;
+    gap: 1rem;
+}
+
+.pds-bb-form {
+    border: 1px solid #C7C2C2;
+    border-radius: 10px;
+    width: auto;
+    height: 100%;
+    padding: 1rem;
+}
+
+.pds-bb-form h6 {
+    margin-bottom: 1rem;
+}
+
+.pds-bb-ls {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+    height: 2rem;
+}
+
+.pds-bb-ls label {
+    width: 7rem;
+    margin: auto 0;
+}
+
+.pds-bb-ls input {
+    width: 60%;
+    background: #fff;
+    border: 1px solid #C7C2C2;
+    padding: 0 0.5rem;
+}
+
+#pds-bb-add div {
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    font-weight: 900;
+    color: #01B7F2;
+    font-size: 3em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pds-bb-add i {
+    cursor: pointer;
 }
