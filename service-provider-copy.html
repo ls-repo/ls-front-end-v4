@@ -221,26 +221,14 @@
                         </a>
                     </li>
                     <div class="pds-document">
-                        <a href="#" id="pds-general">&nbsp;&nbsp;General Information</a>
-                        <a href="#" id="pds-kyc">&nbsp;&nbsp;KYC Documents</a>
-                        <a href="#" id="pds-payment">&nbsp;&nbsp;Payment Method</a>
-                        <a href="#" id="pds-parcel">&nbsp;&nbsp;Parcel Type</a>
-                        <a href="" style="display: none;"><a href="#" id="pds-delivery">&nbsp;&nbsp;Delivery
-                                Location</a>
-                            <div class="pds-document-sub-outer">
-                                <div class="pds-document-sub">
-                                    <a class="pds-ds" id="dl-courier-btn">Courier</a>
-                                    <a class="pds-ds" id="dl-shipping-btn">Shipping</a>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#" id="pds-contacts">&nbsp;&nbsp;Contacts</a>
-                        <a href="#" id="pds-pricing">&nbsp;&nbsp;Pricing Model</a>
-                        <a href="#" id="pds-advt">&nbsp;&nbsp;Upload Advertisement</a>
-                        <a href="#" id="pds-request">&nbsp;&nbsp;Delivery Requests Received</a>
-                        <a href="#" id="pds-biz-partner">&nbsp;&nbsp;Active Business Partners</a>
-                        <a href="#" id="pds-biz-opportunity">&nbsp;&nbsp;Business Opportunities</a>
+                        <a href="#general-info" onclick="openGeneral()">&nbsp;&nbsp;General Information</a>
+                        <a href="#kyc-docs" onclick="openKYC()">&nbsp;&nbsp;KYC Documents</a>
+                        <a href="#" onclick="paymentMethod()">&nbsp;&nbsp;Payment Method</a>
+                        <a href="#" onclick="parcelType()">&nbsp;&nbsp;Parcel Type</a>
+                        <a href="#" onclick="deliveryLocation()">&nbsp;&nbsp;Delivery Location</a>
+                        <a href="#" onclick="addContacts()">&nbsp;&nbsp;Contacts</a>
+                        <a href="#" onclick="addPricing()">&nbsp;&nbsp;Pricing Model</a>
+                        <a href="#" onclick="addAdvt()">&nbsp;&nbsp;Upload Advertisement</a>
                     </div>
                     <li class="nav-item pds-button">
                         <a class="nav-link pds-link std-button" href="#billing" role="tab" data-toggle="tab">Billing
@@ -437,88 +425,87 @@
                         <!-- Test -->
                         <div class="pds-account-info-wrapper" id="general-info">
                             <h5>General Information</h5>
-                            <form>
-                                <div class="pds-account-info">
-                                    <div class="pds-single-input">
-                                        <label>Company Registered Name <span class="asterisk">&ast;</span></label>
+                            <div class="pds-account-info">
+                                <div class="pds-single-input">
+                                    <label>Company Registered Name <span class="asterisk">&ast;</span></label>
 
-                                        <input type="text" placeholder="Logistics Scanner" required>
-                                    </div>
-                                    <div class="pds-single-input">
-                                        <label>Company Name <span class="asterisk">&ast;</span></label>
+                                    <input type="text" placeholder="Logistics Scanner" required>
+                                </div>
+                                <div class="pds-single-input">
+                                    <label>Company Name <span class="asterisk">&ast;</span></label>
 
-                                        <input type="text" placeholder="Logistics Scanner" required>
-                                    </div>
-                                    <div class="pds-single-input pds-span">
-                                        <label>Contact Person <span class="asterisk">&ast;</span></label>
-                                        <span>First Name</span>
-                                        <input type="text" placeholder="First Name" required>
-                                    </div>
-                                    <div class="pds-single-input pds-span">
-                                        <label>&nbsp;</label>
-                                        <span>Last Name</span>
-                                        <input type="text" placeholder="">
-                                    </div>
-                                    <div class="pds-single-input">
-                                        <label>Official Email Id <span class="asterisk">&ast;</span></label>
+                                    <input type="text" placeholder="Logistics Scanner" required>
+                                </div>
+                                <div class="pds-single-input pds-span">
+                                    <label>Contact Person <span class="asterisk">&ast;</span></label>
+                                    <span>First Name</span>
+                                    <input type="text" placeholder="First Name" required>
+                                </div>
+                                <div class="pds-single-input pds-span">
+                                    <label>&nbsp;</label>
+                                    <span>Last Name</span>
+                                    <input type="text" placeholder="">
+                                </div>
+                                <div class="pds-single-input">
+                                    <label>Official Email Id <span class="asterisk">&ast;</span></label>
 
-                                        <input type="text" placeholder="">
-                                    </div>
-                                    <div class="pds-single-input">
-                                        <label>Contact Number <span class="asterisk">&ast;</span></label>
+                                    <input type="text" placeholder="">
+                                </div>
+                                <div class="pds-single-input">
+                                    <label>Contact Number <span class="asterisk">&ast;</span></label>
 
-                                        <input type="text" placeholder="">
+                                    <input type="text" placeholder="">
+                                </div>
+                                <div class="pds-single-input pds-span">
+                                    <label>Official Information</label>
+                                    <span>Company Registered Address <span class="asterisk">&ast;</span></span>
+                                    <input type="text" placeholder="">
+                                </div>
+                                <div class="pds-single-input pds-span">
+                                    <label>&nbsp;</label>
+                                    <span>Company Website <span class="asterisk">&ast;</span></span>
+                                    <input type="text" placeholder="">
+                                </div>
+                                <div class="pds-single-input">
+                                    <label>Company Registered No <span class="asterisk">&ast;</span></label>
+                                    <input type="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="pds-account-type-wrapper">
+                                <h6>Service Provider Type <span class="asterisk">&ast;</span></h6>
+                                <div class="pds-account-type">
+
+                                    <label>
+                                        <span>Bike Delivery</span>
+                                        <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                    </label>
+                                    <label>
+                                        <span>Courier</span>
+                                        <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                    </label>
+                                    <label>
+                                        <span>Warehouse</span>
+                                        <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                    </label>
+                                    <label>
+                                        <span>Fullfillment</span>
+                                        <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                    </label>
+                                    <label>
+                                        <span>Hire Fleet</span>
+                                        <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                    </label>
+                                </div>
+                                <div class="pds-account-buttons">
+                                    <div class="pds-account-edit">
+                                        <button class="btn btn-primary" style="display: none">Back</button>
                                     </div>
-                                    <div class="pds-single-input pds-span">
-                                        <label>Official Information</label>
-                                        <span>Company Registered Address <span class="asterisk">&ast;</span></span>
-                                        <input type="text" placeholder="">
-                                    </div>
-                                    <div class="pds-single-input pds-span">
-                                        <label>&nbsp;</label>
-                                        <span>Company Website <span class="asterisk">&ast;</span></span>
-                                        <input type="text" placeholder="">
-                                    </div>
-                                    <div class="pds-single-input">
-                                        <label>Company Registered No <span class="asterisk">&ast;</span></label>
-                                        <input type="text" placeholder="">
+                                    <div class="pds-account-next">
+                                        <button class="btn btn-primary">Save</button>
+                                        <button class="btn btn-primary">Next</button>
                                     </div>
                                 </div>
-                                <div class="pds-account-type-wrapper">
-                                    <h6>Service Provider Type <span class="asterisk">&ast;</span></h6>
-                                    <div class="pds-account-type">
-                                        <label>
-                                            <span>Bike Delivery</span>
-                                            <input class="custom-checkbox" type="checkbox" name="checkbox" />
-                                        </label>
-                                        <label>
-                                            <span>Courier</span>
-                                            <input class="custom-checkbox" type="checkbox" name="checkbox" />
-                                        </label>
-                                        <label>
-                                            <span>Warehouse</span>
-                                            <input class="custom-checkbox" type="checkbox" name="checkbox" />
-                                        </label>
-                                        <label>
-                                            <span>Fullfillment</span>
-                                            <input class="custom-checkbox" type="checkbox" name="checkbox" />
-                                        </label>
-                                        <label>
-                                            <span>Hire Fleet</span>
-                                            <input class="custom-checkbox" type="checkbox" name="checkbox" />
-                                        </label>
-                                    </div>
-                                    <div class="pds-account-buttons">
-                                        <div class="pds-account-edit">
-                                            <button class="btn btn-primary" style="display: none">Back</button>
-                                        </div>
-                                        <div class="pds-account-next">
-                                            <button type="submit" class="btn btn-primary">Save</button>
-                                            <button class="btn btn-primary">Next</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
                         </div>
 
                         <div class="pds-account-info-wrapper" id="kyc-docs">
@@ -792,35 +779,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="payment-available">
-                                <div class="payment-type">
-                                    <div>
-                                        <p>Add Credit, Debit Cards & ATM Cards</p>
-                                    </div>
-                                </div>
-                                <div class="payment-name-1">
-                                    <div>
-                                        <label><img src="/assets/pymnt-10-debit.png"><br><span>Debit Card</span></label>
-                                        <input type="checkbox">
-                                    </div>
-                                    <div>
-                                        <label><img src="/assets/pymnt-11-credit.png"><br><span>Credit
-                                                Card</span></label>
-                                        <input type="checkbox">
-                                    </div>
-                                    <div>
-                                        <label><img src="/assets/pymnt-12-atm.png"><br><span>ATM</span></label>
-                                        <input type="checkbox">
-                                    </div>
-                                </div>
-                            </div>
                             <div class="pds-account-buttons">
                                 <div class="pds-account-edit">
                                     <button class="btn btn-primary">Back</button>
                                 </div>
                                 <div class="pds-account-next">
                                     <button class="btn btn-primary">Save</button>
-                                    <button class="btn">Next</button>
+                                    <button class="btn btn-primary">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -845,438 +810,141 @@
                                     <div class="cat-name">Apparels & Accessories</div>
                                     <div class="cat-selection">
                                         <div class="cat-select">
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-apparel" type="checkbox" name="" value="1"
-                                                        checked><span>Clothes</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-apparel" type="checkbox" name=""
-                                                        value="1"><span>Cosmetics</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-apparel" type="checkbox" name=""
-                                                        value="1"><span>Shoes</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-apparel" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Fashion
-                                                        Accessories&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-apparel" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Grooming & Beauty
-                                                        Products&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
+                                            <button class="btn btn-primary">Clothes</button>
+                                            <button class="btn btn-secondary">Cosmetics</button>
+                                            <button class="btn btn-secondary">Shoes</button>
+                                            <button class="btn btn-secondary">Fashion Accessories</button>
+                                            <button class="btn btn-secondary">Grooming & Beauty Products</button>
                                         </div>
                                         <div class="cat-details">
                                             <input type="text" placeholder="add custom category">
                                         </div>
                                     </div>
-                                    <div class="cat-select-all">
-                                        <label>
-                                            <input id="select-all-app" type="checkbox">
-                                            <span id="select-all-1">Select All</span>
-                                            <span id="unselect-all-1">Unselect All</span>
-                                        </label>
-                                    </div>
+
+                                    <div class="cat-select-all"><a href="#">Select All</a></div>
                                 </div>
 
                                 <div class="cat-single">
                                     <div class="cat-name">Electronics & Appliances</div>
                                     <div class="cat-selection">
                                         <div class="cat-select">
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-electric" type="checkbox" name="" value="1"
-                                                        checked><span>Electronics Item</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-electric" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Self-Grooming
-                                                        Items&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-electric" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Large Items (Computer,
-                                                        Printer)&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-electric" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Small Items (Hard
-                                                        Drive)&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-electric" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Heating & Cooling&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-electric" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Kitchen
-                                                        Appliances&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-electric" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Music Instruments&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-electric" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Spare Parts&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
+                                            <button class="btn btn-primary">Electronics Item</button>
+                                            <button class="btn btn-secondary">Self-Grooming Items</button>
+                                            <button class="btn btn-secondary">Large Items (Computer, Printer)</button>
+                                            <button class="btn btn-secondary">Small Items (Hard Drive)</button>
+                                            <button class="btn btn-secondary">Grooming & Beauty Products</button>
+                                            <button class="btn btn-secondary">Heating & Cooling</button>
+                                            <button class="btn btn-secondary">Kitchen Appliances</button>
+                                            <button class="btn btn-secondary">Music Instruments</button>
+                                            <button class="btn btn-secondary">Spare Parts</button>
                                         </div>
                                         <div class="cat-details">
                                             <input type="text" placeholder="add custom category">
                                         </div>
                                     </div>
 
-                                    <div class="cat-select-all">
-                                        <label>
-                                            <input id="select-all-electric" type="checkbox">
-                                            <span id="select-all-2">Select All</span>
-                                            <span id="unselect-all-2">Unselect All</span>
-                                        </label>
-                                    </div>
+                                    <div class="cat-select-all"><a href="#">Select All</a></div>
                                 </div>
 
                                 <div class="cat-single">
                                     <div class="cat-name">Automotive</div>
                                     <div class="cat-selection">
                                         <div class="cat-select">
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-automotive" type="checkbox" name="" value="1"
-                                                        checked><span>&nbsp;&nbsp;Spare Parts&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-automotive" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Oils&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-automotive" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Fluids&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-automotive" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Navigation&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-automotive" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Ancillary&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-automotive" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Tools&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
+                                            <button class="btn btn-primary">Spare Parts</button>
+                                            <button class="btn btn-secondary">Oils</button>
+                                            <button class="btn btn-secondary">Fluids</button>
+                                            <button class="btn btn-secondary">Navigation</button>
+                                            <button class="btn btn-secondary">Ancillary</button>
+                                            <button class="btn btn-secondary">Fluids</button>
+                                            <button class="btn btn-secondary">Tools</button>
                                         </div>
                                         <div class="cat-details">
                                             <input type="text" placeholder="add custom category">
                                         </div>
                                     </div>
 
-                                    <div class="cat-select-all">
-                                        <label>
-                                            <input id="select-all-automotive" type="checkbox">
-                                            <span id="select-all-3">Select All</span>
-                                            <span id="unselect-all-3">Unselect All</span>
-                                        </label>
-                                    </div>
+                                    <div class="cat-select-all"><a href="#">Select All</a></div>
                                 </div>
 
                                 <div class="cat-single">
                                     <div class="cat-name">Fresh</div>
                                     <div class="cat-selection">
                                         <div class="cat-select">
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-fresh" type="checkbox" name="" value="1"
-                                                        checked><span>&nbsp;&nbsp;Fast Food&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-fresh" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Flowers&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-fresh" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Frozen&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-fresh" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Perishables&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
+                                            <button class="btn btn-primary">Fast Food</button>
+                                            <button class="btn btn-secondary">Flowers</button>
+                                            <button class="btn btn-secondary">Frozen</button>
                                         </div>
                                         <div class="cat-details">
                                             <input type="text" placeholder="add custom category">
                                         </div>
                                     </div>
 
-                                    <div class="cat-select-all">
-                                        <label>
-                                            <input id="select-all-fresh" type="checkbox">
-                                            <span id="select-all-4">Select All</span>
-                                            <span id="unselect-all-4">Unselect All</span>
-                                        </label>
-                                    </div>
+                                    <div class="cat-select-all"><a href="#">Select All</a></div>
                                 </div>
 
                                 <div class="cat-single">
                                     <div class="cat-name">Books / Stationary / Documents</div>
                                     <div class="cat-selection">
                                         <div class="cat-select">
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-books" type="checkbox" name="" value="1"
-                                                        checked><span>&nbsp;&nbsp;Books&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-books" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Magazines&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-books" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Stationary Products
-                                                        (Packed)&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-books" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Forms&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-books" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Catalogues&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-books" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Papers&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-books" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Board Games&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-books" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Toys&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-books" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Office Supplies&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
+                                            <button class="btn btn-primary">Books</button>
+                                            <button class="btn btn-secondary">Magazines</button>
+                                            <button class="btn btn-secondary">Stationary Products</button>
+                                            <button class="btn btn-secondary">Forms</button>
+                                            <button class="btn btn-secondary">Catalogues</button>
+                                            <button class="btn btn-secondary">Papers</button>
+                                            <button class="btn btn-secondary">Board Games</button>
+                                            <button class="btn btn-secondary">Toys</button>
+                                            <button class="btn btn-secondary">Office Supplies</button>
                                         </div>
                                         <div class="cat-details">
                                             <input type="text" placeholder="add custom category">
                                         </div>
                                     </div>
 
-                                    <div class="cat-select-all">
-                                        <label>
-                                            <input id="select-all-books" type="checkbox">
-                                            <span id="select-all-5">Select All</span>
-                                            <span id="unselect-all-5">Unselect All</span>
-                                        </label>
-                                    </div>
+                                    <div class="cat-select-all"><a href="#">Select All</a></div>
                                 </div>
 
                                 <div class="cat-single">
                                     <div class="cat-name">Essential Supply</div>
                                     <div class="cat-selection">
                                         <div class="cat-select">
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-essential" type="checkbox" name="" value="1"
-                                                        checked><span>&nbsp;&nbsp;Medicines&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-essential" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Grocery&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-essential" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Baby Care&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-essential" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Pet Food&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-essential" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Hospital & Medical
-                                                        Equipment&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-essential" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;All liquid & cooking oil
-                                                        (sealed)&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-essential" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;All Covid
-                                                        Essential&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-essential" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Elderly Care&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-essential" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Religious Needs&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-essential" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Health
-                                                        Supplements&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
+                                            <button class="btn btn-primary">Medicines</button>
+                                            <button class="btn btn-secondary">Grocery</button>
+                                            <button class="btn btn-secondary">Baby Care</button>
+                                            <button class="btn btn-secondary">Pet Food</button>
+                                            <button class="btn btn-secondary">All loose & Packed Grocery</button>
+                                            <button class="btn btn-secondary">All liquid & Cooking Oil (Sealed)</button>
+                                            <button class="btn btn-secondary">ALl Covid Essentials</button>
+                                            <button class="btn btn-secondary">Elderly Care</button>
+                                            <button class="btn btn-secondary">Religious Needs</button>
+                                            <button class="btn btn-secondary">Hospital & Medical Equipment</button>
                                         </div>
                                         <div class="cat-details">
                                             <input type="text" placeholder="add custom category">
                                         </div>
                                     </div>
 
-                                    <div class="cat-select-all">
-                                        <label>
-                                            <input id="select-all-essential" type="checkbox">
-                                            <span id="select-all-6">Select All</span>
-                                            <span id="unselect-all-6">Unselect All</span>
-                                        </label>
-                                    </div>
+                                    <div class="cat-select-all"><a href="#">Select All</a></div>
                                 </div>
 
                                 <div class="cat-single">
                                     <div class="cat-name">Household Decor</div>
                                     <div class="cat-selection">
                                         <div class="cat-select">
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-household" type="checkbox" name="" value="1"
-                                                        checked><span>&nbsp;&nbsp;Gardening & Outdoor&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-household" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Product&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-household" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Home Decor &
-                                                        Furnishing&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-household" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Kitchenware&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-household" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Lights&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-household" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Packers & Movers&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
-                                            <div class="cat-select-input">
-                                                <label>
-                                                    <input class="cat-household" type="checkbox" name=""
-                                                        value="1"><span>&nbsp;&nbsp;Re-location&nbsp;&nbsp;</span>
-                                                </label>
-                                            </div>
+                                            <button class="btn btn-primary">Gardening & Outdoor</button>
+                                            <button class="btn btn-secondary">Product</button>
+                                            <button class="btn btn-secondary">Home Decor & Furnishing</button>
+                                            <button class="btn btn-secondary">Kitchenware</button>
+                                            <button class="btn btn-secondary">Lights</button>
+                                            <button class="btn btn-secondary">Packers & Movers</button>
+                                            <button class="btn btn-secondary">Re-location</button>
                                         </div>
                                         <div class="cat-details">
                                             <input type="text" placeholder="add custom category">
                                         </div>
                                     </div>
 
-                                    <div class="cat-select-all">
-                                        <label>
-                                            <input id="select-all-essential" type="checkbox">
-                                            <span id="select-all-7">Select All</span>
-                                            <span id="unselect-all-7">Unselect All</span>
-                                        </label>
-                                    </div>
+                                    <div class="cat-select-all"><a href="#">Select All</a></div>
                                 </div>
 
                                 <div class="pds-account-buttons">
@@ -1293,180 +961,115 @@
 
                         <!-- Delivery Location Tab -->
                         <div class="pds-account-info-wrapper" id="delivery-location">
-                            <div id="dl-courier">
-                                <div class="row">
-                                    <!-- Provider Pin Codes Data -->
-                                    <div class="col-md-7 col-lg-7">
-                                        <h5 class="text-center">Delivery Location</h5>
-                                        <div class="dl-pincode">
-                                            <div class="dl-pincode-btn">
-                                                <p>++</p>
-                                                <p>--</p>
-                                            </div>
-                                            <div class="dl-pincode-table">
-                                                <table class="dl-pt">
-                                                    <thead>
-                                                        <th>State</th>
-                                                        <th>City (All Metro)</th>
-                                                        <th>Area</th>
-                                                        <th>Serviceable</th>
-                                                        <th>Non-Serviceable</th>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>India</td>
-                                                            <td>All India</td>
-                                                            <td>All India</td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Maharashtra</td>
-                                                            <td>Pune</td>
-                                                            <td>Sadashiv Peth</td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>&nbsp;</td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>&nbsp;</td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>&nbsp;</td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-
+                            <div class="row">
+                                <!-- Provider Pin Codes Data -->
+                                <div class="col-md-7 col-lg-7">
+                                    <h5 class="text-center">Delivery Location</h5>
+                                    <div class="dl-pincode">
+                                        <div class="dl-pincode-btn">
+                                            <p>++</p>
+                                            <p>--</p>
                                         </div>
-
-                                    </div>
-                                    <!-- Provider Business Hours -->
-                                    <div class="col-md-5 col-lg-5">
-                                        <h5 class="text-center">Business Hours</h5>
-                                        <div class="dl-time-wrapper">
-                                            <div class="dl-time-single">
-                                                <p></p>
-                                                <p>Start Time</p>
-                                                <p></p>
-                                                <p>End Time</p>
-                                            </div>
-                                            <div class="dl-time-single">
-                                                <p>Monday To Saturday</p>
-                                                <p><input type="time" id="" name=""></p>
-                                                <p class="text-center">to</p>
-                                                <p><input type="time" id="" name=""></p>
-                                            </div>
-                                            <div class="dl-time-single">
-                                                <p>Saturday</p>
-                                                <p><input type="time" id="" name=""></p>
-                                                <p class="text-center">to</p>
-                                                <p><input type="time" id="" name=""></p>
-                                            </div>
-                                            <div class="dl-time-single">
-                                                <p>Sunday</p>
-                                                <p><input type="time" id="" name=""></p>
-                                                <p class="text-center">to</p>
-                                                <p><input type="time" id="" name=""></p>
-                                            </div>
-                                            <div class="dl-time-single">
-                                                <p>Public Holidays</p>
-                                                <p><input type="time" id="" name=""></p>
-                                                <p class="text-center">to</p>
-                                                <p><input type="time" id="" name=""></p>
-                                            </div>
+                                        <!--
+                                    <div class="dl-pincode-table">
+                                        <div class="dl-pt-header">
+                                            <p>State</p>
+                                            <p>City(All Metro)</p>
+                                            <p>Area</p>
+                                            <p>Serviceable</p>
+                                            <p>Non-Serviceable</p>
                                         </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div id="dl-shipping">
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-12">
-                                        <div class="dl-pincode dl-shipping-table">
-                                            <div class="dl-pincode-btn"></div>
-                                            <div class="dl-pincode-table">
-                                                <table>
+                                    </div>-->
+                                        <div class="dl-pincode-table">
+                                            <table class="dl-pt">
+                                                <thead>
+                                                    <th>State</th>
+                                                    <th>City (All Metro)</th>
+                                                    <th>Area</th>
+                                                    <th>Serviceable</th>
+                                                    <th>Non-Serviceable</th>
+                                                </thead>
+                                                <tbody>
                                                     <tr>
-                                                        <th>Origin Port</th>
-                                                        <th>Destination Port</th>
-                                                        <th>Container Size</th>
-                                                        <th>Container Type</th>
-                                                        <th>Minimum Value</th>
-                                                        <th>Maximum Value</th>
-                                                        <th>Price</th>
-                                                        <th>Premium Services</th>
+                                                        <td>India</td>
+                                                        <td>All India</td>
+                                                        <td>All India</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Quanzhouu Port, China</td>
-                                                        <td>Nhava Sheva Port, India</td>
-                                                        <td>40ft Hc</td>
-                                                        <td>All Type</td>
-                                                        <td>13500</td>
-                                                        <td>26000</td>
-                                                        <td>INR</td>
-                                                        <td>Yes</td>
+                                                        <td>Maharashtra</td>
+                                                        <td>Pune</td>
+                                                        <td>Sadashiv Peth</td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
-                                                </table>
-                                            </div>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <!-- Provider Business Hours -->
+                                <div class="col-md-5 col-lg-5">
+                                    <h5 class="text-center">Business Hours</h5>
+                                    <div class="dl-time-wrapper">
+                                        <div class="dl-time-single">
+                                            <p></p>
+                                            <p>Start Time</p>
+                                            <p></p>
+                                            <p>End Time</p>
+                                        </div>
+                                        <div class="dl-time-single">
+                                            <p>Monday To Saturday</p>
+                                            <p><input type="time" id="" name=""></p>
+                                            <p class="text-center">to</p>
+                                            <p><input type="time" id="" name=""></p>
+                                        </div>
+                                        <div class="dl-time-single">
+                                            <p>Saturday</p>
+                                            <p><input type="time" id="" name=""></p>
+                                            <p class="text-center">to</p>
+                                            <p><input type="time" id="" name=""></p>
+                                        </div>
+                                        <div class="dl-time-single">
+                                            <p>Sunday</p>
+                                            <p><input type="time" id="" name=""></p>
+                                            <p class="text-center">to</p>
+                                            <p><input type="time" id="" name=""></p>
+                                        </div>
+                                        <div class="dl-time-single">
+                                            <p>Public Holidays</p>
+                                            <p><input type="time" id="" name=""></p>
+                                            <p class="text-center">to</p>
+                                            <p><input type="time" id="" name=""></p>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-7 col-lg-7 text-center">
-                                        <h5>GST Details</h5>
-                                        <p>Pending</p>
-                                    </div>
-                                    <div class="col-md-5 col-md-5">
-                                        <div class="dl-time-wrapper">
-                                            <div class="dl-time-single">
-                                                <p></p>
-                                                <p>Start Time</p>
-                                                <p></p>
-                                                <p>End Time</p>
-                                            </div>
-                                            <div class="dl-time-single">
-                                                <p>Monday To Saturday</p>
-                                                <p><input type="time" id="" name=""></p>
-                                                <p class="text-center">to</p>
-                                                <p><input type="time" id="" name=""></p>
-                                            </div>
-                                            <div class="dl-time-single">
-                                                <p>Saturday</p>
-                                                <p><input type="time" id="" name=""></p>
-                                                <p class="text-center">to</p>
-                                                <p><input type="time" id="" name=""></p>
-                                            </div>
-                                            <div class="dl-time-single">
-                                                <p>Sunday</p>
-                                                <p><input type="time" id="" name=""></p>
-                                                <p class="text-center">to</p>
-                                                <p><input type="time" id="" name=""></p>
-                                            </div>
-                                            <div class="dl-time-single">
-                                                <p>Public Holidays</p>
-                                                <p><input type="time" id="" name=""></p>
-                                                <p class="text-center">to</p>
-                                                <p><input type="time" id="" name=""></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="pds-account-buttons row" data-brackets-id="16044">
                                 <div class="pds-account-edit" data-brackets-id="16045">
@@ -1600,6 +1203,7 @@
                                 </div>
                             </div>
                         </div>
+
 
                         <!-- Pricing Model Tab -->
                         <div class="pds-account-info-wrapper" id="pricing-model">
@@ -1938,195 +1542,6 @@
                                     </tr>
                                 </table>
                             </div>
-
-                            <div class="pds-account-buttons">
-                                <div class="pds-account-edit">
-                                    <button class="btn btn-primary">Back</button>
-                                </div>
-                                <div class="pds-account-next">
-                                    <button class="btn btn-primary">Save</button>
-                                    <button class="btn btn-primary">Next</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Requests Received Tab -->
-
-                        <div class="pds-account-info-wrapper" id="requests-received">
-                            <div class="row rr-inner">
-                                <div style="margin: 0 auto;">
-                                    <h5>Delivery Requests Received</h5>
-                                </div>
-                                <table>
-                                    <tr>
-                                        <th>Requester Name</th>
-                                        <th>Parcel Type</th>
-                                        <th>Received Date</th>
-                                        <th>From(location)</th>
-                                        <th>To(location)</th>
-                                        <th>Amount</th>
-                                        <th>Status</th>
-                                    </tr>
-
-                                    <tr>
-                                        <td>abc</td>
-                                        <td>Document</td>
-                                        <td>3/11/2021</td>
-                                        <td>XXXX</td>
-                                        <td>XXXX</td>
-                                        <td>Rs 100</td>
-                                        <td>Dropdown</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>def</td>
-                                        <td>Food</td>
-                                        <td>3/11/2021</td>
-                                        <td>XXXX</td>
-                                        <td>XXXX</td>
-                                        <td>Rs 100</td>
-                                        <td>Dropdown</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>xyz</td>
-                                        <td>Medicine</td>
-                                        <td>3/11/2021</td>
-                                        <td>XXXX</td>
-                                        <td>XXXX</td>
-                                        <td>Rs 100</td>
-                                        <td>Dropdown</td>
-                                    </tr>
-
-                                </table>
-                            </div>
-
-                            <div data-brackets-id="40843" class="pds-account-buttons">
-                                <div data-brackets-id="40844" class="pds-account-edit">
-                                    <button data-brackets-id="40845" class="btn btn-primary">Back</button>
-                                </div>
-                                <div data-brackets-id="40846" class="pds-account-next">
-                                    <button data-brackets-id="40847" class="btn btn-primary">Save</button>
-                                    <button data-brackets-id="40848" class="btn btn-primary">Next</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Business Partners Tab -->
-
-                        <div class="pds-account-info-wrapper" id="business-partners">
-                            <div class="row bp-inner">
-                                <div style="margin: 0 auto;">
-                                    <h5>Active Business Partners</h5>
-                                </div>
-                                <table>
-                                    <tr>
-                                        <th></th>
-                                        <th>Business Partner Name</th>
-                                        <th>Disccount Given</th>
-                                        <th>No. Of Packet Delivered</th>
-                                        <th>Revenue Generated</th>
-                                        <th></th>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <button class="btn"><i class="fa fa-plus-square"
-                                                    style="font-size: 1.5em; padding: 0 5px;"
-                                                    aria-hidden="true"></i></button>
-                                        </td>
-                                        <td>abc</td>
-                                        <td>10%</td>
-                                        <td>200 packets delivered</td>
-                                        <td>XXXX</td>
-                                        <td><button class="btn btn-danger">Terminate</button></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td></td>
-                                        <td>xyz</td>
-                                        <td>5%</td>
-                                        <td>500 packets delivered</td>
-                                        <td>XXXX</td>
-                                        <td><button class="btn btn-danger">Terminate</button></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td></td>
-                                        <td>def</td>
-                                        <td>15%</td>
-                                        <td>500 packets delivered</td>
-                                        <td>XXXX</td>
-                                        <td><button class="btn btn-danger">Terminate</button></td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                            <div class="pds-account-buttons">
-                                <div class="pds-account-edit">
-                                    <button class="btn btn-primary">Back</button>
-                                </div>
-                                <div class="pds-account-next">
-                                    <button class="btn btn-primary">Save</button>
-                                    <button class="btn btn-primary">Next</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Business Opportunities Tab -->
-
-                        <div class="pds-account-info-wrapper" id="business-opp">
-                            <div class="bo-inner row">
-                                <div style="margin: 0 auto;">
-                                    <h5>Business Opportunities</h5>
-                                </div>
-                                <table>
-                                    <tr>
-                                        <th>Date Requested</th>
-                                        <th>Business Name</th>
-                                        <th>Request No.</th>
-                                        <th>Discount Offered</th>
-                                        <th>Confirm<br><span style="font-size: 0.6em">(Delivery Location, Payment
-                                                Method,<br> Parcel Type)</span></th>
-                                        <th>Remark</th>
-                                        <th>Status</th>
-                                        <th></th>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3/12/2021</td>
-                                        <td>abc</td>
-                                        <td>1098761</td>
-                                        <td>10%</td>
-                                        <td>Yes</td>
-                                        <td>Any Comments</td>
-                                        <td>Open</td>
-                                        <td>Remove</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>2/12/2021</td>
-                                        <td>xyz</td>
-                                        <td>1098760</td>
-                                        <td>5%</td>
-                                        <td>Yes</td>
-                                        <td>Any Comments</td>
-                                        <td>Open</td>
-                                        <td>Remove</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>1/12/2021</td>
-                                        <td>def</td>
-                                        <td>1098759</td>
-                                        <td>15%</td>
-                                        <td>Yes</td>
-                                        <td>Any Comments</td>
-                                        <td>Open</td>
-                                        <td>Remove</td>
-                                    </tr>
-                                </table>
-                            </div>
-
                             <div class="pds-account-buttons">
                                 <div class="pds-account-edit">
                                     <button class="btn btn-primary" style="display: none;">Back</button>
@@ -2137,9 +1552,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Business Oppurtunities Tab -->
-
                     </div>
                     <!--- Billing Tab -->
                     <div role="tabpanel" class="tab-pane fade" id="billing">
@@ -2389,7 +1801,100 @@
 
 
     <script>
+        /* Functions for opening different tabs - find better functionality than individual functions*/
+        function openKYC() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "block";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "none";
+            $('#pds-ind-btn').addClass('pds-ct-active');
+        }
 
+        function openGeneral() {
+            document.getElementById("general-info").style.display = "block";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "none";
+        }
+
+        function paymentMethod() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "block";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "none";
+        }
+
+        function parcelType() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "block";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "none";
+        }
+
+        function addContacts() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "block";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "none";
+        }
+
+        function addPricing() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "block";
+            document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "none";
+        }
+
+        function deliveryLocation() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "block";
+            document.getElementById("upload-advt").style.display = "none";
+        }
+
+        function addAdvt() {
+            document.getElementById("general-info").style.display = "none";
+            document.getElementById("kyc-docs").style.display = "none";
+            document.getElementById("payment-method").style.display = "none";
+            document.getElementById("parcel-type").style.display = "none";
+            document.getElementById("contact-info").style.display = "none";
+            document.getElementById("pricing-model").style.display = "none";
+            document.getElementById("delivery-location").style.display = "none";
+            document.getElementById("upload-advt").style.display = "block";
+        }
+
+        function openLink(link) {
+            link.style.background = "#01B7F2";
+            link.style.color = "#fff";
+        }
     </script>
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

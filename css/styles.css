@@ -336,7 +336,7 @@ footer ul {
 }
 
 .qs-options {
-    display: flex;
+    display: flex!important;
     gap: 10px;
     align-items: end;
     padding: 20px 10px;
@@ -411,9 +411,9 @@ footer ul {
     border: none;
 }
 
-.tab-content > .active {
+/*.tab-content > .active {
     display: flex;
-}
+}*/
 
 .qs-single > div > div > .dropdown-toggle:empty::after {
     color: #2D3E52;
@@ -761,7 +761,6 @@ footer ul {
     width: 100%;
 }
 
-
 /* Provider Dashboard Section CSS */
 
 .provider-dashboard {
@@ -770,6 +769,7 @@ footer ul {
 
 .provider-dashboard-inner {
     width: 100%;
+    margin-left: 0;
 }
 
 .pd-sidebar {
@@ -777,16 +777,30 @@ footer ul {
     flex-direction: column;
     gap: 10px;
     padding-right: 0;
+    margin-left: 15px;
 }
 
 .pds-button {
-    height: 12vh;
+    height: 13vh;
     border: 1px solid #B8B5B5;
-    padding: 10px 20px;
+    /*padding: 10px 20px;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
+}
+
+.pds-button a {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    font-weight: 600;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: 99%;
+    justify-content: center;
 }
 
 .pds-button svg {
@@ -794,18 +808,28 @@ footer ul {
     fill: #707070;
 }
 
+.pds-link {
+    border: none !important;
+    margin: 0 auto;
+}
+
 .pds-document {
     border: 1px solid #B8B5B5;
     padding: 20px 0;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     height: auto;
 }
 
+.sp-show {
+    display: flex!important;
+}
+
 .pds-document a {
     color: #000;
     padding: 10px 20px;
+    cursor: pointer;
 }
 
 .pds-document a:focus {
@@ -818,6 +842,27 @@ footer ul {
     background: #01B7F2;
     color: #fff;
     text-decoration: none;
+}
+
+.pds-document-sub-outer {
+    display: none;
+}
+
+.pds-document-sub {
+    color: #000;
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.pds-ds {
+    color: #fff;
+}
+
+.pds-ds:hover, .pds-ds-active {
+    background: none!important;
+    color: #01B7F2!important;
+    font-weight: 600;
 }
 
 .pds-account-intro-wrapper {
@@ -1495,7 +1540,6 @@ footer ul {
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    s
 }
 
 .pds-company-type,
@@ -1520,6 +1564,28 @@ footer ul {
 #pds-company-reg {
     font-weight: 600;
     font-size: 0.85em;
+}
+
+.pds-company-type div {
+    display: flex;
+    gap: 20px;
+}
+
+.pds-ct-std {
+    width: 10vw;
+    border: 1px solid #B5B3B3;
+    border-radius: 0px;
+    font-size: 0.9rem;
+}
+
+.pds-ct-active {
+    border: none;
+    background: #01B7F2;
+    color: #fff;
+}
+
+.pds-ct-active:hover {
+    color: #fff;
 }
 
 .pds-company-note {
@@ -1554,16 +1620,17 @@ footer ul {
 }
 
 #pds-company {
-    display: "none";
+    display: none;
 }
 
 .pds-kyc-label {
     display: flex;
     gap: 40px;
+    width: auto;
 }
 
 .pds-kyc-label label {
-    width: 11vw;
+    width: 12rem;
 }
 
 .pds-kyc-upload {
@@ -1572,7 +1639,8 @@ footer ul {
 
 .pds-kyc-upload-single {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+
     gap: 20px;
     margin-bottom: 10px;
 }
@@ -1589,6 +1657,20 @@ footer ul {
 
 .pds-label:after {
     display: none;
+}
+
+.pds-input[type=file]::file-selector-button {
+    border: 2px solid #A4A1A1;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: #EFECEC;
+    transition: 1s;
+    margin-right: 1rem;
+    width: 10rem;
+}
+
+.pds-input[type=file]::file-selector-button:hover {
+    border: 2px solid #01B7F2;
 }
 
 .pds-kyc-add {
@@ -1726,6 +1808,73 @@ footer ul {
     width: 100%;
 }
 
+.cat-select-input {
+    background-color: none;
+    border: 1px solid #D6D4D4;
+    overflow: hidden;
+    float: left;
+}
+
+.cat-select-input label {
+    float: left;
+    line-height: 2.5em;
+    min-width: 8em;
+    height: 2.5em;
+    margin-bottom: 0!important;
+}
+
+.cat-select-input label span {
+    text-align: center;
+    display: block;
+    font-size: 1em;
+}
+
+.cat-select-input label input {
+    position: absolute;
+    display: none;
+}
+
+.cat-select-input input:checked + span {
+    background: #01B7F2;
+    color: #fff;
+}
+
+/* select all checkboxes for tab-4 parcel type */
+
+.cat-select-all {
+  overflow: hidden;
+  float: left;
+}
+
+.cat-select-all label {
+  float: left; 
+  line-height: 1.0em;
+  width: 6em;
+}
+
+.cat-select-all label span {
+  text-align: center;
+  padding: 3px 0;
+  display: block;
+}
+
+.cat-select-all label input {
+  position: absolute;
+  display: none;
+  color: #fff !important;
+}
+
+#unselect-all-1, #unselect-all-2, #unselect-all-3, #unselect-all-4, #unselect-all-5, #unselect-all-6, #unselect-all-7 {
+  display: none;
+}
+
+.show {
+  display: block!important;
+}
+
+.hide {
+  display: none!important;
+}
 
 /* Contact Details Section */
 
@@ -1834,6 +1983,14 @@ footer ul {
 
 /* Delivery Location Section CSS */
 
+#dl-shipping, #dl-courier {
+    display: none;
+}
+
+.dl-active {
+    display: block!important;
+}
+
 .dl-time-wrapper {
     border: 1px solid #000;
     padding: 10px;
@@ -1886,6 +2043,10 @@ th {
     grid-template-columns: repeat(5, 1fr);
 }
 
+.dl-shipping-table {
+    margin: 0 0 40px 0;
+}
+
 /* Advertisement Tab CSS */
 
 .aw-inner table {
@@ -1897,11 +2058,12 @@ th {
 .aw-inner tr {
     margin-bottom: 20px;
     box-shadow: 0px 0px 0px 1px #B8B5B5;
-    -moz-box-shadow: 0px 0px 0px 1px  #B8B5B5;
-    -webkit-box-shadow: 0px 0px 0px 1px  #B8B5B5;
+    -moz-box-shadow: 0px 0px 0px 1px #B8B5B5;
+    -webkit-box-shadow: 0px 0px 0px 1px #B8B5B5;
 }
 
-.aw-inner td, .aw-inner th {
+.aw-inner td,
+.aw-inner th {
     border: none;
     height: 40px;
 }
@@ -1916,7 +2078,17 @@ th {
     font-size: 0.9em;
 }
 
+/* Requests Recieved Tab */
+
+.bp-inner th,
+tr,
+td {
+    border: 1px solid #000;
+    padding: 0.5rem;
+}
+
 /* Provider Dashboard Billing */
+
 .pds-billing-box {
     background: #F4F6F8;
     border: 1px solid #C7C2C2;
@@ -1991,4 +2163,53 @@ th {
 
 #pds-bb-add i {
     cursor: pointer;
+}
+
+/* Account Settings Section */
+.account-settings h5,
+h6 {
+    margin-bottom: 1rem;
+}
+
+.password-settings,
+.email-settings {
+    margin-bottom: 2rem;
+}
+
+.password-settings label {
+    color: #2D3E52;
+}
+
+.ps-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.ps-label input {
+    width: 20rem;
+    background: #F2F1F1;
+    border: none;
+    height: 2.5rem;
+}
+
+.ps-label span {
+    padding: 0 0 0 1rem;
+    cursor: pointer;
+}
+
+.account-settings button {
+    background: #98CE44;
+    color: #fff;
+    font-size: .9em;
+    width: 20rem;
+    height: 2.5rem;
+    font-weight: 200;
+}
+
+.en-label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 0 0 1rem 0;
 }
