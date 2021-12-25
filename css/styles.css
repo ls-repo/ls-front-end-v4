@@ -140,9 +140,8 @@ input[type="checkbox"]:disabled {
 }
 
 .dropdown-item {
-    background: #01B7F2;
-    color: #fff !important;
-    border-bottom: 1px solid #04afe7;
+    background: #fff;
+    color: #000!important;
     padding: 10px 24px;
 }
 
@@ -151,13 +150,13 @@ input[type="checkbox"]:disabled {
 }
 
 .dropdown-item:hover {
-    background: #fff;
-    color: #000 !important;
+    background: #01B7F2;
+    color: #fff!important;
 }
 
 .dropdown-item:focus {
-    background: #fff;
-    color: #000 !important;
+    background: #01B7F2;
+    color: #fff!important;
 }
 
 
@@ -194,13 +193,15 @@ input[type="checkbox"]:disabled {
     background: #DEF3F9;
 }
 
+.navbar-brand img {
+    height: 5vh;
+    max-width: 20vw;
+}
 
 /* Main Menu CSS ENDS */
 
 
 /* Footer CSS */
-
-.footer {}
 
 footer li {
     text-decoration-style: none;
@@ -214,6 +215,11 @@ footer a {
 
 footer ul {
     padding: 0;
+}
+
+.footer-newsletter-img {
+    height: 4vh;
+    max-width: 20vw;
 }
 
 .footer-socials {
@@ -255,14 +261,14 @@ footer ul {
 .hero-section .inner {
     background: url('/assets/Hero-BG-Image.svg') no-repeat center bottom #EDF7F9;
     min-height: 300px;
-    background-size: 85%;
+    background-size: contain;
     margin-right: 0px !important;
 }
 
 .hero-section-left,
 .hero-section-right {
     margin-top: 10px;
-    height: 400px;
+    max-height: 50vh;
 }
 
 .hero-section-left {
@@ -781,7 +787,7 @@ footer ul {
 }
 
 .pds-button {
-    height: 13vh;
+    height: 7rem;
     border: 1px solid #B8B5B5;
     /*padding: 10px 20px;*/
     display: flex;
@@ -841,6 +847,12 @@ footer ul {
 .pds-document a:hover {
     background: #01B7F2;
     color: #fff;
+    text-decoration: none;
+}
+
+.pds-document-active {
+    background: #01B7F2;
+    color: #fff!important;
     text-decoration: none;
 }
 
@@ -1419,7 +1431,7 @@ footer ul {
 #contact-info,
 #pricing-model,
 #delivery-location,
-#upload-advt {
+#upload-advt, #requests-received, #business-partners, #business-opp {
     display: none;
 }
 
@@ -1838,6 +1850,36 @@ footer ul {
     background: #01B7F2;
     color: #fff;
 }
+/* Custom category in parcel type tab */
+.tags-input-wrapper{
+    background: transparent;
+    padding: 10px;
+    border-radius: 4px;
+    max-width: ;
+    border: 1px solid #ccc
+}
+.tags-input-wrapper input{
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 140px;
+    margin-left: 8px;
+}
+.tags-input-wrapper .tag{
+    display: inline-block;
+    background-color: #fa0e7e;
+    color: white;
+    border-radius: 40px;
+    padding: 0px 3px 0px 7px;
+    margin-right: 5px;
+    margin-bottom:5px;
+    box-shadow: 0 5px 15px -2px rgba(250 , 14 , 126 , .7)
+}
+.tags-input-wrapper .tag a {
+    margin: 0 7px 3px;
+    display: inline-block;
+    cursor: pointer;
+}
 
 /* select all checkboxes for tab-4 parcel type */
 
@@ -2110,7 +2152,7 @@ td {
 .pds-bb-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 30vh;
+    grid-auto-rows: auto;
     gap: 1rem;
 }
 

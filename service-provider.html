@@ -442,46 +442,48 @@
                                     <div class="pds-single-input">
                                         <label>Company Registered Name <span class="asterisk">&ast;</span></label>
 
-                                        <input type="text" placeholder="Logistics Scanner" required>
+                                        <input id="sp-company-name-reg" type="text" placeholder="Logistics Scanner"
+                                            required>
                                     </div>
                                     <div class="pds-single-input">
                                         <label>Company Name <span class="asterisk">&ast;</span></label>
 
-                                        <input type="text" placeholder="Logistics Scanner" required>
+                                        <input id="sp-company-name" type="text" placeholder="Logistics Scanner"
+                                            required>
                                     </div>
                                     <div class="pds-single-input pds-span">
                                         <label>Contact Person <span class="asterisk">&ast;</span></label>
                                         <span>First Name</span>
-                                        <input type="text" placeholder="First Name" required>
+                                        <input id="sp-contact-first" type="text" placeholder="First Name" required>
                                     </div>
                                     <div class="pds-single-input pds-span">
                                         <label>&nbsp;</label>
                                         <span>Last Name</span>
-                                        <input type="text" placeholder="">
+                                        <input id="sp-contact-last" type="text" placeholder="">
                                     </div>
                                     <div class="pds-single-input">
                                         <label>Official Email Id <span class="asterisk">&ast;</span></label>
 
-                                        <input type="text" placeholder="">
+                                        <input id="sp-email" type="text" placeholder="" required>
                                     </div>
                                     <div class="pds-single-input">
                                         <label>Contact Number <span class="asterisk">&ast;</span></label>
 
-                                        <input type="text" placeholder="">
+                                        <input id="sp-contact-number" type="text" placeholder="" required>
                                     </div>
                                     <div class="pds-single-input pds-span">
                                         <label>Official Information</label>
                                         <span>Company Registered Address <span class="asterisk">&ast;</span></span>
-                                        <input type="text" placeholder="">
+                                        <input id="sp-regd-address" type="text" placeholder="" required>
                                     </div>
                                     <div class="pds-single-input pds-span">
                                         <label>&nbsp;</label>
                                         <span>Company Website <span class="asterisk">&ast;</span></span>
-                                        <input type="text" placeholder="">
+                                        <input id="sp-company-website" type="text" placeholder="" required>
                                     </div>
                                     <div class="pds-single-input">
                                         <label>Company Registered No <span class="asterisk">&ast;</span></label>
-                                        <input type="text" placeholder="">
+                                        <input id="sp-regd-number" type="text" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="pds-account-type-wrapper">
@@ -489,23 +491,28 @@
                                     <div class="pds-account-type">
                                         <label>
                                             <span>Bike Delivery</span>
-                                            <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                            <input id="sp-service-bike" class="custom-checkbox" type="checkbox"
+                                                value=false name="checkbox" />
                                         </label>
                                         <label>
                                             <span>Courier</span>
-                                            <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                            <input id="sp-service-courier" class="custom-checkbox" type="checkbox"
+                                                value=false name="checkbox" />
                                         </label>
                                         <label>
                                             <span>Warehouse</span>
-                                            <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                            <input id="sp-service-warehouse" class="custom-checkbox" type="checkbox"
+                                                value=false name="checkbox" />
                                         </label>
                                         <label>
                                             <span>Fullfillment</span>
-                                            <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                            <input id="sp-service-fullfillment" class="custom-checkbox" type="checkbox"
+                                                value=false name="checkbox" />
                                         </label>
                                         <label>
                                             <span>Hire Fleet</span>
-                                            <input class="custom-checkbox" type="checkbox" name="checkbox" />
+                                            <input id="sp-service-hirefleet" class="custom-checkbox" type="checkbox"
+                                                value=false name="checkbox" />
                                         </label>
                                     </div>
                                     <div class="pds-account-buttons">
@@ -513,7 +520,7 @@
                                             <button class="btn btn-primary" style="display: none">Back</button>
                                         </div>
                                         <div class="pds-account-next">
-                                            <button type="submit" class="btn btn-primary">Save</button>
+                                            <button id="sp-save-general" class="btn btn-primary">Save</button>
                                             <button class="btn btn-primary">Next</button>
                                         </div>
                                     </div>
@@ -551,25 +558,30 @@
                                     <div class="pds-kyc-label">
                                         <div>
                                             <label>Company GST Details: <span class="asterisk">*</span></label>
-                                            <input type="text" placeholder="AAAAA546789202IZ5" required>
+                                            <input id="sp-company-gst" type="text" placeholder="AAAAA546789202IZ5"
+                                                required>
                                         </div>
                                     </div>
                                     <div class="pds-kyc-label">
                                         <div>
                                             <label>Bank Payment Details: <span class="asterisk">*</span></label>
-                                            <input type="text" placeholder="Account Number" required>
+                                            <input id="sp-company-bank" type="text" placeholder="Account Number"
+                                                required>
                                         </div>
-                                        <!-- <div>
+                                    </div>
+                                    <div class="pds-kyc-label">
+                                        <div>
                                             <label>IFSC: <span class="asterisk">*</span></label>
-                                            <input type="text" placeholder="IFSC CODE" required>
-                                        </div>-->
+                                            <input id="sp-company-ifsc" type="text" placeholder="IFSC CODE" required>
+                                        </div>
                                     </div>
 
                                     <div class="pds-kyc-upload">
                                         <div class="pds-kyc-upload-single">
                                             <p>Upload File 1</p>
                                             <div class="">
-                                                <input type="file" class="pds-input" id="pds-aadhar">
+                                                <input id="sp-smal-company-aadhar" type="file" class="pds-input"
+                                                    id="pds-aadhar">
                                             </div>
                                             <p>Aadhar Card <span class="asterisk">*</span></p>
                                             <p>Remove File</p>
@@ -604,15 +616,18 @@
                                 <div class="pds-kyc" id="pds-company">
                                     <div class="pds-kyc-label">
                                         <label>Company GST Details: <span class="asterisk">*</span></label>
-                                        <input type="text" placeholder="AAAAA546789202IZ5" required>
+                                        <input id="sp-large-company-gst" type="text" placeholder="AAAAA546789202IZ5"
+                                            required>
                                     </div>
                                     <div class="pds-kyc-label">
                                         <label>Bank Payment Details: <span class="asterisk">*</span></label>
-                                        <input type="text" placeholder="Account Number" required>
+                                        <input id="sp-large-company-bank" type="text" placeholder="Account Number"
+                                            required>
                                     </div>
                                     <div class="pds-kyc-label">
                                         <label>IFSC CODE <span class="asterisk">*</span></label>
-                                        <input type="text" placeholder="Account Number" required>
+                                        <input id="sp-large-company-ifsc" type="text" placeholder="Account Number"
+                                            required>
                                     </div>
 
                                     <div class="pds-kyc-upload">
@@ -719,7 +734,7 @@
                                             <button class="btn btn-primary">Back</button>
                                         </div>
                                         <div class="pds-account-next">
-                                            <button class="btn btn-primary">Save</button>
+                                            <button id="sp-save-kyc" class="btn btn-primary">Save</button>
                                             <button class="btn btn-primary">Next</button>
                                         </div>
                                     </div>
@@ -879,7 +894,7 @@
                                             </div>
                                         </div>
                                         <div class="cat-details">
-                                            <input type="text" placeholder="add custom category">
+                                            <input type="text" id="tag-input1">
                                         </div>
                                     </div>
                                     <div class="cat-select-all">
@@ -2316,7 +2331,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 col-md-4">
-                    <img src="/assets/Logo-LS.svg" alt="">
+                    <img class="footer-newsletter-img" src="/assets/Logo-LS.svg" alt="">
                     <br>
                     <br>
                     <br>
@@ -2399,6 +2414,7 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script type="module" src="firebase.js"></script>
 </body>
 
 </html>
