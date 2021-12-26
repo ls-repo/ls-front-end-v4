@@ -62,10 +62,6 @@ button {
     width: 423px;
 }
 
-.card-body1 img {
-    margin: .5rem auto;
-}
-
 .h6-2 {
     font-size: 14px;
     margin-top: 0%;
@@ -118,6 +114,7 @@ button {
 .card-body1 img {
     height: 150px;
     width: 150px;
+    object-fit: cover;
 }
 
 @media only screen and (width: 768px) {
@@ -139,6 +136,9 @@ button {
         width: 557px;
         margin-left: 142px;
         margin-top: -15px;
+    }
+    .col-lg-4.page1-card {
+        margin-left: 0px !important;
     }
 }
 @media only screen and (width: 1920px){
@@ -173,6 +173,12 @@ button {
         margin-left: 454px;
 }
 }
+
+
+    .col-lg-4.page1-card{
+        margin-left: -28px;
+    }
+
 /* END PAGE1 */
 
 /* PAGE2 CSS */
@@ -491,7 +497,7 @@ input[type="checkbox"] {
 .card-2-page3 {
     /* border:1px solid #B1AFAF; */
     margin-left: 85px;
-    margin-right: -11%;
+    margin-right: -8%;
 
 }
 
@@ -509,6 +515,7 @@ input[type="checkbox"] {
 .img-fluid-pic-page3 {
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
 .px-2 {
@@ -569,19 +576,24 @@ div.sticky {
     text-align: right;
     color: white;
     margin-left: 0px;
-    margin-right: -121px;
+    margin-right: -90px;
 
 }
 
 .whypage3 {
     margin-left: -1px;
-    margin-right: -121px;
+    margin-right: -90px;
 }
 
 
 .border{
     margin-left: -2px;
 }
+/* @media only screen and (width: 1336px){
+    .sticky{
+        margin-right: -90px !important;
+    }
+} */
 
     /* END CSS PAGE 3 */
 
@@ -601,6 +613,7 @@ div.sticky {
     .img-fluid-pic-4{
         margin-left: 15px;
         height: 250px;
+        object-fit: cover;
        }
     .nav-link {
         color: white;
@@ -632,11 +645,15 @@ div.sticky {
         border-radius: 40px;
          border:1px solid #01B7F2;
          height: 250px;
+         padding: 40px 0 0 0;
     }
     .card-all-4{
         border-radius: 40px;
          border:1px solid #01B7F2;
          height: 250px;
+         display: flex;
+         align-items: center;
+         padding: 0 10px;
     }
     @media only screen and (width: 1024px) {
         /* .first-card {
@@ -715,4 +732,8 @@ div.sticky {
     .first-card-row{
         display: flex !important;
         justify-content: center;
+    }
+
+    .text-center-4{
+        text-align: center !important;
     }
