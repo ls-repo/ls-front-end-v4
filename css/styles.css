@@ -22,6 +22,10 @@
     --form-control-disabled: #959495;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container-fluid {
     padding: 0 60px;
 }
@@ -129,11 +133,15 @@ input[type="checkbox"]:disabled {
 /* hidden on max-width: 991px media-query */
 
 #header .topnav {
-    height: 2.2rem;
+    height: 2rem;
     background: #2D3E52;
     width: 100%;
     display: flex;
     align-items: center;
+}
+
+.topnav-blue {
+    background: #01B7F2!important;
 }
 
 #header .topnav-inner-wrapper {
@@ -146,6 +154,7 @@ input[type="checkbox"]:disabled {
     list-style-type: none;
     padding: 0;
     margin-bottom: 0;
+    padding: 0 0 0.2rem 0;
 }
 
 #header li {
@@ -220,6 +229,25 @@ input[type="checkbox"]:disabled {
 .navbar-brand img {
     height: 5vh;
     max-width: 20vw;
+}
+
+.topnav-breadcrumb-outer {
+    background: #2D3E52;
+    margin-bottom: 1rem;
+}
+
+.topnav-breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    height: 2.5rem;
+    align-items: center;
+    color: #fff;
+    font-size: 0.8em;
+}
+
+.breadcrumb-active {
+    color: #FDC500;
+    font-weight: 100!important;
 }
 
 /* Main Menu CSS ENDS */

@@ -31,7 +31,7 @@
 <body>
     <header id="header" class="navbar-static-top">
         <!-- Top Navigation for Login, SignUp, Account-Access  -->
-        <div class="topnav hidden-xs">
+        <div class="topnav topnav-blue hidden-xs">
             <div class="container-fluid">
                 <div class="topnav-inner-wrapper">
                     <ul class="quick-menu pull-left">
@@ -158,6 +158,15 @@
                     </button>
                 </div>
             </nav>
+        </div>
+        <div class="topnav-breadcrumb-outer">
+            <div class="container-fluid">
+                <div class="topnav-breadcrumb">
+                    <div class="tb-left">Service Provider / Login Name</div>
+                    <div class="tb-right">Service Provider / My Account / <span class="breadcrumb-active">General
+                            Information</span> </span></div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -520,7 +529,8 @@
                                             <button class="btn btn-primary" style="display: none">Back</button>
                                         </div>
                                         <div class="pds-account-next">
-                                            <button id="sp-save-general" class="btn btn-primary">Save</button>
+                                            <button id="sp-save-general" class="btn btn-primary"
+                                                type="button">Save</button>
                                             <button class="btn btn-primary">Next</button>
                                         </div>
                                     </div>
@@ -554,187 +564,221 @@
 
                             <div class="pds-kyc-outer row">
                                 <h6>Submit your KYC documents</h6>
-                                <div class="pds-kyc" id="pds-individual">
-                                    <div class="pds-kyc-label">
-                                        <div>
-                                            <label>Company GST Details: <span class="asterisk">*</span></label>
-                                            <input id="sp-company-gst" type="text" placeholder="AAAAA546789202IZ5"
-                                                required>
+                                <div id="pds-individual">
+                                    <div class="pds-kyc">
+                                        <div class="pds-kyc-label">
+                                            <div>
+                                                <label>Company GST Details: <span class="asterisk">*</span></label>
+                                                <input id="sp-company-gst" type="text" placeholder="AAAAA546789202IZ5"
+                                                    required>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="pds-kyc-label">
-                                        <div>
-                                            <label>Bank Payment Details: <span class="asterisk">*</span></label>
-                                            <input id="sp-company-bank" type="text" placeholder="Account Number"
-                                                required>
+                                        <div class="pds-kyc-label">
+                                            <div>
+                                                <label>Bank Payment Details: <span class="asterisk">*</span></label>
+                                                <input id="sp-company-bank" type="text" placeholder="Account Number"
+                                                    required>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="pds-kyc-label">
-                                        <div>
-                                            <label>IFSC: <span class="asterisk">*</span></label>
-                                            <input id="sp-company-ifsc" type="text" placeholder="IFSC CODE" required>
+                                        <div class="pds-kyc-label">
+                                            <div>
+                                                <label>IFSC: <span class="asterisk">*</span></label>
+                                                <input id="sp-company-ifsc" type="text" placeholder="IFSC CODE"
+                                                    required>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="pds-kyc-upload">
-                                        <div class="pds-kyc-upload-single">
-                                            <p>Upload File 1</p>
-                                            <div class="">
-                                                <input id="sp-smal-company-aadhar" type="file" class="pds-input"
-                                                    id="pds-aadhar">
+                                        <div class="pds-kyc-upload">
+                                            <div class="pds-kyc-upload-single">
+                                                <p>Upload File 1</p>
+                                                <div class="">
+                                                    <input id="sp-smal-company-aadhar" type="file" class="pds-input"
+                                                        id="pds-aadhar">
+                                                </div>
+                                                <p>Aadhar Card <span class="asterisk">*</span></p>
+                                                <p>Remove File</p>
                                             </div>
-                                            <p>Aadhar Card <span class="asterisk">*</span></p>
-                                            <p>Remove File</p>
-                                        </div>
-                                        <div class="pds-kyc-upload-single">
-                                            <p>Upload File 2</p>
-                                            <div class="">
-                                                <input type="file" class="pds-input">
+                                            <div class="pds-kyc-upload-single">
+                                                <p>Upload File 2</p>
+                                                <div class="">
+                                                    <input type="file" class="pds-input">
+                                                </div>
+                                                <p>PAN Card <span class="asterisk">*</span></p>
+                                                <p>Remove File</p>
                                             </div>
-                                            <p>PAN Card <span class="asterisk">*</span></p>
-                                            <p>Remove File</p>
-                                        </div>
-                                        <div class="pds-kyc-upload-single">
-                                            <p>Upload File 3</p>
-                                            <div class="">
-                                                <input type="file" class="pds-input">
+                                            <div class="pds-kyc-upload-single">
+                                                <p>Upload File 3</p>
+                                                <div class="">
+                                                    <input type="file" class="pds-input">
+                                                </div>
+                                                <p>Passport</p>
+                                                <p>Remove File</p>
                                             </div>
-                                            <p>Passport</p>
-                                            <p>Remove File</p>
-                                        </div>
-                                        <div class="pds-kyc-upload-single">
-                                            <p>Upload File 1</p>
-                                            <div class="">
-                                                <input type="file" class="pds-input">
+                                            <div class="pds-kyc-upload-single">
+                                                <p>Upload File 1</p>
+                                                <div class="">
+                                                    <input type="file" class="pds-input">
+                                                </div>
+                                                <p>Driving License</p>
+                                                <p>Remove File</p>
                                             </div>
-                                            <p>Driving License</p>
-                                            <p>Remove File</p>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="pds-kyc">
+                                        <h6 class="text-center">Upload Additional Documents</h6>
 
-                                <div class="pds-kyc" id="pds-company">
-                                    <div class="pds-kyc-label">
-                                        <label>Company GST Details: <span class="asterisk">*</span></label>
-                                        <input id="sp-large-company-gst" type="text" placeholder="AAAAA546789202IZ5"
-                                            required>
-                                    </div>
-                                    <div class="pds-kyc-label">
-                                        <label>Bank Payment Details: <span class="asterisk">*</span></label>
-                                        <input id="sp-large-company-bank" type="text" placeholder="Account Number"
-                                            required>
-                                    </div>
-                                    <div class="pds-kyc-label">
-                                        <label>IFSC CODE <span class="asterisk">*</span></label>
-                                        <input id="sp-large-company-ifsc" type="text" placeholder="Account Number"
-                                            required>
-                                    </div>
-
-                                    <div class="pds-kyc-upload">
-                                        <h6 class="pds-kyc-header">A. ID Proof Documents<span>&nbsp;&nbsp;(Each File
-                                                should not be more than 2MB)</span></h6>
-                                        <div class="pds-kyc-upload-single">
-                                            <p>Upload File 1</p>
-                                            <div class="custom-file">
-                                                <input type="file" class="pds-input">
-                                            </div>
-                                            <p>Aadhar Card <span class="asterisk">*</span></p>
-                                            <p>Remove File</p>
+                                        <div class="pds-kyc-add text-center">
+                                            <p><img src="/assets/pds-add-doccument.png"></p>
+                                            <button class="btn">Start Uploading Your Documents Now</button>
+                                            <p style="color: #C4C3C3; font-weight: 500; font-size: 0.9em;">Supported
+                                                files :
+                                                PDF, Images, Scanner, Video files</p>
                                         </div>
-                                        <div class="pds-kyc-upload-single">
-                                            <p>Upload File 2</p>
-                                            <div class="custom-file">
-                                                <input type="file" class="pds-input">
-                                            </div>
-                                            <p>PAN Card <span class="asterisk">*</span></p>
-                                            <p>Remove File</p>
+                                        <div class="pds-kyc-add pds-kyc-upload-single">
+                                            <p>Date & Time</p>
+                                            <p>Uploaded By</p>
+                                            <p>File Name</p>
+                                            <p>File Type</p>
+                                            <p>Sort By * Dropdown type</p>
                                         </div>
-                                        <div class="pds-kyc-upload-single">
-                                            <p>Upload File 3</p>
-                                            <div class="custom-file">
-                                                <input type="file" class="pds-input">
-                                            </div>
-                                            <p>Passport</p>
-                                            <p>Remove File</p>
-                                        </div>
-                                        <div class="pds-kyc-upload-single">
-                                            <p>Upload File 1</p>
-                                            <div class="custom-file">
-                                                <input type="file" class="pds-input">
-                                            </div>
-                                            <p>Driving License</p>
-                                            <p>Remove File</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="pds-kyc-upload">
-                                        <h6 class="pds-kyc-header">B. Proof of Company Documents<span>&nbsp;&nbsp;(Each
-                                                File should not be more than 2MB)</span></h6>
-                                        <div class="pds-kyc-upload-single">
-                                            <p>Upload File 1</p>
-                                            <div class="custom-file">
-                                                <input type="file" class="pds-input">
-                                            </div>
-                                            <p>Certificate of Incorportation<span class="asterisk">*</span></p>
-                                            <p>Remove File</p>
-                                        </div>
-                                        <div class="pds-kyc-upload-single">
-                                            <p>Upload File 2</p>
-                                            <div class="custom-file">
-                                                <input type="file" class="pds-input">
-                                            </div>
-                                            <p>Company Pan Card<span class="asterisk">*</span></p>
-                                            <p>Remove File</p>
-                                        </div>
-                                        <div class="pds-kyc-upload-single">
-                                            <p>Upload File 3</p>
-                                            <div class="custom-file">
-                                                <input type="file" class="pds-input">
-                                            </div>
-                                            <p>Memorandum and Articles of Association</p>
-                                            <p>Remove File</p>
-                                        </div>
-                                        <div class="pds-kyc-upload-single">
-                                            <p>Upload File 1</p>
-                                            <div class="custom-file">
-                                                <input type="file" class="pds-input">
-                                            </div>
-                                            <p>Certificate of Commencement of Business</p>
-                                            <p>Remove File</p>
-                                        </div>
-                                        <div class="pds-kyc-upload-single">
-                                            <p>Upload File 1</p>
-                                            <div class="custom-file">
-                                                <input type="file" class="pds-input">
-                                            </div>
-                                            <p>LLP Agreement</p>
-                                            <p>Remove File</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="pds-kyc">
-                                    <h6 class="text-center">Upload Additional Documents</h6>
-
-                                    <div class="pds-kyc-add text-center">
-                                        <p><img src="/assets/pds-add-doccument.png"></p>
-                                        <button class="btn">Start Uploading Your Documents Now</button>
-                                        <p style="color: #C4C3C3; font-weight: 500; font-size: 0.9em;">Supported files :
-                                            PDF, Images, Scanner, Video files</p>
-                                    </div>
-                                    <div class="pds-kyc-add pds-kyc-upload-single">
-                                        <p>Date & Time</p>
-                                        <p>Uploaded By</p>
-                                        <p>File Name</p>
-                                        <p>File Type</p>
-                                        <p>Sort By * Dropdown type</p>
                                     </div>
                                     <div class="pds-account-buttons">
                                         <div class="pds-account-edit">
                                             <button class="btn btn-primary">Back</button>
                                         </div>
                                         <div class="pds-account-next">
-                                            <button id="sp-save-kyc" class="btn btn-primary">Save</button>
+                                            <button id="sp-save-small-kyc" class="btn btn-primary">Save</button>
+                                            <button class="btn btn-primary">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="pds-company">
+                                    <div class="pds-kyc">
+                                        <div class="pds-kyc-label">
+                                            <label>Company GST Details: <span class="asterisk">*</span></label>
+                                            <input id="sp-large-company-gst" type="text" placeholder="AAAAA546789202IZ5"
+                                                required>
+                                        </div>
+                                        <div class="pds-kyc-label">
+                                            <label>Bank Payment Details: <span class="asterisk">*</span></label>
+                                            <input id="sp-large-company-bank" type="text" placeholder="Account Number"
+                                                required>
+                                        </div>
+                                        <div class="pds-kyc-label">
+                                            <label>IFSC CODE <span class="asterisk">*</span></label>
+                                            <input id="sp-large-company-ifsc" type="text" placeholder="Account Number"
+                                                required>
+                                        </div>
+
+                                        <div class="pds-kyc-upload">
+                                            <h6 class="pds-kyc-header">A. ID Proof Documents<span>&nbsp;&nbsp;(Each File
+                                                    should not be more than 2MB)</span></h6>
+                                            <div class="pds-kyc-upload-single">
+                                                <p>Upload File 1</p>
+                                                <div class="custom-file">
+                                                    <input type="file" class="pds-input">
+                                                </div>
+                                                <p>Aadhar Card <span class="asterisk">*</span></p>
+                                                <p>Remove File</p>
+                                            </div>
+                                            <div class="pds-kyc-upload-single">
+                                                <p>Upload File 2</p>
+                                                <div class="custom-file">
+                                                    <input type="file" class="pds-input">
+                                                </div>
+                                                <p>PAN Card <span class="asterisk">*</span></p>
+                                                <p>Remove File</p>
+                                            </div>
+                                            <div class="pds-kyc-upload-single">
+                                                <p>Upload File 3</p>
+                                                <div class="custom-file">
+                                                    <input type="file" class="pds-input">
+                                                </div>
+                                                <p>Passport</p>
+                                                <p>Remove File</p>
+                                            </div>
+                                            <div class="pds-kyc-upload-single">
+                                                <p>Upload File 1</p>
+                                                <div class="custom-file">
+                                                    <input type="file" class="pds-input">
+                                                </div>
+                                                <p>Driving License</p>
+                                                <p>Remove File</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="pds-kyc-upload">
+                                            <h6 class="pds-kyc-header">B. Proof of Company
+                                                Documents<span>&nbsp;&nbsp;(Each
+                                                    File should not be more than 2MB)</span></h6>
+                                            <div class="pds-kyc-upload-single">
+                                                <p>Upload File 1</p>
+                                                <div class="custom-file">
+                                                    <input type="file" class="pds-input">
+                                                </div>
+                                                <p>Certificate of Incorportation<span class="asterisk">*</span></p>
+                                                <p>Remove File</p>
+                                            </div>
+                                            <div class="pds-kyc-upload-single">
+                                                <p>Upload File 2</p>
+                                                <div class="custom-file">
+                                                    <input type="file" class="pds-input">
+                                                </div>
+                                                <p>Company Pan Card<span class="asterisk">*</span></p>
+                                                <p>Remove File</p>
+                                            </div>
+                                            <div class="pds-kyc-upload-single">
+                                                <p>Upload File 3</p>
+                                                <div class="custom-file">
+                                                    <input type="file" class="pds-input">
+                                                </div>
+                                                <p>Memorandum and Articles of Association</p>
+                                                <p>Remove File</p>
+                                            </div>
+                                            <div class="pds-kyc-upload-single">
+                                                <p>Upload File 1</p>
+                                                <div class="custom-file">
+                                                    <input type="file" class="pds-input">
+                                                </div>
+                                                <p>Certificate of Commencement of Business</p>
+                                                <p>Remove File</p>
+                                            </div>
+                                            <div class="pds-kyc-upload-single">
+                                                <p>Upload File 1</p>
+                                                <div class="custom-file">
+                                                    <input type="file" class="pds-input">
+                                                </div>
+                                                <p>LLP Agreement</p>
+                                                <p>Remove File</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="pds-kyc">
+                                        <h6 class="text-center">Upload Additional Documents</h6>
+
+                                        <div class="pds-kyc-add text-center">
+                                            <p><img src="/assets/pds-add-doccument.png"></p>
+                                            <button class="btn">Start Uploading Your Documents Now</button>
+                                            <p style="color: #C4C3C3; font-weight: 500; font-size: 0.9em;">Supported
+                                                files :
+                                                PDF, Images, Scanner, Video files</p>
+                                        </div>
+                                        <div class="pds-kyc-add pds-kyc-upload-single">
+                                            <p>Date & Time</p>
+                                            <p>Uploaded By</p>
+                                            <p>File Name</p>
+                                            <p>File Type</p>
+                                            <p>Sort By * Dropdown type</p>
+                                        </div>
+                                    </div>
+                                    <div class="pds-account-buttons">
+                                        <div class="pds-account-edit">
+                                            <button class="btn btn-primary">Back</button>
+                                        </div>
+                                        <div class="pds-account-next">
+                                            <button id="sp-save-large-kyc" class="btn btn-primary">Save</button>
                                             <button class="btn btn-primary">Next</button>
                                         </div>
                                     </div>
@@ -2415,6 +2459,7 @@
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <script type="module" src="firebase.js"></script>
+    <script src="custom-category.js"></script>
 </body>
 
 </html>

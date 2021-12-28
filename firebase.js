@@ -43,11 +43,12 @@ let generalBtn = document.getElementById("sp-save-general");
 let spSmallCompanyGST = document.getElementById("sp-company-gst");
 let spSmallCompanyBank = document.getElementById("sp-company-bank");
 let spSmallCompanyIFSC = document.getElementById("sp-company-ifsc");
-let generalBtn2 = document.getElementById("sp-save-kyc");
+let spSmallBtn = document.getElementById("sp-save-small-kyc");
 let spLargeCompanyGST = document.getElementById("sp-large-company-gst");
 let spLargeCompanyBank = document.getElementById("sp-large-company-bank");
 let spLargeCompanyIFSC = document.getElementById("sp-large-company-ifsc");
 let spSmallCompanyAadhar = document.getElementById("sp-small-company-aadhar");
+let splargeBtn = document.getElementById("sp-save-large-kyc");
 
 //function to add data from form
 
@@ -72,17 +73,24 @@ async function sendData() {
 
 generalBtn.addEventListener("click", sendData);
 
-async function updateData() {
+async function updateKYCData1() {
     await updateDoc(doc(db, "user-list", spNameRegistered.value + spCompanyRegisteredNumber.value), {
         spSmallCompanyGST: spSmallCompanyGST.value,
         spSmallCompanyBank: spSmallCompanyBank.value,
         spSmallCompanyIFSC: spSmallCompanyIFSC.value,
-        //spLargeCompanyGST: spLargeCompanyGST.value,
-        //spLargeCompanyBank: spLargeCompanyBank.value,
-        //spLargeCompanyIFSC: spLargeCompanyIFSC.value,
         spSmallCompanyAadhar: spSmallCompanyAadhar.value
     });
 }
 
-generalBtn2.addEventListener("click", updateData);
+async function updateKYCData2() {
+    await updateDoc(doc(db, "user-list", spNameRegistered.value + spCompanyRegisteredNumber.value), {
+        spLargeCompanyGST: spLargeCompanyGST.value,
+        spLargeCompanyBank: spLargeCompanyBank.value,
+        spLargeCompanyIFSC: spLargeCompanyIFSC.value
+    });
+}
+
+spSmallBtn.addEventListener("click", updateKYCData1);
+
+splargeBtn.addEventListener("click", updateKYCData2);
 
