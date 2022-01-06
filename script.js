@@ -54,7 +54,10 @@ $('.std-button').on('click', function () {
 
 
 /* Function to add contact data to contact table in new row - For SP Page - Contacts Tab */
-var cdiCounter = 1;
+// counter for creating auto id's for contact rows
+let cdiCounter = 0;
+
+let contactArray = [];
 
 function addContactRow() {
     let stateValue = document.getElementById("cdi-state");
@@ -72,6 +75,7 @@ function addContactRow() {
     /* Pushing data from modal form to the contact-table div*/
     const div = document.createElement('div');
     div.className = "contact-details-wrapper";
+    div.id = `contactNo${cdiCounter}`;
 
     div.innerHTML = `
                 <p class="contact-details"></p>
@@ -82,15 +86,31 @@ function addContactRow() {
                 <p class="contact-details">${cityValue.value}</p>
                 <p class="contact-details">${emailValue.value}</p>
                 <p class="contact-details">${contactValue.value}</p>
+                <input class="contact-details contact-details-input" type="checkbox">
             `;
 
+    let contactobj = {};
+    contactobj[`newNo${cdiCounter}`] = { state: `${stateValue.value}`, name: `${nameValue.value}`, role: `${roleValue.value}`, city: `${cityValue.value}`, email: `${emailValue.value}`, contact: `${contactValue.value}` };
+    console.log(contactobj[`newNo${cdiCounter}`]);
+    contactArray.push(contactobj[`newNo${cdiCounter}`]);
+
     /* Close the modal after submitting contact information  */
-    document.getElementById("test-id").appendChild(div);
     $('#exampleModal').modal('hide');
 
     /* Create modal form input values */
     for (i = 0; i < valueArray.length; ++i) {
         valueArray[i].value = "";
+    }
+}
+
+//function for deleting selected contacts row - contacts tab
+function deleteContactsRow() {
+    let contactsWrapper = document.getElementById("test-id");
+    for (let i = 0; i < contactsWrapper.getElementsByTagName("input").length; i++) {
+        if (contactsWrapper.getElementsByTagName("input")[i].checked == true) {
+            contactsWrapper.getElementsByTagName("input")[i].parentElement.remove();
+            contactArray.splice([i], 1);
+        }
     }
 }
 
@@ -131,6 +151,7 @@ function openGeneral() {
     document.getElementById("business-partners").style.display = "none";
     document.getElementById("business-opp").style.display = "none";
     document.getElementsByClassName("pds-document-sub-outer")[0].style.display = "none";
+    document.getElementsByClassName("pds-document-sub-outer-1")[0].style.display = "none";
 }
 
 let pdsGeneral = document.getElementById("pds-general");
@@ -150,6 +171,7 @@ function openKYC() {
     document.getElementById("business-opp").style.display = "none";
     $('#pds-ind-btn').addClass('pds-ct-active');
     document.getElementsByClassName("pds-document-sub-outer")[0].style.display = "none";
+    document.getElementsByClassName("pds-document-sub-outer-1")[0].style.display = "none";
 }
 
 let pdsKYC = document.getElementById("pds-kyc");
@@ -168,6 +190,7 @@ function paymentMethod() {
     document.getElementById("business-partners").style.display = "none";
     document.getElementById("business-opp").style.display = "none";
     document.getElementsByClassName("pds-document-sub-outer")[0].style.display = "none";
+    document.getElementsByClassName("pds-document-sub-outer-1")[0].style.display = "none";
 }
 
 let pdsPayment = document.getElementById("pds-payment");
@@ -186,6 +209,7 @@ function parcelType() {
     document.getElementById("business-partners").style.display = "none";
     document.getElementById("business-opp").style.display = "none";
     document.getElementsByClassName("pds-document-sub-outer")[0].style.display = "none";
+    document.getElementsByClassName("pds-document-sub-outer-1")[0].style.display = "none";
 }
 
 let pdsParcel = document.getElementById("pds-parcel");
@@ -204,6 +228,7 @@ function addContacts() {
     document.getElementById("business-partners").style.display = "none";
     document.getElementById("business-opp").style.display = "none";
     document.getElementsByClassName("pds-document-sub-outer")[0].style.display = "none";
+    document.getElementsByClassName("pds-document-sub-outer-1")[0].style.display = "none";
 }
 
 let pdsContacts = document.getElementById("pds-contacts");
@@ -221,6 +246,7 @@ function addPricing() {
     document.getElementById("requests-received").style.display = "none";
     document.getElementById("business-partners").style.display = "none";
     document.getElementById("business-opp").style.display = "none";
+    document.getElementsByClassName("pds-document-sub-outer-1")[0].style.display = "block";
     document.getElementsByClassName("pds-document-sub-outer")[0].style.display = "none";
 }
 
@@ -240,8 +266,7 @@ function deliveryLocation() {
     document.getElementById("business-partners").style.display = "none";
     document.getElementById("business-opp").style.display = "none";
     document.getElementsByClassName('pds-document-sub-outer')[0].style.display = "block";
-    $("#dl-courier-btn").addClass("pds-ds-active");
-    $("#dl-courier").addClass("dl-active");
+    document.getElementsByClassName("pds-document-sub-outer-1")[0].style.display = "none";
 }
 
 let pdsDelivery = document.getElementById("pds-delivery");
@@ -260,6 +285,7 @@ function addAdvt() {
     document.getElementById("business-partners").style.display = "none";
     document.getElementById("business-opp").style.display = "none";
     document.getElementsByClassName("pds-document-sub-outer")[0].style.display = "none";
+    document.getElementsByClassName("pds-document-sub-outer-1")[0].style.display = "none";
 }
 
 let pdsAdvt = document.getElementById("pds-advt");
@@ -278,6 +304,7 @@ function addRequest() {
     document.getElementById("business-partners").style.display = "none";
     document.getElementById("business-opp").style.display = "none";
     document.getElementsByClassName("pds-document-sub-outer")[0].style.display = "none";
+    document.getElementsByClassName("pds-document-sub-outer-1")[0].style.display = "none";
 }
 
 let pdsRequest = document.getElementById("pds-request");
@@ -296,6 +323,7 @@ function addBusinessPartner() {
     document.getElementById("business-partners").style.display = "block";
     document.getElementById("business-opp").style.display = "none";
     document.getElementsByClassName("pds-document-sub-outer")[0].style.display = "none";
+    document.getElementsByClassName("pds-document-sub-outer-1")[0].style.display = "none";
 }
 
 let pdsPartner = document.getElementById("pds-biz-partner");
@@ -314,6 +342,7 @@ function addBusinessOpp() {
     document.getElementById("business-partners").style.display = "none";
     document.getElementById("business-opp").style.display = "block";
     document.getElementsByClassName("pds-document-sub-outer")[0].style.display = "none";
+    document.getElementsByClassName("pds-document-sub-outer-1")[0].style.display = "none";
 }
 
 let pdsOpp = document.getElementById("pds-biz-opportunity");
@@ -541,7 +570,204 @@ $("#dl-courier-btn").on("click", function () {
     $("#dl-courier").addClass("dl-active");
 });
 
+//pricing-model tab sub tabs functionality - SP page
+$("#dl-weight-btn").on("click", function () {
+    $("#dl-weight-btn").addClass('pds-ds-active');
+    $("#dl-distance-btn").removeClass("pds-ds-active");
+    $("#dl-weight").addClass("dl-active");
+    $("#dl-distance").removeClass("dl-active");
+});
+
+$("#dl-distance-btn").on("click", function () {
+    $("#dl-weight-btn").removeClass('pds-ds-active');
+    $("#dl-distance-btn").addClass("pds-ds-active");
+    $("#dl-weight").removeClass("dl-active");
+    $("#dl-distance").addClass("dl-active");
+});
+
 //converting default checbox value to true/false - to understand checkbox checked and unchecked values
 $('.custom-checkbox').on('click', function () {
     $(this).val(this.checked ? true : false);
 });
+
+// upload files to fireabse storage - giving an error 
+let spSmallFiles = [];
+var reader = new FileReader();
+
+var spSmallInput = document.getElementById("pds-upload-multiple-small");
+spSmallInput.type = "file";
+
+spSmallInput.onchange = e => {
+    files = e.target.files;
+    spSmallFiles = files;
+    console.log(spSmallFiles);
+    let htmlSmall = document.getElementById("pds-kyc-small-multiple");
+    for (var i = 0; i < spSmallFiles.length; i++) {
+        console.log(spSmallFiles[i]);
+        htmlSmall.innerHTML +=
+            `<div class="pds-kyc-add pds-kyc-upload-multiple">
+                <p>
+                <span>${new Date().toLocaleDateString()}</span>
+                <span>${new Date().toLocaleTimeString()}</span>
+                </p>
+                <p>Uploaded By</p>
+                <p>${spSmallFiles[i].name}</p>
+                <p>${spSmallFiles[i].type}</p>
+                <p>Sort By</p>
+            </div>`;
+    }
+}
+
+// prompt for missing fields
+var once = false;
+function prompt() {
+    if (once == false) {
+        alert('Check for missing required fields!');
+        once = true;
+    }
+}
+
+
+// Pricing Model Functions
+
+// Pricing Model Bike Function
+function addBikePricing() {
+    let pmBikeRate = document.getElementById("pm-bike-rate-per-km");
+    let pmBikeMinKm = document.getElementById("pm-bike-min-km");
+    let pmBikeMaxKm = document.getElementById("pm-bike-max-km");
+    let pmBikeMinWeight = document.getElementById("pm-bike-min-weight");
+    let pmBikeMaxWeight = document.getElementById("pm-bike-max-weight");
+    let pmBikeGST = document.getElementById("pm-bike-gst");
+
+    document.getElementById("pm-bike-rate-value").innerHTML = `${pmBikeRate.value}`;
+    document.getElementById("pm-bike-min-km-value").innerHTML = `${pmBikeMinKm.value}`;
+    document.getElementById("pm-bike-max-km-value").innerHTML = `${pmBikeMaxKm.value}`;
+    document.getElementById("pm-bike-min-weight-value").innerHTML = `${pmBikeMinWeight.value}`;
+    document.getElementById("pm-bike-max-weight-value").innerHTML = `${pmBikeMaxWeight.value}`;
+    document.getElementById("pm-bike-gst-value").innerHTML = `${pmBikeGST.value}`;
+
+    /* Close the modal after submitting contact information  */
+    $('#pm-bike-modal').modal('hide');
+}
+
+// Pricing Model E-Rickshaw Function
+function addRickshawPricing() {
+    let pmRickshawRate = document.getElementById("pm-rickshaw-rate-per-km");
+    let pmRickshawMinKm = document.getElementById("pm-rickshaw-min-km");
+    let pmRickshawMaxKm = document.getElementById("pm-rickshaw-max-km");
+    let pmRickshawMinWeight = document.getElementById("pm-rickshaw-min-weight");
+    let pmRickshawMaxWeight = document.getElementById("pm-rickshaw-max-weight");
+    let pmRickshawGST = document.getElementById("pm-rickshaw-gst");
+
+    document.getElementById("pm-rickshaw-rate-value").innerHTML = `${pmRickshawRate.value}`;
+    document.getElementById("pm-rickshaw-min-km-value").innerHTML = `${pmRickshawMinKm.value}`;
+    document.getElementById("pm-rickshaw-max-km-value").innerHTML = `${pmRickshawMaxKm.value}`;
+    document.getElementById("pm-rickshaw-min-weight-value").innerHTML = `${pmRickshawMinWeight.value}`;
+    document.getElementById("pm-rickshaw-max-weight-value").innerHTML = `${pmRickshawMaxWeight.value}`;
+    document.getElementById("pm-rickshaw-gst-value").innerHTML = `${pmRickshawGST.value}`;
+
+    /* Close the modal after submitting contact information  */
+    $('#pm-rickshaw-modal').modal('hide');
+}
+
+// Pricing Model Tempo Function
+function addTempoPricing() {
+    let pmTempoRate = document.getElementById("pm-tempo-rate-per-km");
+    let pmTempoMinKm = document.getElementById("pm-tempo-min-km");
+    let pmTempoMaxKm = document.getElementById("pm-tempo-max-km");
+    let pmTempoMinWeight = document.getElementById("pm-tempo-min-weight");
+    let pmTempoMaxWeight = document.getElementById("pm-tempo-max-weight");
+    let pmTempoGST = document.getElementById("pm-tempo-gst");
+
+    document.getElementById("pm-tempo-rate-value").innerHTML = `${pmTempoRate.value}`;
+    document.getElementById("pm-tempo-min-km-value").innerHTML = `${pmTempoMinKm.value}`;
+    document.getElementById("pm-tempo-max-km-value").innerHTML = `${pmTempoMaxKm.value}`;
+    document.getElementById("pm-tempo-min-weight-value").innerHTML = `${pmTempoMinWeight.value}`;
+    document.getElementById("pm-tempo-max-weight-value").innerHTML = `${pmTempoMaxWeight.value}`;
+    document.getElementById("pm-tempo-gst-value").innerHTML = `${pmTempoGST.value}`;
+
+    /* Close the modal after submitting contact information  */
+    $('#pm-tempo-modal').modal('hide');
+}
+
+// Pricing Model Half-truck Pricing
+function addHtruckPricing() {
+    let pmHtruckRate = document.getElementById("pm-htruck-rate-per-km");
+    let pmHtruckMinKm = document.getElementById("pm-htruck-min-km");
+    let pmHtruckMaxKm = document.getElementById("pm-htruck-max-km");
+    let pmHtruckMinWeight = document.getElementById("pm-htruck-min-weight");
+    let pmHtruckMaxWeight = document.getElementById("pm-htruck-max-weight");
+    let pmHtruckGST = document.getElementById("pm-htruck-gst");
+
+    document.getElementById("pm-htruck-rate-value").innerHTML = `${pmHtruckRate.value}`;
+    document.getElementById("pm-htruck-min-km-value").innerHTML = `${pmHtruckMinKm.value}`;
+    document.getElementById("pm-htruck-max-km-value").innerHTML = `${pmHtruckMaxKm.value}`;
+    document.getElementById("pm-htruck-min-weight-value").innerHTML = `${pmHtruckMinWeight.value}`;
+    document.getElementById("pm-htruck-max-weight-value").innerHTML = `${pmHtruckMaxWeight.value}`;
+    document.getElementById("pm-htruck-gst-value").innerHTML = `${pmHtruckGST.value}`;
+
+    /* Close the modal after submitting contact information  */
+    $('#pm-htruck-modal').modal('hide');
+}
+
+
+// Pricing Model Full-truck Pricing
+function addFtruckPricing() {
+    let pmFtruckRate = document.getElementById("pm-ftruck-rate-per-km");
+    let pmFtruckMinKm = document.getElementById("pm-ftruck-min-km");
+    let pmFtruckMaxKm = document.getElementById("pm-ftruck-max-km");
+    let pmFtruckMinWeight = document.getElementById("pm-ftruck-min-weight");
+    let pmFtruckMaxWeight = document.getElementById("pm-ftruck-max-weight");
+    let pmFtruckGST = document.getElementById("pm-ftruck-gst");
+
+    document.getElementById("pm-ftruck-rate-value").innerHTML = `${pmFtruckRate.value}`;
+    document.getElementById("pm-ftruck-min-km-value").innerHTML = `${pmFtruckMinKm.value}`;
+    document.getElementById("pm-ftruck-max-km-value").innerHTML = `${pmFtruckMaxKm.value}`;
+    document.getElementById("pm-ftruck-min-weight-value").innerHTML = `${pmFtruckMinWeight.value}`;
+    document.getElementById("pm-ftruck-max-weight-value").innerHTML = `${pmFtruckMaxWeight.value}`;
+    document.getElementById("pm-ftruck-gst-value").innerHTML = `${pmFtruckGST.value}`;
+
+    /* Close the modal after submitting contact information  */
+    $('#pm-ftruck-modal').modal('hide');
+}
+
+
+// Pricing Model Container 20L Pricing
+function addContainer20Pricing() {
+    let pmContainer20Rate = document.getElementById("pm-container20-rate-per-km");
+    let pmContainer20MinKm = document.getElementById("pm-container20-min-km");
+    let pmContainer20MaxKm = document.getElementById("pm-container20-max-km");
+    let pmContainer20MinWeight = document.getElementById("pm-container20-min-weight");
+    let pmContainer20MaxWeight = document.getElementById("pm-container20-max-weight");
+    let pmContainer20GST = document.getElementById("pm-container20-gst");
+
+    document.getElementById("pm-container20-rate-value").innerHTML = `${pmContainer20Rate.value}`;
+    document.getElementById("pm-container20-min-km-value").innerHTML = `${pmContainer20MinKm.value}`;
+    document.getElementById("pm-container20-max-km-value").innerHTML = `${pmContainer20MaxKm.value}`;
+    document.getElementById("pm-container20-min-weight-value").innerHTML = `${pmContainer20MinWeight.value}`;
+    document.getElementById("pm-container20-max-weight-value").innerHTML = `${pmContainer20MaxWeight.value}`;
+    document.getElementById("pm-container20-gst-value").innerHTML = `${pmContainer20GST.value}`;
+
+    /* Close the modal after submitting contact information  */
+    $('#pm-container20-modal').modal('hide');
+}
+
+// Pricing Model Container 40L Pricing
+function addContainer40Pricing() {
+    let pmContainer40Rate = document.getElementById("pm-container40-rate-per-km");
+    let pmContainer40MinKm = document.getElementById("pm-container40-min-km");
+    let pmContainer40MaxKm = document.getElementById("pm-container40-max-km");
+    let pmContainer40MinWeight = document.getElementById("pm-container40-min-weight");
+    let pmContainer40MaxWeight = document.getElementById("pm-container40-max-weight");
+    let pmContainer40GST = document.getElementById("pm-container40-gst");
+
+    document.getElementById("pm-container40-rate-value").innerHTML = `${pmContainer40Rate.value}`;
+    document.getElementById("pm-container40-min-km-value").innerHTML = `${pmContainer40MinKm.value}`;
+    document.getElementById("pm-container40-max-km-value").innerHTML = `${pmContainer40MaxKm.value}`;
+    document.getElementById("pm-container40-min-weight-value").innerHTML = `${pmContainer40MinWeight.value}`;
+    document.getElementById("pm-container40-max-weight-value").innerHTML = `${pmContainer40MaxWeight.value}`;
+    document.getElementById("pm-container40-gst-value").innerHTML = `${pmContainer40GST.value}`;
+
+    /* Close the modal after submitting contact information  */
+    $('#pm-container40-modal').modal('hide');
+}

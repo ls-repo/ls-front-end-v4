@@ -4,6 +4,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase
 // Import firebase authentication 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
 
+// Import firebase storage
+import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-storage.js";
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyD-fnBa0BkVFiNwSN1i2DBrVmoep7WoN2Y",
@@ -37,7 +40,7 @@ let spServiceCourier = document.getElementById("sp-service-courier");
 let spServiceWarehouse = document.getElementById("sp-service-warehouse");
 let spServiceFullfillment = document.getElementById("sp-service-fullfillment");
 let spServiceHirefleet = document.getElementById("sp-service-hirefleet");
-let generalBtn = document.getElementById("sp-save-general");
+let btnSaveGeneral = document.getElementById("sp-save-general");
 
 //kyc documents variables
 let spSmallCompanyGST = document.getElementById("sp-company-gst");
@@ -69,9 +72,27 @@ async function sendData() {
         spServiceFullfillment: spServiceFullfillment.value,
         spServiceHirefleet: spServiceHirefleet.value
     });
+    // set atleast one checkboxes set to required
+    jQuery(function ($) {
+        var requiredCheckboxes = $(':checkbox[required]');
+        requiredCheckboxes.on('change', function (e) {
+            var checkboxGroup = requiredCheckboxes.filter('[name="' + $(this).attr('name') + '"]');
+            var isChecked = checkboxGroup.is(':checked');
+            checkboxGroup.prop('required', !isChecked);
+        });
+        requiredCheckboxes.trigger('change');
+    });
 }
 
-generalBtn.addEventListener("click", sendData);
+btnSaveGeneral.addEventListener("click", sendData);
+//event listeners for service provide next buttons
+let spNextGeneral = document.getElementById("sp-next-general");
+spNextGeneral.addEventListener("click", function () {
+    sendData()
+        .then(result => openKYC())
+        .then(console.log("A"))
+        .catch(console.log("B"))
+});
 
 async function updateKYCData1() {
     await updateDoc(doc(db, "user-list", spNameRegistered.value + spCompanyRegisteredNumber.value), {
@@ -94,3 +115,59 @@ spSmallBtn.addEventListener("click", updateKYCData1);
 
 splargeBtn.addEventListener("click", updateKYCData2);
 
+// upload images to storage giving an error
+async function fireStorage() {
+    for (var k = 0; k < spSmallFiles[k]; k++) {
+        var imgtoupload = spSmallFiles[k];
+    }
+
+    var imgName = spSmallFiles[k].name + spSmallFiles[k].type;
+
+    const storage = getStorage();
+    const storageRef = sRef(storage, "Images/" + imgName);
+    const UploadTask = uploadBytesResumable(storageRef, imgtoupload);
+}
+
+//variable for payment-type tab - sp page
+let spPymntPrepaid = document.getElementById("pymnt-prepaid");
+let spPymntCOD = document.getElementById("pymnt-cod");
+let spPymntPaytm = document.getElementById("pymnt-paytm");
+let spPymntGPAY = document.getElementById("pymnt-gpay");
+let spPymntPhonepe = document.getElementById("pymnt-phonepe");
+let spPymntUPI = document.getElementById("pymnt-upi");
+let spPymntVisa = document.getElementById("pymnt-visa");
+let spPymntAmazonPay = document.getElementById("pymnt-amazonpay");
+let spPymntMobikwik = document.getElementById("pymnt-mobikwik");
+let spPymntFreecharge = document.getElementById("pymnt-freecharge");
+let spPymntDebit = document.getElementById("pymnt-debit");
+let spPymntCredit = document.getElementById("pymnt-credit");
+let spPymntATM = document.getElementById("pymnt-atm");
+let spSavePayment = document.getElementById("sp-save-payment");
+
+async function updatePayment() {
+    await updateDoc(doc(db, "user-list", spNameRegistered.value + spCompanyRegisteredNumber.value), {
+        spPymntPrepaid: spPymntPrepaid.value,
+        spPymntCOD: spPymntCOD.value,
+        spPymntPaytm: spPymntPaytm.value,
+        spPymntGPAY: spPymntGPAY.value,
+        spPymntPhonepe: spPymntPhonepe.value,
+        spPymntUPI: spPymntUPI.value,
+        spPymntVisa: spPymntVisa, value,
+        spPymntAmazonPay: spPymntAmazonPay.value,
+        spPymntMobikwik: spPymntMobikwik.value,
+        spPymntFreecharge: spPymntFreecharge.value,
+        spPymntDebit: spPymntDebit.value,
+        spPymntCredit: spPymntCredit.vlaue,
+        spPymntATM: spPymntATM.value
+    });
+    jQuery(function ($) {
+        var requiredCheckboxes = $(':checkbox[required]');
+        requiredCheckboxes.on('change', function (e) {
+            var checkboxGroup = requiredCheckboxes.filter('[name="' + $(this).attr('name') + '"]');
+            var isChecked = checkboxGroup.is(':checked');
+            checkboxGroup.prop('required', !isChecked);
+        });
+        requiredCheckboxes.trigger('change');
+    });
+}
+spSavePayment.addEventListener("click", updatePayment);

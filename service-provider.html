@@ -234,11 +234,12 @@
                         <a href="#" id="pds-kyc">&nbsp;&nbsp;KYC Documents</a>
                         <a href="#" id="pds-payment">&nbsp;&nbsp;Payment Method</a>
                         <a href="#" id="pds-parcel">&nbsp;&nbsp;Parcel Type</a>
-                        <a href="" style="display: none;"><a href="#" id="pds-delivery">&nbsp;&nbsp;Delivery
-                                Location</a>
+                        <a href="#" id="pds-delivery">&nbsp;&nbsp;Delivery
+                            Location</a>
+                        <a href="" style="display: none;">
                             <div class="pds-document-sub-outer">
                                 <div class="pds-document-sub">
-                                    <a class="pds-ds" id="dl-courier-btn">Courier</a>
+                                    <a class="pds-ds pds-ds-active" id="dl-courier-btn">Courier</a>
                                     <a class="pds-ds" id="dl-shipping-btn">Shipping</a>
                                 </div>
                             </div>
@@ -246,10 +247,18 @@
 
                         <a href="#" id="pds-contacts">&nbsp;&nbsp;Contacts</a>
                         <a href="#" id="pds-pricing">&nbsp;&nbsp;Pricing Model</a>
+                        <a href="" style="display: none;">
+                            <div class="pds-document-sub-outer-1">
+                                <div class="pds-document-sub">
+                                    <a class="pds-ds pds-ds-active" id="dl-distance-btn">BY Km</a>
+                                    <a class="pds-ds" id="dl-weight-btn">By Weight</a>
+                                </div>
+                            </div>
+                        </a>
                         <a href="#" id="pds-advt">&nbsp;&nbsp;Upload Advertisement</a>
                         <a href="#" id="pds-request">&nbsp;&nbsp;Delivery Requests Received</a>
                         <a href="#" id="pds-biz-partner">&nbsp;&nbsp;Active Business Partners</a>
-                        <a href="#" id="pds-biz-opportunity">&nbsp;&nbsp;Business Opportunities</a>
+                        <a href="#" id="pds-biz-opportunity">&nbsp;&nbsp;New Business Opportunities</a>
                     </div>
                     <li class="nav-item pds-button">
                         <a class="nav-link pds-link std-button" href="#billing" role="tab" data-toggle="tab">Billing
@@ -446,7 +455,7 @@
                         <!-- Test -->
                         <div class="pds-account-info-wrapper" id="general-info">
                             <h5>General Information</h5>
-                            <form>
+                            <form onsubmit="return false">
                                 <div class="pds-account-info">
                                     <div class="pds-single-input">
                                         <label>Company Registered Name <span class="asterisk">&ast;</span></label>
@@ -501,37 +510,36 @@
                                         <label>
                                             <span>Bike Delivery</span>
                                             <input id="sp-service-bike" class="custom-checkbox" type="checkbox"
-                                                value=false name="checkbox" />
+                                                value=false name="checkbox" required oninvalid="prompt()" />
                                         </label>
                                         <label>
                                             <span>Courier</span>
                                             <input id="sp-service-courier" class="custom-checkbox" type="checkbox"
-                                                value=false name="checkbox" />
+                                                value=false name="checkbox" required oninvalid="prompt()" />
                                         </label>
                                         <label>
                                             <span>Warehouse</span>
                                             <input id="sp-service-warehouse" class="custom-checkbox" type="checkbox"
-                                                value=false name="checkbox" />
+                                                value=false name="checkbox" required oninvalid="prompt()" />
                                         </label>
                                         <label>
                                             <span>Fullfillment</span>
                                             <input id="sp-service-fullfillment" class="custom-checkbox" type="checkbox"
-                                                value=false name="checkbox" />
+                                                value=false name="checkbox" required oninvalid="prompt()" />
                                         </label>
                                         <label>
                                             <span>Hire Fleet</span>
                                             <input id="sp-service-hirefleet" class="custom-checkbox" type="checkbox"
-                                                value=false name="checkbox" />
+                                                value=false name="checkbox" required oninvalid="prompt()" />
                                         </label>
                                     </div>
                                     <div class="pds-account-buttons">
                                         <div class="pds-account-edit">
-                                            <button class="btn btn-primary" style="display: none">Back</button>
+                                            <button class="btn" style="display: none">Back</button>
                                         </div>
                                         <div class="pds-account-next">
-                                            <button id="sp-save-general" class="btn btn-primary"
-                                                type="button">Save</button>
-                                            <button class="btn btn-primary">Next</button>
+                                            <button id="sp-save-general" class="btn">Save</button>
+                                            <button id="sp-next-general" class="btn">Next</button>
                                         </div>
                                     </div>
                                 </div>
@@ -626,29 +634,35 @@
                                     </div>
                                     <div class="pds-kyc">
                                         <h6 class="text-center">Upload Additional Documents</h6>
-
                                         <div class="pds-kyc-add text-center">
-                                            <p><img src="/assets/pds-add-doccument.png"></p>
-                                            <button class="btn">Start Uploading Your Documents Now</button>
+                                            <p></p>
+                                            <label for="pds-upload-multiple-small">
+                                                <img src="/assets/pds-add-doccument.png">
+                                                <p class="pds-kyc-add-button">Start Uploading Your Documents Now</p>
+                                            </label>
+                                            <input id="pds-upload-multiple-small" type="file" multiple hidden>
                                             <p style="color: #C4C3C3; font-weight: 500; font-size: 0.9em;">Supported
                                                 files :
                                                 PDF, Images, Scanner, Video files</p>
                                         </div>
-                                        <div class="pds-kyc-add pds-kyc-upload-single">
-                                            <p>Date & Time</p>
-                                            <p>Uploaded By</p>
-                                            <p>File Name</p>
-                                            <p>File Type</p>
-                                            <p>Sort By * Dropdown type</p>
+                                        <div id="pds-kyc-small-multiple">
+                                            <div class="pds-kyc-add pds-kyc-upload-multiple">
+                                                <p>Date & Time</p>
+                                                <p>Uploaded By</p>
+                                                <p>File Name</p>
+                                                <p>File Type</p>
+                                                <p>Sort By</p>
+                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="pds-account-buttons">
                                         <div class="pds-account-edit">
-                                            <button class="btn btn-primary">Back</button>
+                                            <button class="btn">Back</button>
                                         </div>
                                         <div class="pds-account-next">
-                                            <button id="sp-save-small-kyc" class="btn btn-primary">Save</button>
-                                            <button class="btn btn-primary">Next</button>
+                                            <button id="sp-save-small-kyc" class="btn">Save</button>
+                                            <button class="btn">Next</button>
                                         </div>
                                     </div>
                                 </div>
@@ -765,7 +779,7 @@
                                                 files :
                                                 PDF, Images, Scanner, Video files</p>
                                         </div>
-                                        <div class="pds-kyc-add pds-kyc-upload-single">
+                                        <div class="pds-kyc-add pds-kyc-upload-multiple">
                                             <p>Date & Time</p>
                                             <p>Uploaded By</p>
                                             <p>File Name</p>
@@ -775,11 +789,11 @@
                                     </div>
                                     <div class="pds-account-buttons">
                                         <div class="pds-account-edit">
-                                            <button class="btn btn-primary">Back</button>
+                                            <button class="btn">Back</button>
                                         </div>
                                         <div class="pds-account-next">
-                                            <button id="sp-save-large-kyc" class="btn btn-primary">Save</button>
-                                            <button class="btn btn-primary">Next</button>
+                                            <button id="sp-save-large-kyc" class="btn">Save</button>
+                                            <button class="btn">Next</button>
                                         </div>
                                     </div>
                                 </div>
@@ -788,107 +802,120 @@
 
                         <div class="pds-account-info-wrapper" id="payment-method">
                             <h6 class="text-center">Type of Payment Method allowed for customer</h6>
-                            <div class="payment-available">
-                                <div class="payment-type">
-                                    <div>
-                                        <p>Payment Mode <span class="asterisk">*</span></p>
-                                        <p class="pt-minimum">(Minimum 1 required)</p>
+                            <form>
+                                <div class="payment-available">
+                                    <div class="payment-type">
+                                        <div>
+                                            <p>Payment Mode <span class="asterisk">*</span></p>
+                                            <p class="pt-minimum">(Minimum 1 required)</p>
+                                        </div>
+                                    </div>
+                                    <div class="payment-name-1">
+                                        <div>
+                                            <label>Prepaid</label>
+                                            <input id="pymnt-prepaid" type="checkbox" class="custom-checkbox"
+                                                value=false name="checkbox" required oninvalid="prompt()">
+                                        </div>
+                                        <div>
+                                            <label>Cash on Delivery</label>
+                                            <input id="pymnt-cod" type="checkbox" class="custom-checkbox" value=false
+                                                name="checkbox" required>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="payment-name-1">
-                                    <div>
-                                        <label>Prepaid</label>
-                                        <input type="checkbox">
+                                <div class="payment-available">
+                                    <div class="payment-type">
+                                        <div>
+                                            <p>Digital Wallet Accepted <span class="asterisk">*</span></p>
+                                            <p class="pt-minimum">(Minimum 1 required)</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <label>Cash on Delivery</label>
-                                        <input type="checkbox">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="payment-available">
-                                <div class="payment-type">
-                                    <div>
-                                        <p>Digital Wallet Accepted <span class="asterisk">*</span></p>
-                                        <p class="pt-minimum">(Minimum 1 required)</p>
-                                    </div>
-                                </div>
-                                <div class="payment-name">
-                                    <div>
-                                        <label><img src="assets/pymnt-4-paytm.svg" alt="UPI"></label>
-                                        <input class="custom-checkbox" type="checkbox">
-                                    </div>
-                                    <div>
-                                        <label><img src="assets/pymnt-2-gpay.svg" alt="Google Pay"></label>
-                                        <input type="checkbox">
-                                    </div>
-                                    <div>
-                                        <label><img src="assets/pymnt-8-phonepe.svg" alt="PhonePe"></label>
-                                        <input type="checkbox">
-                                    </div>
-                                    <div>
-                                        <label><img src="/assets/pymnt-1-upi.svg" alt="UPI"></label>
-                                        <input type="checkbox">
-                                    </div>
-                                    <div>
-                                        <label><img src="assets/pymnt-3-visa.svg" alt="VISA"></label>
-                                        <input type="checkbox">
-                                    </div>
-                                    <div>
-                                        <label><img src="assets/pymnt-5-amazonpay.svg" alt="Amazon Pay"></label>
-                                        <input type="checkbox">
-                                    </div>
-                                    <div>
-                                        <label><img src="assets/pymnt-7-mobikwik.svg" alt="MobiKwik"></label>
-                                        <input type="checkbox">
-                                    </div>
-                                    <div>
-                                        <label><img src="assets/pymnt-6-freecharge.svg" alt="Freecharge"></label>
-                                        <input type="checkbox">
-                                    </div>
-                                    <div>
-                                        &nbsp;
+                                    <div class="payment-name">
+                                        <div>
+                                            <label><img src="assets/pymnt-4-paytm.svg" alt="paytm"></label>
+                                            <input id="pymnt-paytm" class="custom-checkbox" type="checkbox" required
+                                                oninvalid="prompt()">
+                                        </div>
+                                        <div>
+                                            <label><img src="assets/pymnt-2-gpay.svg" alt="Google Pay"></label>
+                                            <input id="pymnt-gpay" class="custom-checkbox" type="checkbox" required
+                                                oninvalid="prompt()">
+                                        </div>
+                                        <div>
+                                            <label><img src="assets/pymnt-8-phonepe.svg" alt="PhonePe"></label>
+                                            <input id="pymnt-phonepe" class="custom-checkbox" type="checkbox" required
+                                                oninvalid="prompt()">
+                                        </div>
+                                        <div>
+                                            <label><img src="/assets/pymnt-1-upi.svg" alt="UPI"></label>
+                                            <input id="pymnt-upi" class="custom-checkbox" type="checkbox" required
+                                                oninvalid="prompt()">
+                                        </div>
+                                        <div>
+                                            <label><img src="assets/pymnt-3-visa.svg" alt="VISA"></label>
+                                            <input id="pymnt-visa" class="custom-checkbox" type="checkbox" required
+                                                oninvalid="prompt()">
+                                        </div>
+                                        <div>
+                                            <label><img src="assets/pymnt-5-amazonpay.svg" alt="Amazon Pay"></label>
+                                            <input id="pymnt-amazonpay" class="custom-checkbox" type="checkbox" required
+                                                oninvalid="prompt()">
+                                        </div>
+                                        <div>
+                                            <label><img src="assets/pymnt-7-mobikwik.svg" alt="MobiKwik"></label>
+                                            <input id="pymnt-mobikwik" class="custom-checkbox" type="checkbox" required
+                                                oninvalid="prompt()">
+                                        </div>
+                                        <div>
+                                            <label><img src="assets/pymnt-6-freecharge.svg" alt="Freecharge"></label>
+                                            <input id="pymnt-freecharge" class="custom-checkbox" type="checkbox"
+                                                required oninvalid="prompt()">
+                                        </div>
+                                        <div>
+                                            &nbsp;
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="payment-available">
-                                <div class="payment-type">
-                                    <div>
-                                        <p>Add Credit, Debit Cards & ATM Cards</p>
+                                <div class="payment-available">
+                                    <div class="payment-type">
+                                        <div>
+                                            <p>Add Credit, Debit Cards & ATM Cards</p>
+                                        </div>
+                                    </div>
+                                    <div class="payment-name-1">
+                                        <div>
+                                            <label><img src="/assets/pymnt-10-debit.png"><br><span>Debit
+                                                    Card</span></label>
+                                            <input id="pymnt-debit" class="custom-checkbox" type="checkbox">
+                                        </div>
+                                        <div>
+                                            <label><img src="/assets/pymnt-11-credit.png"><br><span>Credit
+                                                    Card</span></label>
+                                            <input id="pymnt-credit" class="custom-checkbox" type="checkbox">
+                                        </div>
+                                        <div>
+                                            <label><img src="/assets/pymnt-12-atm.png"><br><span>ATM</span></label>
+                                            <input id="pymnt-atm" type="checkbox">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="payment-name-1">
-                                    <div>
-                                        <label><img src="/assets/pymnt-10-debit.png"><br><span>Debit Card</span></label>
-                                        <input type="checkbox">
+                                <div class="pds-account-buttons">
+                                    <div class="pds-account-edit">
+                                        <button class="btn">Back</button>
                                     </div>
-                                    <div>
-                                        <label><img src="/assets/pymnt-11-credit.png"><br><span>Credit
-                                                Card</span></label>
-                                        <input type="checkbox">
-                                    </div>
-                                    <div>
-                                        <label><img src="/assets/pymnt-12-atm.png"><br><span>ATM</span></label>
-                                        <input type="checkbox">
+                                    <div class="pds-account-next">
+                                        <button id="sp-save-payment" class="btn">Save</button>
+                                        <button class="btn">Next</button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="pds-account-buttons">
-                                <div class="pds-account-edit">
-                                    <button class="btn btn-primary">Back</button>
-                                </div>
-                                <div class="pds-account-next">
-                                    <button class="btn btn-primary">Save</button>
-                                    <button class="btn">Next</button>
-                                </div>
-                            </div>
+                            </form>
                         </div>
 
                         <!-- Parcel Type Tab -->
                         <div class="" id="parcel-type">
                             <div class="parcel-type-wrapper parcel-type-header">
                                 <div class="parcel-edit">
-                                    <button class="btn btn-priamry">Edit</button>
+                                    <button class="btn">Edit</button>
                                 </div>
                                 <div>
                                     <h5>Parcel Type</h5>
@@ -903,9 +930,9 @@
                                 <div class="cat-single">
                                     <div class="cat-name">Apparels & Accessories</div>
                                     <div class="cat-selection">
-                                        <div class="cat-select">
+                                        <div id="pt-apparel-tags" class="cat-select">
                                             <div class="cat-select-input">
-                                                <label>
+                                                <label class="cat-apparel-label">
                                                     <input class="cat-apparel" type="checkbox" name="" value="1"
                                                         checked><span>Clothes</span>
                                                 </label>
@@ -937,9 +964,11 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="cat-details">
+                                        <div id="pt-apparel-input" class="cat-details">
                                             <input type="text" id="tag-input1">
                                         </div>
+                                        <div class='parcel-type-custom'><button class='btn'
+                                                id='pt-apparel-btn'>Add</button></div>
                                     </div>
                                     <div class="cat-select-all">
                                         <label>
@@ -953,7 +982,7 @@
                                 <div class="cat-single">
                                     <div class="cat-name">Electronics & Appliances</div>
                                     <div class="cat-selection">
-                                        <div class="cat-select">
+                                        <div id="pt-electric-tags" class="cat-select">
                                             <div class="cat-select-input">
                                                 <label>
                                                     <input class="cat-electric" type="checkbox" name="" value="1"
@@ -1007,9 +1036,11 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="cat-details">
-                                            <input type="text" placeholder="add custom category">
+                                        <div id="pt-electric-input" class="cat-details">
+                                            <input type="text" id="tag-input2">
                                         </div>
+                                        <div class='parcel-type-custom'><button class='btn'
+                                                id='pt-electric-btn'>Add</button></div>
                                     </div>
 
                                     <div class="cat-select-all">
@@ -1024,7 +1055,7 @@
                                 <div class="cat-single">
                                     <div class="cat-name">Automotive</div>
                                     <div class="cat-selection">
-                                        <div class="cat-select">
+                                        <div id="pt-automotive-tags" class="cat-select">
                                             <div class="cat-select-input">
                                                 <label>
                                                     <input class="cat-automotive" type="checkbox" name="" value="1"
@@ -1062,9 +1093,11 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="cat-details">
-                                            <input type="text" placeholder="add custom category">
+                                        <div id="pt-automotive-input" class="cat-details">
+                                            <input type="text" id="tag-input3">
                                         </div>
+                                        <div class='parcel-type-custom'><button class='btn'
+                                                id='pt-automotive-btn'>Add</button></div>
                                     </div>
 
                                     <div class="cat-select-all">
@@ -1079,7 +1112,7 @@
                                 <div class="cat-single">
                                     <div class="cat-name">Fresh</div>
                                     <div class="cat-selection">
-                                        <div class="cat-select">
+                                        <div id="pt-fresh-tags" class="cat-select">
                                             <div class="cat-select-input">
                                                 <label>
                                                     <input class="cat-fresh" type="checkbox" name="" value="1"
@@ -1105,9 +1138,11 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="cat-details">
-                                            <input type="text" placeholder="add custom category">
+                                        <div id="pt-fresh-input" class="cat-details">
+                                            <input type="text" id="tag-input4">
                                         </div>
+                                        <div class='parcel-type-custom'><button class='btn'
+                                                id='pt-fresh-btn'>Add</button></div>
                                     </div>
 
                                     <div class="cat-select-all">
@@ -1122,7 +1157,7 @@
                                 <div class="cat-single">
                                     <div class="cat-name">Books / Stationary / Documents</div>
                                     <div class="cat-selection">
-                                        <div class="cat-select">
+                                        <div id="pt-books-tags" class="cat-select">
                                             <div class="cat-select-input">
                                                 <label>
                                                     <input class="cat-books" type="checkbox" name="" value="1"
@@ -1179,9 +1214,11 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="cat-details">
-                                            <input type="text" placeholder="add custom category">
+                                        <div id="pt-books-input" class="cat-details">
+                                            <input type="text" id="tag-input5">
                                         </div>
+                                        <div class='parcel-type-custom'><button class='btn'
+                                                id='pt-books-btn'>Add</button></div>
                                     </div>
 
                                     <div class="cat-select-all">
@@ -1196,7 +1233,7 @@
                                 <div class="cat-single">
                                     <div class="cat-name">Essential Supply</div>
                                     <div class="cat-selection">
-                                        <div class="cat-select">
+                                        <div id="pt-essentials-tags" class="cat-select">
                                             <div class="cat-select-input">
                                                 <label>
                                                     <input class="cat-essential" type="checkbox" name="" value="1"
@@ -1262,9 +1299,11 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="cat-details">
-                                            <input type="text" placeholder="add custom category">
+                                        <div id="pt-essential-input" class="cat-details">
+                                            <input type="text" id="tag-input6">
                                         </div>
+                                        <div class='parcel-type-custom'><button class='btn'
+                                                id='pt-essentials-btn'>Add</button></div>
                                     </div>
 
                                     <div class="cat-select-all">
@@ -1279,7 +1318,7 @@
                                 <div class="cat-single">
                                     <div class="cat-name">Household Decor</div>
                                     <div class="cat-selection">
-                                        <div class="cat-select">
+                                        <div id="pt-household-tags" class="cat-select">
                                             <div class="cat-select-input">
                                                 <label>
                                                     <input class="cat-household" type="checkbox" name="" value="1"
@@ -1324,9 +1363,11 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="cat-details">
-                                            <input type="text" placeholder="add custom category">
+                                        <div id="pt-household-input" class="cat-details">
+                                            <input type="text" id="tag-input7">
                                         </div>
+                                        <div class='parcel-type-custom'><button class='btn'
+                                                id='pt-household-btn'>Add</button></div>
                                     </div>
 
                                     <div class="cat-select-all">
@@ -1340,11 +1381,11 @@
 
                                 <div class="pds-account-buttons">
                                     <div class="pds-account-edit">
-                                        <button class="btn btn-primary">Back</button>
+                                        <button class="btn">Back</button>
                                     </div>
                                     <div class="pds-account-next">
-                                        <button class="btn btn-primary">Save</button>
-                                        <button class="btn btn-primary">Next</button>
+                                        <button class="btn">Save</button>
+                                        <button class="btn">Next</button>
                                     </div>
                                 </div>
                             </div>
@@ -1352,10 +1393,10 @@
 
                         <!-- Delivery Location Tab -->
                         <div class="pds-account-info-wrapper" id="delivery-location">
-                            <div id="dl-courier">
-                                <div class="row">
+                            <div id="dl-courier" class="dl-active">
+                                <div class="dl-courier-inner">
                                     <!-- Provider Pin Codes Data -->
-                                    <div class="col-md-7 col-lg-7">
+                                    <div class="dl-pincode-outer">
                                         <h5 class="text-center">Delivery Location</h5>
                                         <div class="dl-pincode">
                                             <div class="dl-pincode-btn">
@@ -1365,11 +1406,11 @@
                                             <div class="dl-pincode-table">
                                                 <table class="dl-pt">
                                                     <thead>
-                                                        <th>State</th>
-                                                        <th>City (All Metro)</th>
+                                                        <th width="18%">State</th>
+                                                        <th width="18%">City (All Metro)</th>
                                                         <th>Area</th>
-                                                        <th>Serviceable</th>
-                                                        <th>Non-Serviceable</th>
+                                                        <th width="20%">Serviceable</th>
+                                                        <th width="20%">Non-Serviceable</th>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
@@ -1415,7 +1456,7 @@
 
                                     </div>
                                     <!-- Provider Business Hours -->
-                                    <div class="col-md-5 col-lg-5">
+                                    <div class="dl-time-outer">
                                         <h5 class="text-center">Business Hours</h5>
                                         <div class="dl-time-wrapper">
                                             <div class="dl-time-single">
@@ -1529,11 +1570,11 @@
                             </div>
                             <div class="pds-account-buttons row" data-brackets-id="16044">
                                 <div class="pds-account-edit" data-brackets-id="16045">
-                                    <button class="btn btn-primary" data-brackets-id="16046">Back</button>
+                                    <button class="btn" data-brackets-id="16046">Back</button>
                                 </div>
                                 <div class="pds-account-next" data-brackets-id="16047">
-                                    <button class="btn btn-primary" data-brackets-id="16048">Save</button>
-                                    <button class="btn btn-primary" data-brackets-id="16049">Next</button>
+                                    <button class="btn" data-brackets-id="16048">Save</button>
+                                    <button class="btn" data-brackets-id="16049">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -1543,7 +1584,74 @@
                             <h5 class="text-center">Company Contacts</h5>
                             <div class="contact-table">
                                 <div class="contact-header">
-                                    <p>Add.</p>
+                                    <div class="contact-details-button">
+                                        <p>
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn cd-button" data-toggle="modal"
+                                                data-target="#exampleModal">
+                                                <img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xMS41IDBjNi4zNDcgMCAxMS41IDUuMTUzIDExLjUgMTEuNXMtNS4xNTMgMTEuNS0xMS41IDExLjUtMTEuNS01LjE1My0xMS41LTExLjUgNS4xNTMtMTEuNSAxMS41LTExLjV6bTAgMWM1Ljc5NSAwIDEwLjUgNC43MDUgMTAuNSAxMC41cy00LjcwNSAxMC41LTEwLjUgMTAuNS0xMC41LTQuNzA1LTEwLjUtMTAuNSA0LjcwNS0xMC41IDEwLjUtMTAuNXptLjUgMTBoNnYxaC02djZoLTF2LTZoLTZ2LTFoNnYtNmgxdjZ6Ii8+PC9zdmc+">
+                                            </button>
+                                        </p>
+                                        <!-- Modal for contact data input -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true"
+                                            style="display: none;">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                    </div>
+                                                    <form>
+                                                        <div class="modal-body">
+                                                            <div class="cd-input">
+                                                                <label>State</label>
+                                                                <input id="cdi-state" type="text"
+                                                                    placeholder="Enter the state" required="">
+                                                            </div>
+                                                            <div class="cd-input">
+                                                                <label>Name</label>
+                                                                <input id="cdi-name" type="text"
+                                                                    placeholder="Contact Person Name" required="">
+                                                            </div>
+                                                            <div class="cd-input">
+                                                                <label>Role</label>
+                                                                <input id="cdi-role" type="text"
+                                                                    placeholder="Contact Person Role" required="">
+                                                            </div>
+                                                            <div class="cd-input">
+                                                                <label>City</label>
+                                                                <input id="cdi-city" type="text"
+                                                                    placeholder="Enter the city" required="">
+                                                            </div>
+                                                            <div class="cd-input">
+                                                                <label>Contact No.</label>
+                                                                <input id="cdi-contact" type="tel"
+                                                                    placeholder="Contact No." required="">
+                                                            </div>
+                                                            <div class="cd-input">
+                                                                <label>Email ID</label>
+                                                                <input id="cdi-email" type="email"
+                                                                    placeholder="Enter email ID" required="">
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Close</button>
+                                                            <input type="submit" class="btn btn-primary"
+                                                                onclick="addContactRow()">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <p>Sr. No.</p>
                                     <p>State</p>
                                     <p>Name</p>
@@ -1551,393 +1659,859 @@
                                     <p>City</p>
                                     <p>Contact No.</p>
                                     <p>Email Id</p>
-                                    <p>Delete **DeleteIcon</p>
+                                    <p onclick="deleteContactsRow()"><i class="fa fa-trash"></i></p>
                                 </div>
                                 <div id="test-id">
-                                    <div class="contact-details-wrapper">
-
-                                        <!-- Add contact button starts -->
-                                        <div class="contact-details-button">
-                                            <p>
-                                                <!-- Button trigger modal -->
-                                                <button type="button" class="btn" data-toggle="modal"
-                                                    data-target="#exampleModal">
-                                                    <img
-                                                        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xMS41IDBjNi4zNDcgMCAxMS41IDUuMTUzIDExLjUgMTEuNXMtNS4xNTMgMTEuNS0xMS41IDExLjUtMTEuNS01LjE1My0xMS41LTExLjUgNS4xNTMtMTEuNSAxMS41LTExLjV6bTAgMWM1Ljc5NSAwIDEwLjUgNC43MDUgMTAuNSAxMC41cy00LjcwNSAxMC41LTEwLjUgMTAuNS0xMC41LTQuNzA1LTEwLjUtMTAuNSA0LjcwNS0xMC41IDEwLjUtMTAuNXptLjUgMTBoNnYxaC02djZoLTF2LTZoLTZ2LTFoNnYtNmgxdjZ6Ii8+PC9zdmc+">
-                                                </button>
-                                            </p>
-                                            <!-- Modal for contact data input -->
-                                            <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title
-                                                            </h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <form>
-                                                            <div class="modal-body">
-                                                                <div class="cd-input">
-                                                                    <label>State</label>
-                                                                    <input id="cdi-state" type="text"
-                                                                        placeholder="Enter the state" required>
-                                                                </div>
-                                                                <div class="cd-input">
-                                                                    <label>Name</label>
-                                                                    <input id="cdi-name" type="text"
-                                                                        placeholder="Contact Person Name" required>
-                                                                </div>
-                                                                <div class="cd-input">
-                                                                    <label>Role</label>
-                                                                    <input id="cdi-role" type="text"
-                                                                        placeholder="Contact Person Role" required>
-                                                                </div>
-                                                                <div class="cd-input">
-                                                                    <label>City</label>
-                                                                    <input id="cdi-city" type="text"
-                                                                        placeholder="Enter the city" required>
-                                                                </div>
-                                                                <div class="cd-input">
-                                                                    <label>Contact No.</label>
-                                                                    <input id="cdi-contact" type="tel"
-                                                                        placeholder="Contact No." required>
-                                                                </div>
-                                                                <div class="cd-input">
-                                                                    <label>Email ID</label>
-                                                                    <input id="cdi-email" type="email"
-                                                                        placeholder="Enter email ID" required>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary"
-                                                                    data-dismiss="modal">Close</button>
-                                                                <input type="submit" class="btn btn-primary"
-                                                                    onclick="addContactRow()">
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Add contact button ends -->
-
-                                        <p class="contact-details">
-                                            1
-                                        </p>
-                                        <p class="contact-details">
-                                            Head
-                                        </p>
-                                        <p class="contact-details">
-                                            Ashok K
-                                        </p>
-                                        <p class="contact-details">
-                                            Director
-                                        </p>
-                                        <p class="contact-details">
-                                            Delhi
-                                        </p>
-                                        <p class="contact-details">
-                                            9999xxxxxx
-                                        </p>
-                                        <p class="contact-details">email id</p>
-                                        <p class="contact-details"><input type="checkbox"></p>
-                                    </div>
+                                    <!-- Contact Rows Go here - updated by addcontactrow function -->
                                 </div>
                             </div>
                             <div class="pds-account-buttons">
                                 <div class="pds-account-edit">
-                                    <button class="btn btn-primary">Back</button>
+                                    <button class="btn">Back</button>
                                 </div>
                                 <div class="pds-account-next">
-                                    <button class="btn btn-primary">Save</button>
-                                    <button class="btn btn-primary">Next</button>
+                                    <button class="btn">Save</button>
+                                    <button class="btn">Next</button>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Pricing Model Tab -->
                         <div class="pds-account-info-wrapper" id="pricing-model">
-                            <div class="pricing-model-wrapper">
-                                <div class="pricing-model">
-                                    <h6 class="text-center">Bike</h6>
-                                    <div class="pm-info">
-                                        <p>Currency</p>
-                                        <p>INR Default</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Rate per Km.</p>
-                                        <p class="pm-value">8</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum No. of Km.</p>
-                                        <p class="pm-value">2</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum No. of Km.</p>
-                                        <p class="pm-value">50</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum Weight (gms)</p>
-                                        <p class="pm-value">0.5gms</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum Weight (kgs)</p>
-                                        <p class="pm-value">50 kgs</p>
-                                    </div>
-                                    <p class="pm-header">Surcharges</p>
-                                    <div class="pm-details">
-                                        <p class="pm-name">GST</p>
-                                        <p class="pm-value">10%</p>
-                                    </div>
-                                    <p class="pm-header">Fuel Surcharge</p>
-                                    <p class="pm-save">
-                                        <button class="btn btn-secondary">Save</button>
-                                    </p>
+                            <div id="dl-distance" class="dl-active">
+                                <div class="pricing-model-wrapper">
+                                    <div class="pricing-model">
+                                        <h6 class="text-center">Bike</h6>
+                                        <div class="pm-info">
+                                            <p>Currency</p>
+                                            <p>INR Default</p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Rate per Km.</p>
+                                            <p id="pm-bike-rate-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum No. of Km.</p>
+                                            <p id="pm-bike-min-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum No. of Km.</p>
+                                            <p id="pm-bike-max-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum Weight (gms)</p>
+                                            <p id="pm-bike-min-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum Weight (kgs)</p>
+                                            <p id="pm-bike-max-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Surcharges</p>
+                                        <div class="pm-details">
+                                            <p class="pm-name">GST</p>
+                                            <p id="pm-bike-gst-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Fuel Surcharge</p>
+                                        <p class="pm-save">
+                                            <button class="btn btn-secondary" type="button" data-toggle="modal"
+                                                data-target="#pm-bike-modal">Edit</button>
+                                        </p>
 
-                                    *** Give option to add categories
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="pm-bike-modal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Edit Bike Pricing
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pm-bike-input">
+                                                            <label>Rate per Km</label>
+                                                            <input id="pm-bike-rate-per-km" type="text"
+                                                                placeholder="Enter the rate per km" required="">
+                                                        </div>
+                                                        <div class="pm-bike-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-bike-min-km" type="text"
+                                                                placeholder="Enter the miniminum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-bike-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-bike-max-km" type="text"
+                                                                placeholder="Enter the maximum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-bike-input">
+                                                            <label>Minimum Weight</label>
+                                                            <input id="pm-bike-min-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-bike-input">
+                                                            <label>Maximum Weight</label>
+                                                            <input id="pm-bike-max-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-bike-input">
+                                                            <label>GST Rate</label>
+                                                            <input id="pm-bike-gst" type="text"
+                                                                placeholder="Enter the gst rate" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary"
+                                                            onclick="addBikePricing()">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        *** Give option to add categories
+                                    </div>
+                                    <div class="pricing-model">
+                                        <h6 class="text-center">E-Rickshaw</h6>
+                                        <div class="pm-info">
+                                            <p>Currency</p>
+                                            <p>INR Default</p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Rate per Km.</p>
+                                            <p id="pm-rickshaw-rate-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum No. of Km.</p>
+                                            <p id="pm-rickshaw-min-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum No. of Km.</p>
+                                            <p id="pm-rickshaw-max-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum Weight (gms)</p>
+                                            <p id="pm-rickshaw-min-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum Weight (kgs)</p>
+                                            <p id="pm-rickshaw-max-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Surcharges</p>
+                                        <div class="pm-details">
+                                            <p class="pm-name">GST</p>
+                                            <p id="pm-rickshaw-gst-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Fuel Surcharge</p>
+                                        <p class="pm-save">
+                                            <button class="btn btn-secondary" type="button" data-toggle="modal"
+                                                data-target="#pm-rickshaw-modal">Edit</button>
+                                        </p>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="pm-rickshaw-modal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Edit Rickshaw
+                                                            Pricing
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pm-rickshaw-input">
+                                                            <label>Rate per Km</label>
+                                                            <input id="pm-rickshaw-rate-per-km" type="text"
+                                                                placeholder="Enter the rate per km" required="">
+                                                        </div>
+                                                        <div class="pm-rickshaw-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-rickshaw-min-km" type="text"
+                                                                placeholder="Enter the miniminum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-rickshaw-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-rickshaw-max-km" type="text"
+                                                                placeholder="Enter the maximum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-rickshaw-input">
+                                                            <label>Minimum Weight</label>
+                                                            <input id="pm-rickshaw-min-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-rickshaw-input">
+                                                            <label>Maximum Weight</label>
+                                                            <input id="pm-rickshaw-max-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-rickshaw-input">
+                                                            <label>GST Rate</label>
+                                                            <input id="pm-rickshaw-gst" type="text"
+                                                                placeholder="Enter the gst rate" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary"
+                                                            onclick="addRickshawPricing()">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        *** Give option to add categories
+                                    </div>
+                                    <div class="pricing-model">
+                                        <h6 class="text-center">Tempo</h6>
+                                        <div class="pm-info">
+                                            <p>Currency</p>
+                                            <p>INR Default</p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Rate per Km.</p>
+                                            <p id="pm-tempo-rate-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum No. of Km.</p>
+                                            <p id="pm-tempo-min-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum No. of Km.</p>
+                                            <p id="pm-tempo-max-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum Weight (gms)</p>
+                                            <p id="pm-tempo-min-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum Weight (kgs)</p>
+                                            <p id="pm-tempo-max-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Surcharges</p>
+                                        <div class="pm-details">
+                                            <p class="pm-name">GST</p>
+                                            <p id="pm-tempo-gst-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Fuel Surcharge</p>
+                                        <p class="pm-save">
+                                            <button class="btn btn-secondary" type="button" data-toggle="modal"
+                                                data-target="#pm-tempo-modal">Edit</button>
+                                        </p>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="pm-tempo-modal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Edit Rickshaw
+                                                            Pricing
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pm-tempo-input">
+                                                            <label>Rate per Km</label>
+                                                            <input id="pm-tempo-rate-per-km" type="text"
+                                                                placeholder="Enter the rate per km" required="">
+                                                        </div>
+                                                        <div class="pm-tempo-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-tempo-min-km" type="text"
+                                                                placeholder="Enter the miniminum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-tempo-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-tempo-max-km" type="text"
+                                                                placeholder="Enter the maximum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-tempo-input">
+                                                            <label>Minimum Weight</label>
+                                                            <input id="pm-tempo-min-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-tempo-input">
+                                                            <label>Maximum Weight</label>
+                                                            <input id="pm-tempo-max-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-tempo-input">
+                                                            <label>GST Rate</label>
+                                                            <input id="pm-tempo-gst" type="text"
+                                                                placeholder="Enter the gst rate" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary"
+                                                            onclick="addTempoPricing()">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        *** Give option to add categories
+                                    </div>
+                                    <div class="pricing-model">
+                                        <h6 class="text-center">Half Truck Load</h6>
+                                        <div class="pm-info">
+                                            <p>Currency</p>
+                                            <p>INR Default</p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Rate per Km.</p>
+                                            <p id="pm-htruck-rate-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum No. of Km.</p>
+                                            <p id="pm-htruck-min-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum No. of Km.</p>
+                                            <p id="pm-htruck-max-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum Weight (gms)</p>
+                                            <p id="pm-htruck-min-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum Weight (kgs)</p>
+                                            <p id="pm-htruck-max-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Surcharges</p>
+                                        <div class="pm-details">
+                                            <p class="pm-name">GST</p>
+                                            <p id="pm-htruck-gst-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Fuel Surcharge</p>
+                                        <p class="pm-save">
+                                            <button class="btn btn-secondary" type="button" data-toggle="modal"
+                                                data-target="#pm-htruck-modal">Edit</button>
+                                        </p>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="pm-htruck-modal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Edit Rickshaw
+                                                            Pricing
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pm-htruck-input">
+                                                            <label>Rate per Km</label>
+                                                            <input id="pm-htruck-rate-per-km" type="text"
+                                                                placeholder="Enter the rate per km" required="">
+                                                        </div>
+                                                        <div class="pm-htruck-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-htruck-min-km" type="text"
+                                                                placeholder="Enter the miniminum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-htruck-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-htruck-max-km" type="text"
+                                                                placeholder="Enter the maximum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-htruck-input">
+                                                            <label>Minimum Weight</label>
+                                                            <input id="pm-htruck-min-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-htruck-input">
+                                                            <label>Maximum Weight</label>
+                                                            <input id="pm-htruck-max-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-htruck-input">
+                                                            <label>GST Rate</label>
+                                                            <input id="pm-htruck-gst" type="text"
+                                                                placeholder="Enter the gst rate" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary"
+                                                            onclick="addHtruckPricing()">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        *** Give option to add categories
+                                    </div>
+                                    <div class="pricing-model">
+                                        <h6 class="text-center">Full Truck Load</h6>
+                                        <div class="pm-info">
+                                            <p>Currency</p>
+                                            <p>INR Default</p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Rate per Km.</p>
+                                            <p id="pm-ftruck-rate-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum No. of Km.</p>
+                                            <p id="pm-ftruck-min-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum No. of Km.</p>
+                                            <p id="pm-ftruck-max-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum Weight (gms)</p>
+                                            <p id="pm-ftruck-min-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum Weight (kgs)</p>
+                                            <p id="pm-ftruck-max-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Surcharges</p>
+                                        <div class="pm-details">
+                                            <p class="pm-name">GST</p>
+                                            <p id="pm-ftruck-gst-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Fuel Surcharge</p>
+                                        <p class="pm-save">
+                                            <button class="btn btn-secondary" type="button" data-toggle="modal"
+                                                data-target="#pm-ftruck-modal">Edit</button>
+                                        </p>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="pm-ftruck-modal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Edit Rickshaw
+                                                            Pricing
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pm-ftruck-input">
+                                                            <label>Rate per Km</label>
+                                                            <input id="pm-ftruck-rate-per-km" type="text"
+                                                                placeholder="Enter the rate per km" required="">
+                                                        </div>
+                                                        <div class="pm-ftruck-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-ftruck-min-km" type="text"
+                                                                placeholder="Enter the miniminum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-ftruck-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-ftruck-max-km" type="text"
+                                                                placeholder="Enter the maximum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-ftruck-input">
+                                                            <label>Minimum Weight</label>
+                                                            <input id="pm-ftruck-min-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-ftruck-input">
+                                                            <label>Maximum Weight</label>
+                                                            <input id="pm-ftruck-max-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-ftruck-input">
+                                                            <label>GST Rate</label>
+                                                            <input id="pm-ftruck-gst" type="text"
+                                                                placeholder="Enter the gst rate" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary"
+                                                            onclick="addFtruckPricing()">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        *** Give option to add categories
+                                    </div>
+                                    <div class="pricing-model">
+                                        <h6 class="text-center">Container 20 Ft.</h6>
+                                        <div class="pm-info">
+                                            <p>Currency</p>
+                                            <p>INR Default</p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Rate per Km.</p>
+                                            <p id="pm-container20-rate-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum No. of Km.</p>
+                                            <p id="pm-container20-min-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum No. of Km.</p>
+                                            <p id="pm-container20-max-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum Weight (gms)</p>
+                                            <p id="pm-container20-min-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum Weight (kgs)</p>
+                                            <p id="pm-container20-max-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Surcharges</p>
+                                        <div class="pm-details">
+                                            <p class="pm-name">GST</p>
+                                            <p id="pm-container20-gst-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Fuel Surcharge</p>
+                                        <p class="pm-save">
+                                            <button class="btn btn-secondary" type="button" data-toggle="modal"
+                                                data-target="#pm-container20-modal">Edit</button>
+                                        </p>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="pm-container20-modal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Edit Rickshaw
+                                                            Pricing
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pm-container20-input">
+                                                            <label>Rate per Km</label>
+                                                            <input id="pm-container20-rate-per-km" type="text"
+                                                                placeholder="Enter the rate per km" required="">
+                                                        </div>
+                                                        <div class="pm-container20-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-container20-min-km" type="text"
+                                                                placeholder="Enter the miniminum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-container20-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-container20-max-km" type="text"
+                                                                placeholder="Enter the maximum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-container20-input">
+                                                            <label>Minimum Weight</label>
+                                                            <input id="pm-container20-min-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-container20-input">
+                                                            <label>Maximum Weight</label>
+                                                            <input id="pm-container20-max-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-container20-input">
+                                                            <label>GST Rate</label>
+                                                            <input id="pm-container20-gst" type="text"
+                                                                placeholder="Enter the gst rate" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary"
+                                                            onclick="addContainer20Pricing()">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        *** Give option to add categories
+                                    </div>
+                                    <div class="pricing-model">
+                                        <h6 class="text-center">Container 40 Ft.</h6>
+                                        <div class="pm-info">
+                                            <p>Currency</p>
+                                            <p>INR Default</p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Rate per Km.</p>
+                                            <p id="pm-container40-rate-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum No. of Km.</p>
+                                            <p id="pm-container40-min-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum No. of Km.</p>
+                                            <p id="pm-container40-max-km-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Minimum Weight (gms)</p>
+                                            <p id="pm-container40-min-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <div class="pm-details">
+                                            <p class="pm-name">Maximum Weight (kgs)</p>
+                                            <p id="pm-container40-max-weight-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Surcharges</p>
+                                        <div class="pm-details">
+                                            <p class="pm-name">GST</p>
+                                            <p id="pm-container40-gst-value" class="pm-value"></p>
+                                        </div>
+                                        <p class="pm-header">Fuel Surcharge</p>
+                                        <p class="pm-save">
+                                            <button class="btn btn-secondary" type="button" data-toggle="modal"
+                                                data-target="#pm-container40-modal">Edit</button>
+                                        </p>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="pm-container40-modal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Edit Rickshaw
+                                                            Pricing
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pm-container40-input">
+                                                            <label>Rate per Km</label>
+                                                            <input id="pm-container40-rate-per-km" type="text"
+                                                                placeholder="Enter the rate per km" required="">
+                                                        </div>
+                                                        <div class="pm-container40-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-container40-min-km" type="text"
+                                                                placeholder="Enter the miniminum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-container40-input">
+                                                            <label>Minimum No. Of Km</label>
+                                                            <input id="pm-container40-max-km" type="text"
+                                                                placeholder="Enter the maximum no. km" required="">
+                                                        </div>
+                                                        <div class="pm-container40-input">
+                                                            <label>Minimum Weight</label>
+                                                            <input id="pm-container40-min-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-container40-input">
+                                                            <label>Maximum Weight</label>
+                                                            <input id="pm-container40-max-weight" type="text"
+                                                                placeholder="Enter the minimum weight" required="">
+                                                        </div>
+                                                        <div class="pm-container40-input">
+                                                            <label>GST Rate</label>
+                                                            <input id="pm-container40-gst" type="text"
+                                                                placeholder="Enter the gst rate" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary"
+                                                            onclick="addContainer40Pricing()">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>*** Give option to add categories</p>
+
+                                    </div>
                                 </div>
-                                <div class="pricing-model">
-                                    <h6 class="text-center">E-Rickshaw</h6>
-                                    <div class="pm-info">
-                                        <p>Currency</p>
-                                        <p>INR Default</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Rate per Km.</p>
-                                        <p class="pm-value">8</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum No. of Km.</p>
-                                        <p class="pm-value">2</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum No. of Km.</p>
-                                        <p class="pm-value">50</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum Weight (gms)</p>
-                                        <p class="pm-value">0.5gms</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum Weight (kgs)</p>
-                                        <p class="pm-value">50 kgs</p>
-                                    </div>
-                                    <p class="pm-header">Surcharges</p>
-                                    <div class="pm-details">
-                                        <p class="pm-name">GST</p>
-                                        <p class="pm-value">10%</p>
-                                    </div>
-                                    <p class="pm-header">Fuel Surcharge</p>
-                                    <p class="pm-save">
-                                        <button class="btn btn-secondary">Save</button>
-                                    </p>
-
-                                    *** Give option to add categories
-                                </div>
-                                <div class="pricing-model">
-                                    <h6 class="text-center">Tempo</h6>
-                                    <div class="pm-info">
-                                        <p>Currency</p>
-                                        <p>INR Default</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Rate per Km.</p>
-                                        <p class="pm-value">8</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum No. of Km.</p>
-                                        <p class="pm-value">2</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum No. of Km.</p>
-                                        <p class="pm-value">50</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum Weight (gms)</p>
-                                        <p class="pm-value">0.5gms</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum Weight (kgs)</p>
-                                        <p class="pm-value">50 kgs</p>
-                                    </div>
-                                    <p class="pm-header">Surcharges</p>
-                                    <div class="pm-details">
-                                        <p class="pm-name">GST</p>
-                                        <p class="pm-value">10%</p>
-                                    </div>
-                                    <p class="pm-header">Fuel Surcharge</p>
-                                    <p class="pm-save">
-                                        <button class="btn btn-secondary">Save</button>
-                                    </p>
-
-                                    *** Give option to add categories
-                                </div>
-                                <div class="pricing-model">
-                                    <h6 class="text-center">Half Truck Load</h6>
-                                    <div class="pm-info">
-                                        <p>Currency</p>
-                                        <p>INR Default</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Rate per Km.</p>
-                                        <p class="pm-value">8</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum No. of Km.</p>
-                                        <p class="pm-value">2</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum No. of Km.</p>
-                                        <p class="pm-value">50</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum Weight (gms)</p>
-                                        <p class="pm-value">0.5gms</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum Weight (kgs)</p>
-                                        <p class="pm-value">50 kgs</p>
-                                    </div>
-                                    <p class="pm-header">Surcharges</p>
-                                    <div class="pm-details">
-                                        <p class="pm-name">GST</p>
-                                        <p class="pm-value">10%</p>
-                                    </div>
-                                    <p class="pm-header">Fuel Surcharge</p>
-                                    <p class="pm-save">
-                                        <button class="btn btn-secondary">Save</button>
-                                    </p>
-
-                                    *** Give option to add categories
-                                </div>
-                                <div class="pricing-model">
-                                    <h6 class="text-center">Full Truck Load</h6>
-                                    <div class="pm-info">
-                                        <p>Currency</p>
-                                        <p>INR Default</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Rate per Km.</p>
-                                        <p class="pm-value">8</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum No. of Km.</p>
-                                        <p class="pm-value">2</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum No. of Km.</p>
-                                        <p class="pm-value">50</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum Weight (gms)</p>
-                                        <p class="pm-value">0.5gms</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum Weight (kgs)</p>
-                                        <p class="pm-value">50 kgs</p>
-                                    </div>
-                                    <p class="pm-header">Surcharges</p>
-                                    <div class="pm-details">
-                                        <p class="pm-name">GST</p>
-                                        <p class="pm-value">10%</p>
-                                    </div>
-                                    <p class="pm-header">Fuel Surcharge</p>
-                                    <p class="pm-save">
-                                        <button class="btn btn-secondary">Save</button>
-                                    </p>
-
-                                    *** Give option to add categories
-                                </div>
-                                <div class="pricing-model">
-                                    <h6 class="text-center">Container 20 Ft.</h6>
-                                    <div class="pm-info">
-                                        <p>Currency</p>
-                                        <p>INR Default</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Rate per Km.</p>
-                                        <p class="pm-value">8</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum No. of Km.</p>
-                                        <p class="pm-value">2</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum No. of Km.</p>
-                                        <p class="pm-value">50</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum Weight (gms)</p>
-                                        <p class="pm-value">0.5gms</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum Weight (kgs)</p>
-                                        <p class="pm-value">50 kgs</p>
-                                    </div>
-                                    <p class="pm-header">Surcharges</p>
-                                    <div class="pm-details">
-                                        <p class="pm-name">GST</p>
-                                        <p class="pm-value">10%</p>
-                                    </div>
-                                    <p class="pm-header">Fuel Surcharge</p>
-                                    <p class="pm-save">
-                                        <button class="btn btn-secondary">Save</button>
-                                    </p>
-
-                                    *** Give option to add categories
-                                </div>
-                                <div class="pricing-model">
-                                    <h6 class="text-center">Container 40 Ft.</h6>
-                                    <div class="pm-info">
-                                        <p>Currency</p>
-                                        <p>INR Default</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Rate per Km.</p>
-                                        <p class="pm-value">8</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum No. of Km.</p>
-                                        <p class="pm-value">2</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum No. of Km.</p>
-                                        <p class="pm-value">50</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Minimum Weight (gms)</p>
-                                        <p class="pm-value">0.5gms</p>
-                                    </div>
-                                    <div class="pm-details">
-                                        <p class="pm-name">Maximum Weight (kgs)</p>
-                                        <p class="pm-value">50 kgs</p>
-                                    </div>
-                                    <p class="pm-header">Surcharges</p>
-                                    <div class="pm-details">
-                                        <p class="pm-name">GST</p>
-                                        <p class="pm-value">10%</p>
-                                    </div>
-                                    <p class="pm-header">Fuel Surcharge</p>
-                                    <p class="pm-save">
-                                        <button class="btn btn-secondary">Save</button>
-                                    </p>
-
-                                    <p>*** Give option to add categories</p>
-
-                                </div>
+                            </div>
+                            <div id="dl-weight">
+                                <table>
+                                    <tr>
+                                        <th colspan="8">
+                                            Delivery Type - By Air
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Kgs</th>
+                                        <th>Within State</th>
+                                        <th>Metro to Metro</th>
+                                        <th>Rest OF India</th>
+                                        <th>Special Zone</th>
+                                        <th>Min COD</th>
+                                        <th>COD%</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Minimum Weight</th>
+                                        <td>0.5</td>
+                                        <td>24</td>
+                                        <td>110</td>
+                                        <td>120</td>
+                                        <td>150</td>
+                                        <td>30</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Minimum Weight</th>
+                                        <td>1</td>
+                                        <td>72</td>
+                                        <td>150</td>
+                                        <td>150</td>
+                                        <td>180</td>
+                                        <td>20</td>
+                                        <td>1.5%</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Additional Kg</th>
+                                        <td>1</td>
+                                        <td>35</td>
+                                        <td>130</td>
+                                        <td>140</td>
+                                        <td>180</td>
+                                        <td>40</td>
+                                        <td>1.8</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Maximum</th>
+                                        <td>20</td>
+                                        <td>3000</td>
+                                        <td>3000</td>
+                                        <td>3000</td>
+                                        <td>3500</td>
+                                        <td>40</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>GST %</th>
+                                        <td>18</td>
+                                        <td>18</td>
+                                        <td>18</td>
+                                        <td>18</td>
+                                        <td>18</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Fuel Surcharges</th>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8" style="text-align: end;">
+                                            <button class="btn btn-primary">Show More</button>
+                                            <button class="btn btn-primary">Edit</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <br>
+                                <br>
+                                <table>
+                                    <tr>
+                                        <th colspan="8">
+                                            Delivery Type - By Road
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Kgs</th>
+                                        <th>Within State</th>
+                                        <th>Metro to Metro</th>
+                                        <th>Rest OF India</th>
+                                        <th>Special Zone</th>
+                                        <th>Min COD</th>
+                                        <th>COD%</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Minimum Weight</th>
+                                        <td>0.5</td>
+                                        <td>24</td>
+                                        <td>110</td>
+                                        <td>120</td>
+                                        <td>150</td>
+                                        <td>30</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Minimum Weight</th>
+                                        <td>1</td>
+                                        <td>72</td>
+                                        <td>150</td>
+                                        <td>150</td>
+                                        <td>180</td>
+                                        <td>20</td>
+                                        <td>1.5%</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Additional Kg</th>
+                                        <td>1</td>
+                                        <td>35</td>
+                                        <td>130</td>
+                                        <td>140</td>
+                                        <td>180</td>
+                                        <td>40</td>
+                                        <td>1.8</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Maximum</th>
+                                        <td>20</td>
+                                        <td>3000</td>
+                                        <td>3000</td>
+                                        <td>3000</td>
+                                        <td>3500</td>
+                                        <td>40</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>GST %</th>
+                                        <td>18</td>
+                                        <td>18</td>
+                                        <td>18</td>
+                                        <td>18</td>
+                                        <td>18</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Fuel Surcharges</th>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8" style="text-align: end;">
+                                            <button class="btn btn-primary">Show More</button>
+                                            <button class="btn btn-primary">Edit</button>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                             <div class="pds-account-buttons">
                                 <div class="pds-account-edit">
-                                    <button class="btn btn-primary">Back</button>
+                                    <button class="btn">Back</button>
                                 </div>
                                 <div class="pds-account-next">
-                                    <button class="btn btn-primary">Save</button>
-                                    <button class="btn btn-primary">Next</button>
+                                    <button class="btn">Save</button>
+                                    <button class="btn">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -2000,11 +2574,11 @@
 
                             <div class="pds-account-buttons">
                                 <div class="pds-account-edit">
-                                    <button class="btn btn-primary">Back</button>
+                                    <button class="btn">Back</button>
                                 </div>
                                 <div class="pds-account-next">
-                                    <button class="btn btn-primary">Save</button>
-                                    <button class="btn btn-primary">Next</button>
+                                    <button class="btn">Save</button>
+                                    <button class="btn">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -2019,42 +2593,60 @@
                                 <table>
                                     <tr>
                                         <th>Requester Name</th>
+                                        <th>Request ID</th>
+                                        <th>Requester Type</th>
                                         <th>Parcel Type</th>
                                         <th>Received Date</th>
-                                        <th>From(location)</th>
-                                        <th>To(location)</th>
                                         <th>Amount</th>
                                         <th>Status</th>
                                     </tr>
 
                                     <tr>
                                         <td>abc</td>
+                                        <td>XXXXX</td>
+                                        <td>Individual</td>
                                         <td>Document</td>
                                         <td>3/11/2021</td>
-                                        <td>XXXX</td>
-                                        <td>XXXX</td>
                                         <td>Rs 100</td>
-                                        <td>Dropdown</td>
+                                        <td>
+                                            <select name="options" class="rr-status">
+                                                <option value="accept">Accept</option>
+                                                <option value="decline">Decline</option>
+                                                <option value="delivered">Delivered</option>
+                                            </select>
+                                        </td>
                                     </tr>
 
                                     <tr>
                                         <td>def</td>
+                                        <td>XXXXX</td>
+                                        <td>Individual</td>
                                         <td>Food</td>
                                         <td>3/11/2021</td>
-                                        <td>XXXX</td>
-                                        <td>XXXX</td>
                                         <td>Rs 100</td>
-                                        <td>Dropdown</td>
+                                        <td>
+                                            <select name="options" class="rr-status">
+                                                <option value="accept">Accept</option>
+                                                <option value="decline">Decline</option>
+                                                <option value="delivered">Delivered</option>
+                                            </select>
+                                        </td>
                                     </tr>
 
                                     <tr>
                                         <td>xyz</td>
+                                        <td>XXXXX</td>
+                                        <td>Business</td>
                                         <td>Medicine</td>
                                         <td>3/11/2021</td>
-                                        <td>XXXX</td>
-                                        <td>XXXX</td>
                                         <td>Rs 100</td>
-                                        <td>Dropdown</td>
+                                        <td>
+                                            <select name="options" class="rr-status">
+                                                <option value="accept">Accept</option>
+                                                <option value="decline">Decline</option>
+                                                <option value="delivered">Delivered</option>
+                                            </select>
+                                        </td>
                                     </tr>
 
                                 </table>
@@ -2062,11 +2654,11 @@
 
                             <div data-brackets-id="40843" class="pds-account-buttons">
                                 <div data-brackets-id="40844" class="pds-account-edit">
-                                    <button data-brackets-id="40845" class="btn btn-primary">Back</button>
+                                    <button data-brackets-id="40845" class="btn">Back</button>
                                 </div>
                                 <div data-brackets-id="40846" class="pds-account-next">
-                                    <button data-brackets-id="40847" class="btn btn-primary">Save</button>
-                                    <button data-brackets-id="40848" class="btn btn-primary">Next</button>
+                                    <button data-brackets-id="40847" class="btn">Save</button>
+                                    <button data-brackets-id="40848" class="btn">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -2097,7 +2689,12 @@
                                         <td>10%</td>
                                         <td>200 packets delivered</td>
                                         <td>XXXX</td>
-                                        <td><button class="btn btn-danger">Terminate</button></td>
+                                        <td>
+                                            <select name="options" class="bp-terminate">
+                                                <option value="active">Active</option>
+                                                <option value="terminate">Terminate</option>
+                                            </select>
+                                        </td>
                                     </tr>
 
                                     <tr>
@@ -2106,7 +2703,12 @@
                                         <td>5%</td>
                                         <td>500 packets delivered</td>
                                         <td>XXXX</td>
-                                        <td><button class="btn btn-danger">Terminate</button></td>
+                                        <td>
+                                            <select name="options" class="bp-terminate">
+                                                <option value="active">Active</option>
+                                                <option value="terminate">Terminate</option>
+                                            </select>
+                                        </td>
                                     </tr>
 
                                     <tr>
@@ -2115,18 +2717,23 @@
                                         <td>15%</td>
                                         <td>500 packets delivered</td>
                                         <td>XXXX</td>
-                                        <td><button class="btn btn-danger">Terminate</button></td>
+                                        <td>
+                                            <select name="options" class="bp-terminate">
+                                                <option value="active">Active</option>
+                                                <option value="terminate">Terminate</option>
+                                            </select>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
 
                             <div class="pds-account-buttons">
                                 <div class="pds-account-edit">
-                                    <button class="btn btn-primary">Back</button>
+                                    <button class="btn">Back</button>
                                 </div>
                                 <div class="pds-account-next">
-                                    <button class="btn btn-primary">Save</button>
-                                    <button class="btn btn-primary">Next</button>
+                                    <button class="btn">Save</button>
+                                    <button class="btn">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -2136,7 +2743,7 @@
                         <div class="pds-account-info-wrapper" id="business-opp">
                             <div class="bo-inner row">
                                 <div style="margin: 0 auto;">
-                                    <h5>Business Opportunities</h5>
+                                    <h5>New Business Opportunities</h5>
                                 </div>
                                 <table>
                                     <tr>
@@ -2158,7 +2765,13 @@
                                         <td>10%</td>
                                         <td>Yes</td>
                                         <td>Any Comments</td>
-                                        <td>Open</td>
+                                        <td>
+                                            <select name="options" class="new-bp-status">
+                                                <option value="open">Open</option>
+                                                <option value="accept">Accept</option>
+                                                <option value="decline">Decline</option>
+                                            </select>
+                                        </td>
                                         <td>Remove</td>
                                     </tr>
 
@@ -2169,7 +2782,13 @@
                                         <td>5%</td>
                                         <td>Yes</td>
                                         <td>Any Comments</td>
-                                        <td>Open</td>
+                                        <td>
+                                            <select name="options" class="new-bp-status">
+                                                <option value="open">Open</option>
+                                                <option value="accept">Accept</option>
+                                                <option value="decline">Decline</option>
+                                            </select>
+                                        </td>
                                         <td>Remove</td>
                                     </tr>
 
@@ -2180,7 +2799,13 @@
                                         <td>15%</td>
                                         <td>Yes</td>
                                         <td>Any Comments</td>
-                                        <td>Open</td>
+                                        <td>
+                                            <select name="options" class="new-bp-status">
+                                                <option value="open">Open</option>
+                                                <option value="accept">Accept</option>
+                                                <option value="decline">Decline</option>
+                                            </select>
+                                        </td>
                                         <td>Remove</td>
                                     </tr>
                                 </table>
@@ -2188,11 +2813,11 @@
 
                             <div class="pds-account-buttons">
                                 <div class="pds-account-edit">
-                                    <button class="btn btn-primary" style="display: none;">Back</button>
+                                    <button class="btn" style="display: none;">Back</button>
                                 </div>
                                 <div class="pds-account-next">
-                                    <button class="btn btn-primary">Previous</button>
-                                    <button class="btn btn-primary">Submit</button>
+                                    <button class="btn">Previous</button>
+                                    <button class="btn">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -2214,7 +2839,8 @@
                                     <div class="pds-billing-box pds-bb-container" id="pds-ls-bank">
                                         <div class="pds-bb-form-outer">
                                             <div class="pds-bb-form">
-                                                <h6 style="font-weight: 600; color: ">LS Bank Account Information</h6>
+                                                <h6 style="font-weight: 600; color: ">LS Bank Account Information
+                                                </h6>
                                                 <div class="pds-bb-ls">
                                                     <label>Name</label>
                                                     <input type="text" name="account-name" placeholder="Srinivas"

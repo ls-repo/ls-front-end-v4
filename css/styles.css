@@ -81,6 +81,7 @@ input[type="checkbox"] {
     font-size: 2rem;
     font-weight: bold;
     line-height: 1.1;
+    align-self: baseline;
 }
 
 input[type="checkbox"]::before {
@@ -840,6 +841,7 @@ footer ul {
     gap: 10px;
     padding-right: 0;
     margin-left: 15px;
+    border-bottom: none;
 }
 
 .pds-button {
@@ -875,6 +877,18 @@ footer ul {
     margin: 0 auto;
 }
 
+.pds-link.nav-link {
+    color: #4D4E4E;
+}
+
+.pds-link.nav-link.active {
+    color: #FDC500;
+}
+
+.pds-link.nav-link.active .cls-1 {
+    fill: #FDC500;
+}
+
 .pds-document {
     border: 1px solid #B8B5B5;
     padding: 20px 0;
@@ -892,6 +906,7 @@ footer ul {
     color: #000;
     padding: 10px 20px;
     cursor: pointer;
+    font-size: 0.9rem;
 }
 
 .pds-document a:focus {
@@ -912,7 +927,7 @@ footer ul {
     text-decoration: none;
 }
 
-.pds-document-sub-outer {
+.pds-document-sub-outer, .pds-document-sub-outer-1 {
     display: none;
 }
 
@@ -1532,7 +1547,7 @@ footer ul {
 .pds-account-type label {
     display: flex;
     gap: 10px;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     margin: 0;
     height: 30px;
@@ -1571,6 +1586,7 @@ footer ul {
 .pds-account-buttons button:hover {
     background: #01B7F2;
     font-weight: 600;
+    color: #fff;
 }
 
 .pds-account-next {
@@ -1684,7 +1700,7 @@ footer ul {
 
 .pds-kyc-add img {
     width: 40px;
-    margin: 10px auto;
+    margin: 10px auto 20px;
 }
 
 #pds-company {
@@ -1708,7 +1724,6 @@ footer ul {
 .pds-kyc-upload-single {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
     gap: 20px;
     margin-bottom: 10px;
 }
@@ -1717,6 +1732,13 @@ footer ul {
     line-height: 1.1em;
     margin: auto 0;
     text-align: left;
+}
+
+.pds-kyc-upload-multiple {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-bottom: 2vh!important;
 }
 
 .pds-kyc-header {
@@ -1749,21 +1771,23 @@ footer ul {
     box-shadow: 0 0 5px 1px rgb(100 100 100 / 30%);
 }
 
-.pds-kyc-add button {
+.pds-kyc-add-button {
     background: #01B7F2;
     padding: 10px 40px;
     font-size: 0.9em;
     font-weight: 600;
-    border-color: #01B7F2;
+    border: 1px solid #01B7F2;
     color: #fff !important;
     margin-bottom: 20px;
+    border-radius: 5px;
 }
 
-.pds-kyc-add button:hover,
-.pds-kyc-add button:focus {
+.pds-kyc-add-button:hover,
+.pds-kyc-add-button:focus {
     background: #01B7F2;
-    border-color: #01B7F2;
-    color: #000 !important;
+    border: 1px solid #fff;
+    color: #fff!important;
+    transform: scale(1.1);
 }
 
 .payment-available {
@@ -1809,12 +1833,10 @@ footer ul {
 .payment-name div {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .payment-name-1 div {
     display: flex;
-    align-items: center;
 }
 
 .payment-name-1 label {
@@ -1847,6 +1869,11 @@ footer ul {
     margin-bottom: 0;
 }
 
+.parcel-type-custom {
+    display: flex;
+    justify-content: end;
+}
+
 .cat-single {
     display: flex;
     justify-content: space-between;
@@ -1854,7 +1881,7 @@ footer ul {
     padding: 10px;
     align-items: flex-start;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 2vh;
 }
 
 .cat-name {
@@ -1911,7 +1938,7 @@ footer ul {
     background: transparent;
     padding: 10px;
     border-radius: 4px;
-    max-width: ;
+    min-height: 3rem;
     border: 1px solid #ccc
 }
 .tags-input-wrapper input{
@@ -1923,13 +1950,12 @@ footer ul {
 }
 .tags-input-wrapper .tag{
     display: inline-block;
-    background-color: #fa0e7e;
-    color: white;
+    border: 1px solid #01b7f2;
+    color: #000;
     border-radius: 40px;
-    padding: 0px 3px 0px 7px;
+    padding: 5px 5px 2.5px 10px;
     margin-right: 5px;
     margin-bottom:5px;
-    box-shadow: 0 5px 15px -2px rgba(250 , 14 , 126 , .7)
 }
 .tags-input-wrapper .tag a {
     margin: 0 7px 3px;
@@ -1983,9 +2009,10 @@ footer ul {
 
 .contact-header {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    padding: 10px 20px;
+    grid-template-columns: 5vw 5vw 5vw 7vw 7vw 7vw 7vw 7vw 4vw;
+    padding: 10px;
     border-bottom: 1px solid #000;
+     gap: 2px;
 }
 
 
@@ -1996,8 +2023,18 @@ footer ul {
 
 .contact-details-wrapper {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    padding: 10px 20px;
+    grid-template-columns: 5vw 5vw 5vw 7vw 7vw 7vw 7vw 7vw 4vw;
+    padding: 10px;
+    gap: 2px;
+    align-items: center;
+}
+
+.contact-details-wrapper p {
+    overflow-wrap: break-word;
+}
+
+.cd-button {
+    padding: 0!important;
 }
 
 .contact-details-button img {
@@ -2014,10 +2051,16 @@ footer ul {
     width: 25%;
 }
 
+/* Pricing Model Tab CSS */
+
 .pricing-model-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
+}
+
+#dl-distance, #dl-weight {
+    display: none;
 }
 
 .pricing-model {
@@ -2078,11 +2121,44 @@ footer ul {
     width: 100%;
 }
 
+.pm-bike-input, .pm-rickshaw-input, .pm-tempo-input, .pm-htruck-input, .pm-ftruck-input, .pm-container20-input, .pm-container40-input {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.pm-bike-input label, .pm-rickshaw-input label, .pm-tempo-input label, .pm-htruck-input label, .pm-container20-input label, .pm-container40-input label {
+    width: 40%;
+}
+
+.pm-bike-input input, .pm-rickshaw-input input, .pm-tempo-input input, .pm-htruck-input input, .pm-container20-input input, .pm-container40-input input {
+    width: 50%;
+}
+
+#dl-weight table {
+    table-layout: fixed;
+}
+
 
 /* Delivery Location Section CSS */
 
 #dl-shipping, #dl-courier {
     display: none;
+}
+
+.dl-courier-inner {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.dl-pincode-outer {
+    width: 55%;
+}
+
+.dl-time-outer {
+    width: 40%;
 }
 
 .dl-active {
@@ -2094,9 +2170,13 @@ footer ul {
     padding: 10px;
 }
 
+.dl-time-wrapper p {
+    font-size: 0.9em;
+}
+
 .dl-time-single {
     display: grid;
-    grid-template-columns: 2fr 1fr 0.5fr 1fr;
+    grid-template-columns: 7vw 5vw 3vw 5vw;
 }
 
 .dl-pincode {
@@ -2132,8 +2212,15 @@ th {
 }
 
 .dl-pincode th {
-    font-size: 0.9em;
-    font-size: 0.9em;
+    font-size: 0.8em;
+}
+
+.dl-pt {
+    table-layout: fixed;
+}
+
+.dl-pt td {
+    overflow-wrap: break-word;
 }
 
 .dl-pt-header {
@@ -2183,6 +2270,24 @@ tr,
 td {
     border: 1px solid #000;
     padding: 0.5rem;
+}
+
+.rr-status {
+    width: 100%;
+}
+
+/* Active Business Partners CSS */
+.bp-terminate {
+    width: 100%;
+}
+
+.bp-terminate option:active {
+    background-color: none;
+}
+
+/* New Business Opportunities CSS */
+.new-bp-status {
+    width: 100%;
 }
 
 /* Provider Dashboard Billing */
